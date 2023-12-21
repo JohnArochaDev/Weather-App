@@ -8,10 +8,11 @@ As a user, I want the ability to...
   - sign up.
   - sign in. 
   - sign out. 
-  - create my own Team. 
-  - update my Team. 
-  - view a complete Pokédex. 
-  - see all the details of a selected Pokémon. 
+  - check the weather anywhere in the world
+  - save locations
+  - view my locations and their corresponding forcasts
+  - select a location on a google map window
+  - Display a 7 day forcast and a current forcast
 
 ## Wireframe
 ![alt text](Public/Wireframe.png)
