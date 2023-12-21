@@ -15,11 +15,11 @@ As a user, I want the ability to...
   - Display a 7 day forcast and a current forcast
 
 ## Wireframe
-![alt text](Public/Wireframe.png)
+![alt text](Public/images/Wireframe.png)
 
 
 
 
 ## ERD
 
-![alt text](Public/ERD.png)
+![alt text](Public/images/ERD.png)
