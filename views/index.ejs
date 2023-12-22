@@ -1,11 +1,116 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<!doctype html>
+<!--
+  @license
+  Copyright 2019 Google LLC. All Rights Reserved.
+  SPDX-License-Identifier: Apache-2.0
+-->
+
+    <div id="map"></div>
+
+    <h1>Tis workin</h1>
+    <script>
+      (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+        key: "AIzaSyANtLR5ZVcSDGk3iTqHu9LYNQlNjs90Qzw",
+        v: "weekly",
+        // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+        // Add other bootstrap parameters as needed, using camel case.
+      });
+    </script>
+    <!-- <script defer src="http://maps.googleapis.com/maps/api/js"></script>  -->
+    <!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script> -->
+    <script defer type="text/javascript"> 
+      const p = document.createElement("p");
+      p.innerText = "hello"
+      document.body.appendChild(p);
+      let map;
+      let marker;
+      let geocoder;
+      let responseDiv;
+      let response;
+
+      function initMap() {
+          map = new google.maps.Map(document.getElementById("map"), {
+              zoom: 8,
+              center: { lat: -34.397, lng: 150.644 },
+              mapTypeControl: false,
+          });
+          geocoder = new google.maps.Geocoder();
+
+          const inputText = document.createElement("input");
+
+          inputText.type = "text";
+          inputText.placeholder = "Enter a location";
+
+          const submitButton = document.createElement("input");
+
+          submitButton.type = "button";
+          submitButton.value = "Geocode";
+          submitButton.classList.add("button", "button-primary");
+
+          const clearButton = document.createElement("input");
+
+          clearButton.type = "button";
+          clearButton.value = "Clear";
+          clearButton.classList.add("button", "button-secondary");
+          response = document.createElement("pre");
+          response.id = "response";
+          response.innerText = "";
+          responseDiv = document.createElement("div");
+          responseDiv.id = "response-container";
+          responseDiv.appendChild(response);
+
+          const instructionsElement = document.createElement("p");
+
+          instructionsElement.id = "instructions";
+          instructionsElement.innerHTML =
+              "<strong>Instructions</strong>: Enter an address in the textbox to geocode or click on the map to reverse geocode.";
+          map.controls[google.maps.ControlPosition.TOP_LEFT].push(inputText);
+          map.controls[google.maps.ControlPosition.TOP_LEFT].push(submitButton);
+          map.controls[google.maps.ControlPosition.TOP_LEFT].push(clearButton);
+          map.controls[google.maps.ControlPosition.LEFT_TOP].push(instructionsElement);
+          map.controls[google.maps.ControlPosition.LEFT_TOP].push(responseDiv);
+          marker = new google.maps.Marker({
+              map,
+          });
+          map.addListener("click", (e) => {
+              geocode({ location: e.latLng });
+          });
+          submitButton.addEventListener("click", () =>
+              geocode({ address: inputText.value }),
+          );
+          clearButton.addEventListener("click", () => {
+              clear();
+          });
+          clear();
+      }
+
+      function clear() {
+          marker.setMap(null);
+          responseDiv.style.display = "none";
+      }
+
+      function geocode(request) {
+          clear();
+          geocoder
+              .geocode(request)
+              .then((result) => {
+              const { results } = result;
+
+              map.setCenter(results[0].geometry.location);
+              marker.setPosition(results[0].geometry.location);
+              marker.setMap(map);
+              responseDiv.style.display = "block";
+              response.innerText = JSON.stringify(result, null, 2);
+              return results;
+              })
+              .catch((e) => {
+              alert("Geocode was not successful for the following reason: " + e);
+          });
+      }
+
+      window.initMap = initMap;
+      initMap()
+    </script>
