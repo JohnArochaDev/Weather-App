@@ -38,6 +38,8 @@ response.innerText = "";
 responseDiv = document.createElement("div");
 responseDiv.id = "response-container";
 responseDiv.appendChild(response);
+//                                               response IS the object   obj>location> lat: / lng:
+console.log('This is the response: \n', response);
 
 const instructionsElement = document.createElement("p");
 
