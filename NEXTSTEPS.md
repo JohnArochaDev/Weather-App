@@ -12,3 +12,7 @@ https://api.weather.gov/points/{latitude},{longitude} = Object > properties > fo
 
 
 https://api.weather.gov/points/{latitude},{longitude} = Object > properties > forecastHourly -- HOurly forcast, based off a value[called number in the object], it incriments hour by hour with the following data: start-time, end-time, day time or night time, temperature, percipitation chances, dewpoint, humidity, wind speed, wind direction, am icon, forcast name(Mostly sunny), and details(THIS IS THE ENDPOINT, ITS INSIDE OF Object > properties > forecastHourly[I need to find a way to use the object key to upen a request because of the custom data, the PUB and the 72,86 are custom and generated on their side] <https://api.weather.gov/gridpoints/PUB/72,86/forecast/hourly>)
+
+
+
+Need to gather users current location to display on Home Page, look here >> https://www.geoapify.com/how-to-get-user-location-with-javascript
