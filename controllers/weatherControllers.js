@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
 router.get('/weather/daily', (req, res) => {
     console.log(weatherURL)
     console.log('I WAS HIT')
-    axios(`${weatherURL}/${lat},${long}`)
+    axios(`${weatherURL}/${lat},${long}`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
         // render the results on a 'show' page: aka 'detail' page
         .then(apiRes => {
             console.log('this came back from the api: \n', apiRes)
