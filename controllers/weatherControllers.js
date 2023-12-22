@@ -28,13 +28,12 @@ router.get('/', function(req, res, next) {
 // This will be for the single day
 
 router.get('/weather/daily', (req, res) => {
-    console.log(weatherURL)
-    console.log('I WAS HIT')
     axios(`${weatherURL}/${lat},${long}`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
         // render the results on a 'show' page: aka 'detail' page
         .then(apiRes => {
             console.log('this came back from the api: \n', apiRes)
-            res.render('weather/daily', {apiRes})
+            let weather = apiRes.data
+            res.render('weather/daily', {weather})
         })
         // if we get an error, display the error
         .catch(err => {
