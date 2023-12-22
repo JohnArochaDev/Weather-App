@@ -38,7 +38,7 @@ response.innerText = "";
 responseDiv = document.createElement("div");
 responseDiv.id = "response-container";
 responseDiv.appendChild(response);
-//                                               response IS the object   obj>location> lat: / lng:
+//                                                                                               response IS the object   obj>location> lat: / lng:
 console.log('This is the response: \n', response);
 
 const instructionsElement = document.createElement("p");
@@ -49,8 +49,10 @@ instructionsElement.innerHTML =
 map.controls[google.maps.ControlPosition.TOP_LEFT].push(inputText);
 map.controls[google.maps.ControlPosition.TOP_LEFT].push(submitButton);
 map.controls[google.maps.ControlPosition.TOP_LEFT].push(clearButton);
-map.controls[google.maps.ControlPosition.LEFT_TOP].push(instructionsElement);
-map.controls[google.maps.ControlPosition.LEFT_TOP].push(responseDiv);
+// map.controls[google.maps.ControlPosition.LEFT_TOP].push(instructionsElement);
+//                                                                                               This was the instructions, it was blocking the view^^^^^^
+// map.controls[google.maps.ControlPosition.LEFT_TOP].push(responseDiv);
+//                                                                                                  THIS WAS THE WINDOW THAT POPPS UP WITH THE OBJECT!!!!!^^^^^^
 marker = new google.maps.Marker({
 map,
 });
