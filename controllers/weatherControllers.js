@@ -35,12 +35,14 @@ router.get('/weather/daily', (req, res) => {
             let weather = apiRes.data // This currently = https://api.weather.gov/gridpoints/CRP/125,36/forecast
             let daily = weather.properties.forecast // This is the link we want to use
 
-            //                                                                                 THe below code should work, api is down so we cant check
+            //                                                                                 THe below code should work, api is down so we cant check, May need to do a .then after the first .then, not INSIDE
+
             // axios(daily)
             // .then(weather => {
             //     console.log('this came back from the api: \n', weather)
             //     res.render('weather/daily', {weather})
             // })
+            //                                                       Remove res.render after reapplying above code
             res.render('weather/daily', {daily})
         })
         // if we get an error, display the error
