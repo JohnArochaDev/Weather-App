@@ -29,14 +29,29 @@ router.get('/', function(req, res, next) {
 // This will be for the single day
 
 router.get('/weather/daily', (req, res) => {
+    const time = []
+    const temp = []
+    const day = []
+    const wind = []
+    const precip = []
+    const snow = []
+    const humidity = []
+    const cloud = []
+    const feelslike = []
+    const windchill = []
+    const heatindex = []
+    const dewpoint = []
+    const chanceOfRain = []
+    const chanceOfSnow = []
+    const visability = []
+    const uv = []
     axios(`${weatherURL}${lat},${long}&days=3&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
         // render the results on a 'show' page: aka 'detail' page
         .then(apiRes => {
             console.log('this came back from the api: \n', apiRes)
             let weather = apiRes.data
             let locName = weather.location.name
-            let forecast1 = weather.forecast.forecastday[
-                0] // DAY OF
+            let forecast1 = weather.forecast.forecastday[0] // DAY OF
             let forecast2 = weather.forecast.forecastday[1] // TOMORROW
             let forecast3 = weather.forecast.forecastday[2] // TOMORROW'S TOMORROW
             let locRegion = weather.location.region
@@ -48,15 +63,34 @@ router.get('/weather/daily', (req, res) => {
             let maxWind = forecast1.day.maxwind_mph
             let totalPrecip = forecast1.day.totalprecip_in
             let totalSnow = forecast1.day.totalsnow_cm
-            let humidity = forecast1.day.avghumidity
+            let localHumidity = forecast1.day.avghumidity
             let rainChance = forecast1.day.daily_chance_of_rain
             let snowChance = forecast1.day.daily_chance_of_snow
             let condition = forecast1.day.condition.text
             let conditionIcon = forecast1.day.condition.icon
+            let hour = forecast1.hour // hour us an array I need to sift through with for each and hour.length
+            hour.forEach((data) => {
+                time.push(data.time)
+                temp.push(data.temp_f)
+                day.push(data.is_day)
+                wind.push(data.wind_mph)
+                precip.push(data.precip_in)
+                snow.push(data.snow_cm)
+                humidity.push(data.humidity)
+                cloud.push(data.cloud)
+                feelslike.push(data.feelslike_f)
+                windchill.push(data.windchill_f)
+                heatindex.push(data.heatindex_f)
+                dewpoint.push(data.dewpoint_f)
+                chanceOfRain.push(data.chance_of_rain)
+                chanceOfSnow.push(data.chance_of_snow)
+                visability.push(data.vis_miles)
+                uv.push(data.uv)
+            })
 
 
-
-            res.render('weather/daily', { locName, locRegion, locTime, locDate, maxTemp, minTemp, avrTemp, maxWind, totalPrecip, totalSnow, humidity, rainChance, snowChance, condition, conditionIcon, })
+            res.render('weather/daily', { locName, locRegion, locTime, locDate, maxTemp, minTemp, avrTemp, maxWind, totalPrecip, totalSnow, localHumidity, rainChance, snowChance, condition, conditionIcon, time, temp, day, wind, precip, snow, humidity, cloud, feelslike, 
+                windchill, heatindex, dewpoint, chanceOfRain, chanceOfSnow, visability, uv})
         })
         // if we get an error, display the error
         .catch(err => {
