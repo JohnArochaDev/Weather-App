@@ -35,14 +35,28 @@ router.get('/weather/daily', (req, res) => {
             console.log('this came back from the api: \n', apiRes)
             let weather = apiRes.data
             let locName = weather.location.name
-            let forecast1 = weather.forecast.forecastday[0] // DAY OF
+            let forecast1 = weather.forecast.forecastday[
+                0] // DAY OF
             let forecast2 = weather.forecast.forecastday[1] // TOMORROW
             let forecast3 = weather.forecast.forecastday[2] // TOMORROW'S TOMORROW
             let locRegion = weather.location.region
             let locTime = weather.location.localtime
             let locDate = forecast1.date
+            let maxTemp = forecast1.day.maxtemp_f
+            let minTemp = forecast1.day.mintemp_f
+            let avrTemp = forecast1.day.avgtemp_f
+            let maxWind = forecast1.day.maxwind_mph
+            let totalPrecip = forecast1.day.totalprecip_in
+            let totalSnow = forecast1.day.totalsnow_cm
+            let humidity = forecast1.day.avghumidity
+            let rainChance = forecast1.day.daily_chance_of_rain
+            let snowChance = forecast1.day.daily_chance_of_snow
+            let condition = forecast1.day.condition.text
+            let conditionIcon = forecast1.day.condition.icon
 
-            res.render('weather/daily', {locName, locRegion, locTime, locDate})
+
+
+            res.render('weather/daily', { locName, locRegion, locTime, locDate, maxTemp, minTemp, avrTemp, maxWind, totalPrecip, totalSnow, humidity, rainChance, snowChance, condition, conditionIcon, })
         })
         // if we get an error, display the error
         .catch(err => {
