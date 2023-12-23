@@ -14,9 +14,10 @@ const router = express.Router();
 ////////////////////////
 // Create Variables ////
 ////////////////////////
-let lat = 27.833
-let long = -97.061
+let lat = 42.3621997
+let long = -102.2631529
 
+// TEST COORDS     42.3621997,-102.2631529
 //////////////////////////////
 ///  Routes + Controllers ////
 //////////////////////////////
