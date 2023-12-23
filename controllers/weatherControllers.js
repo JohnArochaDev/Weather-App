@@ -69,7 +69,13 @@ router.get('/weather/daily', (req, res) => {
             let condition = forecast1.day.condition.text
             let conditionIcon = forecast1.day.condition.icon
             let hour = forecast1.hour // hour us an array I need to sift through with for each and hour.length
-            hour.forEach((data) => {
+
+// I need to write a function that uses the hour data from locTime, and uses splice() to copy the array starting at the point from locTime, and the make the below forEach iterate through the new array. This will allow me to display the hourly data ONLY for the future, not the whole day.
+            let localTime = locTime[11] + locTime[12]
+            localTime ++
+            let hourTime = hour.splice(localTime)
+
+            hourTime.forEach((data) => {
                 time.push(data.time)
                 temp.push(data.temp_f)
                 day.push(data.is_day)
