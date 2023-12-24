@@ -9,8 +9,19 @@
             <div class="card-body">
                 <h5 class="card-title"><%= temp[0] %>°F</h5>
                 <p class="card-text"><%=condition%></p>
-                <img src="" alt="">
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <% if (condition == 'Clear') { %>
+                    <img src="public/images/icons/clearDay.png" alt="">
+                <% } else if (condition == 'Cloudy') {%>
+                <img src="public/images/icons/cloudy.png" alt="">
+                <% } else if (condition == 'Overcast') {%>
+                    <img src="public/images/icons/cloudy.png" alt="">
+                <% } else if (condition == 'Blizzard') {%>
+                    <img src="public/images/icons/blizzard.png" alt="">
+                <% } else if (condition == 'Sunny') {%>
+                    <img src="public/images/icons/clearDay.png" alt="">
+                <% } else if (condition == 'Partly cloudy') {%>
+                    <img src="public/images/icons/partlyCloudyDay.png" alt="">
+                <% } %>
             </div>
         </div>
     </div>
