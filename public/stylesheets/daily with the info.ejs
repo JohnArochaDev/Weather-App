@@ -1,19 +1,59 @@
 <%- include('../partial/header') %>
 
-<div class="container mt-5">
-    <div class="justify-content-start">
-        <div class="card w-50">
-            <div class="card-header">
-                Current Weather:
-            </div>
-            <div class="card-body">
-                <h5 class="card-title"><%= temp[0] %>°F</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- <h1>City: <%=  locName  %></h1>
+<h1>State: <%=  locRegion  %></h1>
+<h1>Time: <%=  locTime  %></h1>
+<h1>Date: <%=  locDate  %></h1>
+<h1>Maximum Temperature: <%=  maxTemp  %></h1>
+<h1>Minimum Temperature: <%=  minTemp  %></h1>
+<h1>Average Tempature: <%=  avrTemp  %></h1>
+<h1>Wind Speed: <%=  maxWind  %></h1>
+<h1>Orecipitaion in Inches: <%=  totalPrecip  %></h1>
+<h1>Snow in Inches: <%=  totalSnow  %></h1>
+<h1>Humidity: <%=  humidity  %>%</h1>
+<h1>Change of Rain: <%=  rainChance  %>%</h1>
+<h1>Snow Chance: <%=  snowChance  %>%</h1>
+<h1>Condition: <%=  condition  %></h1>
+<br>
+<br>
+<br>
+<h1>time: <%=  time[0]  %></h1>
+<h1>temp: <%=  temp[0]  %></h1>
+<h1>Day: <%=  day[0]  %></h1>
+<h1>Wind Speed: <%=  wind[0]  %></h1>
+<h1>Rain in in: <%=  precip[0]  %></h1>
+<h1>Snow in cm: <%=  snow[0]  %></h1>
+<h1>Humidity: <%=  humidity[0]  %></h1>
+<h1>Cloud Coverage: <%=  cloud[0]  %></h1>
+<h1>Feels like: <%=  feelslike[0]  %></h1>
+<h1>Windchill: <%=  windchill[0]  %></h1>
+<h1>Heat Index: <%=  heatindex[0]  %></h1>
+<h1>Dewpoint :<%=  dewpoint[0]  %></h1>
+<h1>Chance of Rain: <%=  chanceOfRain[0]  %></h1>
+<h1>Chance of Snow: <%=  chanceOfSnow[0]  %></h1>
+<h1>Visability: <%=  visability[0]  %></h1>
+<h1>UV: <%=  uv[0]  %></h1>
+<br>
+<br>
+<br>
+<h1>time: <%=  time[1]  %></h1>
+<h1>temp: <%=  temp[1]  %></h1>
+<h1>Day: <%=  day[1]  %></h1>
+<h1>Wind Speed: <%=  wind[1]  %></h1>
+<h1>Rain in in: <%=  precip[1]  %></h1>
+<h1>Snow in cm: <%=  snow[1]  %></h1>
+<h1>Humidity: <%=  humidity[1]  %></h1>
+<h1>Cloud Coverage: <%=  cloud[1]  %></h1>
+<h1>Feels like: <%=  feelslike[1]  %></h1>
+<h1>Windchill: <%=  windchill[1]  %></h1>
+<h1>Heat Index: <%=  heatindex[1]  %></h1>
+<h1>Dewpoint :<%=  dewpoint[1]  %></h1>
+<h1>Chance of Rain: <%=  chanceOfRain[1]  %></h1>
+<h1>Chance of Snow: <%=  chanceOfSnow[1]  %></h1>
+<h1>Visability: <%=  visability[1]  %></h1>
+<h1>UV: <%=  uv[1]  %></h1> -->
+
+
 
 
 <div id="carouselExample" class="carousel slide container">
@@ -73,5 +113,4 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-
 <%- include('../partial/footer') %>
