@@ -96,23 +96,12 @@ input[type=button].button-secondary:hover {
   font-size: medium;
 }
 
-.weatherText {
-  margin-top: -74px;
-  margin-bottom: 10px;
+.weatherIcon {
+  margin-top: -4vh;
+  margin-left: -5vh;
+  width: 17vh;
 }
 
-/* .card-img {
-  margin-left: -16px;
-  margin-top: -92px;
-  width: 646px;
-  height: 150px;
-  z-index: 2;
-} */
-
-.weatherIcon {
-  position: relative;
-  margin-top: -33px;
-  margin-left: -33px;
-  width: 20vh;
-  z-index: 3;
+.weatherText {
+margin-top: -1.5vh;
 }
