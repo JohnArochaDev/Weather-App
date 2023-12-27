@@ -7,6 +7,7 @@
  * Always set the map height explicitly to define the size of the div element
  * that contains the map. 
  */
+
 #map {
   height: 50%;
   width: 50%
@@ -97,15 +98,27 @@ input[type=button].button-secondary:hover {
 }
 
 .weatherIcon {
-  margin-top: -4vh;
+  margin-top: -5vh;
   margin-left: -5vh;
   width: 17vh;
 }
 
 .weatherText {
-margin-top: -1.5vh;
+  padding-top: .7vh;
+}
+
+.weatherText2 {
+  padding-top: 2.5vh;
 }
 
 .black {
   color: black;
+}
+
+.bcseashell {
+  background-color: rgb(233, 233, 233);
+}
+
+.slider{
+  width: 70vh;
 }
