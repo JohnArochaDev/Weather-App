@@ -66,11 +66,14 @@ router.get('/weather/daily', (req, res) => {
             // THis will be the time we start from
             let localTime = locTime[11] + locTime[12]
             let hourTime = hours.splice(localTime)
+            let idx = 0;
+
             while (hourTime.length < 12) {
-                let idx = 0;
                 hourTime.push(forecast2.hour[idx])
                 idx++
             }
+console.log('this is the idx: \n', idx)
+
             let hour = hourTime[0]
             let hour1 = hourTime[1]
             let hour2 = hourTime[2]
@@ -84,8 +87,12 @@ router.get('/weather/daily', (req, res) => {
             let hour10 = hourTime[10]
             let hour11 = hourTime[11]
             //TESTING
-            res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11})
+            console.log(hour7.time)
+            console.log(hour8.time)
+            console.log(hour9.time)
+            // console.log('7 8 9 not working: \n', hourTime)
             //TESTING
+            res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11})
         })
         .catch(err => {
             console.log('error', err)
