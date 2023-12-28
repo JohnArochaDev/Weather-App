@@ -122,3 +122,10 @@ input[type=button].button-secondary:hover {
 .slider{
   width: 70vh;
 }
+
+.weatherIconSmall {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}

@@ -23,3 +23,4 @@ As a user, I want the ability to...
 ## ERD
 
 ![alt text](Public/images/ERD.png)
+
