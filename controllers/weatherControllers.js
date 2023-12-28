@@ -25,9 +25,7 @@ let long = -85.45500539999999
 router.get('/', function(req, res, next) {
     res.render('index', { title: 'Express' });
 });
-
 // This will be for the single day
-
 router.get('/weather/daily', (req, res) => {
     const time = []
     const temp = []
@@ -69,12 +67,10 @@ router.get('/weather/daily', (req, res) => {
             let condition = forecast1.day.condition.text
             let conditionIcon = forecast1.day.condition.icon
             let hour = forecast1.hour // hour us an array I need to sift through with for each and hour.length
-
 // I need to write a function that uses the hour data from locTime, and uses splice() to copy the array starting at the point from locTime, and the make the below forEach iterate through the new array. This will allow me to display the hourly data ONLY for the future, not the whole day.
             let localTime = locTime[11] + locTime[12]
             localTime ++
             let hourTime = hour.splice(localTime)
-
             hourTime.forEach((data) => {
                 time.push(data.time)
                 temp.push(data.temp_f)
@@ -93,22 +89,14 @@ router.get('/weather/daily', (req, res) => {
                 visability.push(data.vis_miles)
                 uv.push(data.uv)
             })
-
-
             res.render('weather/daily', { locName, locRegion, locTime, locDate, maxTemp, minTemp, avrTemp, maxWind, totalPrecip, totalSnow, localHumidity, rainChance, snowChance, condition, conditionIcon, time, temp, day, wind, precip, snow, humidity, cloud, feelslike, 
                 windchill, heatindex, dewpoint, chanceOfRain, chanceOfSnow, visability, uv})
         })
-        // if we get an error, display the error
         .catch(err => {
             console.log('error', err)
             res.redirect(`/error?error=${err}`)
     })
 })
-
-
-
-
-
 
 ///////////////////////
 ///  Export Router ////
