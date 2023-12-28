@@ -133,3 +133,8 @@ input[type=button].button-secondary:hover {
 .blackSmall {
   color: black;
 }
+
+/* .middleBorder {
+  border-left: black solid .3vh;
+  border-right: black solid .3vh;
+} */
