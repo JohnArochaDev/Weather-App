@@ -66,7 +66,6 @@ router.get('/weather/daily', (req, res) => {
 
             // THis will be the time we start from
             let localTime = locTime[11] + locTime[12]
-            localTime ++
             let hourTime = hours.splice(localTime)
             while (hourTime.length < 12) {
                 let idx = 0;
@@ -88,7 +87,7 @@ router.get('/weather/daily', (req, res) => {
             let hour10 = hourTime[10]
             let hour11 = hourTime[11]
             //TESTING
-            res.render('weather/daily', { hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11})
+            res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11})
             //TESTING
         })
         .catch(err => {

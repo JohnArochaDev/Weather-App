@@ -1,5 +1,9 @@
 <%- include('../partial/header') %>
 
+<% let timeConversion = weather.location.localtime[11] + weather.location.localtime[12];   timeConversion = (timeConversion % 12) || 12;  let finalTime = timeConversion; %>
+
+
+<h1><h7><%= finalTime + weather.location.localtime[13] + weather.location.localtime[14] + weather.location.localtime[15]%></h7></h1>
 
 <div class="container mt-5">
     <div class="justify-content-start">
@@ -70,7 +74,7 @@
         <div class="carousel-item active">
             <div class="container grid text-center" style="--bs-columns: 3;" data-bs-interval="10000">
                 <div class="row justify-content-between">
-                    <div class="col col-2">
+                    <div class="col col-3">
                         <% if (hour1.condition.text == 'Clear' ||hour1.condition.text == 'Sunny') { %>
                             <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
                             <!-- CLOUDY -->
@@ -96,7 +100,7 @@
                             <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                     <% } %>
                     </div>
-                    <div class="col col-2">
+                    <div class="col col-3">
                         <% if (hour2.condition.text == 'Clear' ||hour2.condition.text == 'Sunny') { %>
                                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
                                 <!-- CLOUDY -->
@@ -122,7 +126,7 @@
                                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                         <% } %>
                     </div>
-                    <div class="col col-2">
+                    <div class="col col-3">
                         <% if (hour3.condition.text == 'Clear' ||hour3.condition.text == 'Sunny') { %>
                                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
                                 <!-- CLOUDY -->
@@ -152,76 +156,59 @@
 
 
                 <div class="row justify-content-between">
-                    <div class="col col-2">
-                        Howdy2
+                    <div class="col col-3">
+                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour1.temp_f %>°F</strong></h5>
                     </div>
-                    <div class="col col-2">
-                        Howdy2
+                    <div class="col col-3">
+                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour2.temp_f %>°F</strong></h5>
                     </div>
-                    <div class="col col-2">
-                        Howdy2
+                    <div class="col col-3">
+                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour3.temp_f %>°F</strong></h5>
                     </div>
                 </div>
 
 
                 <div class="row justify-content-between">
-                    <div class="col col-2">
-                        Howdy3
+                    <div class="col col-3">
+                        <h7 class="card-text weatherText blackSmall"><%= hour1.condition.text %></h7>
                     </div>
-                    <div class="col col-2">
-                        Howdy3
+                    <div class="col col-3">
+                        <h7 class="card-text weatherText blackSmall"><%= hour2.condition.text %></h7>
                     </div>
-                    <div class="col col-2">
-                        Howdy3
-                    </div>
-                </div>
-
-                
-                <div class="row justify-content-between">
-                    <div class="col col-2">
-                        Howdy4
-                    </div>
-                    <div class="col col-2">
-                        Howdy4
-                    </div>
-                    <div class="col col-2">
-                        Howdy4
+                    <div class="col col-3">
+                        <h7 class="card-text weatherText blackSmall"><%= hour3.condition.text %></h7>
                     </div>
                 </div>
-                
-            </div>
-        </div>
 
 
-
-
-        <div class="carousel-item">
-            <div class="container grid text-center" style="--bs-columns: 3;">
                 <div class="row justify-content-between">
-                    <div class="col col-2">
-                        Howdy
+                    <div class="col col-3">
+                        <% let timeConversion1 =  hour1.time[11] + hour1.time[12];   timeConversion1 = (timeConversion1 % 12) || 12;  let finalTime1 = timeConversion1; %>
+                        <h7><%= finalTime1 + hour1.time[13] + hour1.time[14] + hour1.time[15]%></h7>
                     </div>
-                    <div class="col col-2">
-                        Howdy
+                    <div class="col col-3">
+                        <% let timeConversion2 = hour2.time[11] + hour2.time[12];   timeConversion2 = (timeConversion2 % 12) || 12;  let finalTime2 = timeConversion2; %>
+                        <h7><%= finalTime2 + hour1.time[13] + hour1.time[14] + hour1.time[15]%></h7>
                     </div>
-                    <div class="col col-2">
-                        Howdy
+                    <div class="col col-3">
+                        <% let timeConversion3 =  hour3.time[11] + hour3.time[12];   timeConversion3 = (timeConversion3 % 12) || 12;  let finalTime3 = timeConversion3; %>
+                        <h7><%= finalTime3 + hour1.time[13] + hour1.time[14] + hour1.time[15]%></h7>
                     </div>
                 </div>
             </div>
         </div>
-
+        
 
         <div class="carousel-item">
             <div class="container grid text-center" style="--bs-columns: 3;">
                 <div class="row justify-content-between">
-                    <div class="col col-2">
+                    <div class="col col-3">
                         Howdy
                     </div>
-                    <div class="col col-2">
+                    <div class="col col-3">
                         Howdy
                     </div>
-                    <div class="col col-2">
+                    <div class="col col-3">
                         Howdy
                     </div>
                 </div>
@@ -232,13 +219,30 @@
         <div class="carousel-item">
             <div class="container grid text-center" style="--bs-columns: 3;">
                 <div class="row justify-content-between">
-                    <div class="col col-2">
+                    <div class="col col-3">
                         Howdy
                     </div>
-                    <div class="col col-2">
+                    <div class="col col-3">
                         Howdy
                     </div>
-                    <div class="col col-2">
+                    <div class="col col-3">
+                        Howdy
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="carousel-item">
+            <div class="container grid text-center" style="--bs-columns: 3;">
+                <div class="row justify-content-between">
+                    <div class="col col-3">
+                        Howdy
+                    </div>
+                    <div class="col col-3">
+                        Howdy
+                    </div>
+                    <div class="col col-3">
                         Howdy
                     </div>
                 </div>
