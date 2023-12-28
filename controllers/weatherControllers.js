@@ -33,7 +33,6 @@ router.get('/weather/daily', (req, res) => {
     axios(`${weatherURL}${lat},${long}&days=3&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
         // render the results on a 'show' page: aka 'detail' page
         .then(apiRes => {
-            console.log('this came back from the api: \n', apiRes)
             let weather = apiRes.data
             let locName = weather.location.name
             let forecast1 = weather.forecast.forecastday[0] // DAY OF
@@ -72,8 +71,6 @@ router.get('/weather/daily', (req, res) => {
                 hourTime.push(forecast2.hour[idx])
                 idx++
             }
-            console.log('This is the list starting point after: \n', hourTime)
-            
             let hour = hourTime[0]
             let hour1 = hourTime[1]
             let hour2 = hourTime[2]
