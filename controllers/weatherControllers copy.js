@@ -54,6 +54,8 @@ router.get('/weather/daily', (req, res) => {
             let forecast3 = weather.forecast.forecastday[2] // TOMORROW'S TOMORROW
             let locRegion = weather.location.region
             let locTime = weather.location.localtime
+            // THIS BELOW IS FOR THE FIRST DAY
+            //TESTING
             let locDate = forecast1.date
             let maxTemp = forecast1.day.maxtemp_f
             let minTemp = forecast1.day.mintemp_f
@@ -66,7 +68,7 @@ router.get('/weather/daily', (req, res) => {
             let snowChance = forecast1.day.daily_chance_of_snow
             let condition = forecast1.day.condition.text
             let conditionIcon = forecast1.day.condition.icon
-
+            //TESTING
             let hour = forecast1.hour // hour us an array I need to sift through with for each and hour.length
             // I need to write a function that uses the hour data from locTime, and uses splice() to copy the array starting at the point from locTime, and the make the below forEach iterate through the new array. This will allow me to display the hourly data ONLY for the future, not the whole day.
             let localTime = locTime[11] + locTime[12]
@@ -90,6 +92,19 @@ router.get('/weather/daily', (req, res) => {
                 visability.push(data.vis_miles)
                 uv.push(data.uv)
             })
+            // This will ensure that there is akways 12 hours of future forcast
+            while (hourTime.length < 12) {
+                let idx = 0;
+                hourTime.push(forecast2.hour[idx])
+                idx++
+            }
+            console.log('this is the hourtime list: \n', hourTime)
+            // Below create a new way to access the data. Instead of giving everything a variable, give the different hours variables and access the min the EJS. For example I want to  do hour.cloud and hour2.temp
+
+            //TESTING
+            // res.render('weather/daily', { hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, hour12})
+            //TESTING
+
             res.render('weather/daily', { locName, locRegion, locTime, locDate, maxTemp, minTemp, avrTemp, maxWind, totalPrecip, totalSnow, localHumidity, rainChance, snowChance, condition, conditionIcon, time, temp, day, wind, precip, snow, humidity, cloud, feelslike, 
                 windchill, heatindex, dewpoint, chanceOfRain, chanceOfSnow, visability, uv})
         })
