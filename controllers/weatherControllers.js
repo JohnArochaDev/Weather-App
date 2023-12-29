@@ -24,9 +24,9 @@ let long = -85.45500539999999
 //////////////////////////////
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Express'})
-})
+// router.get('/', function(req, res, next) {
+//     res.render('index', { title: 'Express'})
+// })
 
 
 
@@ -43,22 +43,128 @@ const sanJose = '37.33874,-121.8852525'
 
 
 
-// router.get('/', function(req, res, next) {
+let homelocName = []
+let homeTemp = []
+let homeCondition = []
 
-//     axios(`${weatherURL}${lat},${long}&days=3&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
-//     // render the results on a 'show' page: aka 'detail' page
-//     .then(apiRes => {
-//         let weather = apiRes.data
-//         let locName = weather.location.name
-//         let forecast1 = weather.forecast.forecastday[0]
-//         let locRegion = weather.location.region
-//         res.render('index', { title: 'Express', weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11})
-//         })
-//     .catch(err => {
-//         console.log('error', err)
-//         res.redirect(`/error?error=${err}`)
-//     })
-// })
+router.get('/', function(req, res, next) {
+
+    axios(`${weatherURL}${newYork}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    // render the results on a 'show' page: aka 'detail' page
+    .then(apiRes => {
+        let weather = apiRes.data
+        let locName = weather.location.name
+        homelocName.push(locName)
+        let tempF = weather.current.temp_f
+        homeTemp.push(tempF)
+        let condition = weather.current.condition.text
+        homeCondition.push(condition)
+    })
+    axios(`${weatherURL}${losAngeles}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    // render the results on a 'show' page: aka 'detail' page
+    .then(apiRes => {
+        let weather = apiRes.data
+        let locName = weather.location.name
+        homelocName.push(locName)
+        let tempF = weather.current.temp_f
+        homeTemp.push(tempF)
+        let condition = weather.current.condition.text
+        homeCondition.push(condition)
+    })
+    axios(`${weatherURL}${chicago}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    // render the results on a 'show' page: aka 'detail' page
+    .then(apiRes => {
+        let weather = apiRes.data
+        let locName = weather.location.name
+        homelocName.push(locName)
+        let tempF = weather.current.temp_f
+        homeTemp.push(tempF)
+        let condition = weather.current.condition.text
+        homeCondition.push(condition)
+    })
+    axios(`${weatherURL}${houston}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    // render the results on a 'show' page: aka 'detail' page
+    .then(apiRes => {
+        let weather = apiRes.data
+        let locName = weather.location.name
+        homelocName.push(locName)
+        let tempF = weather.current.temp_f
+        homeTemp.push(tempF)
+        let condition = weather.current.condition.text
+        homeCondition.push(condition)
+    })
+    axios(`${weatherURL}${phoenix}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    // render the results on a 'show' page: aka 'detail' page
+    .then(apiRes => {
+        let weather = apiRes.data
+        let locName = weather.location.name
+        homelocName.push(locName)
+        let tempF = weather.current.temp_f
+        homeTemp.push(tempF)
+        let condition = weather.current.condition.text
+        homeCondition.push(condition)
+    })
+    axios(`${weatherURL}${philadelphia}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    // render the results on a 'show' page: aka 'detail' page
+    .then(apiRes => {
+        let weather = apiRes.data
+        let locName = weather.location.name
+        homelocName.push(locName)
+        let tempF = weather.current.temp_f
+        homeTemp.push(tempF)
+        let condition = weather.current.condition.text
+        homeCondition.push(condition)
+    })
+    axios(`${weatherURL}${sanAntonio}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    // render the results on a 'show' page: aka 'detail' page
+    .then(apiRes => {
+        let weather = apiRes.data
+        let locName = weather.location.name
+        homelocName.push(locName)
+        let tempF = weather.current.temp_f
+        homeTemp.push(tempF)
+        let condition = weather.current.condition.text
+        homeCondition.push(condition)
+    })
+    axios(`${weatherURL}${sanDiego}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    // render the results on a 'show' page: aka 'detail' page
+    .then(apiRes => {
+        let weather = apiRes.data
+        let locName = weather.location.name
+        homelocName.push(locName)
+        let tempF = weather.current.temp_f
+        homeTemp.push(tempF)
+        let condition = weather.current.condition.text
+        homeCondition.push(condition)
+    })
+    axios(`${weatherURL}${dallas}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    // render the results on a 'show' page: aka 'detail' page
+    .then(apiRes => {
+        let weather = apiRes.data
+        let locName = weather.location.name
+        homelocName.push(locName)
+        let tempF = weather.current.temp_f
+        homeTemp.push(tempF)
+        let condition = weather.current.condition.text
+        homeCondition.push(condition)
+    })
+    axios(`${weatherURL}${sanJose}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    // render the results on a 'show' page: aka 'detail' page
+    .then(apiRes => {
+        let weather = apiRes.data
+        let locName = weather.location.name
+        homelocName.push(locName)
+        let tempF = weather.current.temp_f
+        homeTemp.push(tempF)
+        let condition = weather.current.condition.text
+        homeCondition.push(condition)
+        res.render('index', { title: 'Express', weather, homelocName, homeTemp, homeCondition})
+    })
+        .catch(err => {
+            console.log('error', err)
+            res.redirect(`/error?error=${err}`)
+    })
+})
 
 
 
