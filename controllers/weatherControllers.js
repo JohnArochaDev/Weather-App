@@ -25,8 +25,52 @@ let long = -85.45500539999999
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Express' });
-});
+    axios(`${weatherURL}${lat},${long}&days=3&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+        // render the results on a 'show' page: aka 'detail' page
+        .then(apiRes => {
+            let weather = apiRes.data
+            let locName = weather.location.name
+            let forecast1 = weather.forecast.forecastday[0] // DAY OF
+            let forecast2 = weather.forecast.forecastday[1] // TOMORROW
+            let locRegion = weather.location.region
+            let locTime = weather.location.localtime
+            let hours = forecast1.hour
+            // THis will be the time we start from
+            let localTime = locTime[11] + locTime[12]
+            let hourTime = hours.splice(localTime)
+            let idx = 0;
+
+            while (hourTime.length < 12) {
+                hourTime.push(forecast2.hour[idx])
+                idx++
+            }
+console.log('this is the idx: \n', idx)
+
+            let hour = hourTime[0]
+            let hour1 = hourTime[1]
+            let hour2 = hourTime[2]
+            let hour3 = hourTime[3]
+            let hour4 = hourTime[4]
+            let hour5 = hourTime[5]
+            let hour6 = hourTime[6]
+            let hour7 = hourTime[7]
+            let hour8 = hourTime[8]
+            let hour9 = hourTime[9]
+            let hour10 = hourTime[10]
+            let hour11 = hourTime[11]
+            //TESTING
+            console.log(hour7.time)
+            console.log(hour8.time)
+            console.log(hour9.time)
+            // console.log('7 8 9 not working: \n', hourTime)
+            //TESTING
+            res.render('index', { title: 'Express', weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11})
+        })
+        .catch(err => {
+            console.log('error', err)
+            res.redirect(`/error?error=${err}`)
+    })
+})
 
 // This will be for the hourly forcasts
 router.get('/weather/daily', (req, res) => {
@@ -39,30 +83,7 @@ router.get('/weather/daily', (req, res) => {
             let forecast2 = weather.forecast.forecastday[1] // TOMORROW
             let locRegion = weather.location.region
             let locTime = weather.location.localtime
-
             let hours = forecast1.hour
-
-            // THIS IS THE LIST OF DATA AND ITS ENDPOINTS FOR THE EJS
-            // let weather = apiRes.data
-            // let locName = weather.location.name
-            // let forecast1 = weather.forecast.forecastday[0] // DAY OF
-            // let forecast2 = weather.forecast.forecastday[1] // TOMORROW
-            // let forecast3 = weather.forecast.forecastday[2] // TOMORROW'S TOMORROW
-            // let locRegion = weather.location.region
-            // let locTime = weather.location.localtime
-            // let locDate = forecast1.date
-            // let maxTemp = forecast1.day.maxtemp_f
-            // let minTemp = forecast1.day.mintemp_f
-            // let avrTemp = forecast1.day.avgtemp_f
-            // let maxWind = forecast1.day.maxwind_mph
-            // let totalPrecip = forecast1.day.totalprecip_in
-            // let totalSnow = forecast1.day.totalsnow_cm
-            // let localHumidity = forecast1.day.avghumidity
-            // let rainChance = forecast1.day.daily_chance_of_rain
-            // let snowChance = forecast1.day.daily_chance_of_snow
-            // let condition = forecast1.day.condition.text
-            // let conditionIcon = forecast1.day.condition.icon
-
             // THis will be the time we start from
             let localTime = locTime[11] + locTime[12]
             let hourTime = hours.splice(localTime)

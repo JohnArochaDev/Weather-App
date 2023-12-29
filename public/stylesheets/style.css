@@ -151,6 +151,29 @@ input[type=button].button-secondary:hover {
   z-index: -1;
 }
 
-.navIcon {
-m
+.row {
+  justify-content: space-evenly;
+  margin-left: 40vh;
+  margin-right: 40vh;
+  background-color: white;
+}
+
+.column {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.weatherIconHome {
+  margin-top: 10vh;
+  height: 17vh;
+}
+
+.conditionHome {
+  margin-top: -4vh;
+  margin-left: 6vh;
+}
+
+.tempHome {
+  margin-top: 27vh;
+  margin-left: 5vh;
 }
