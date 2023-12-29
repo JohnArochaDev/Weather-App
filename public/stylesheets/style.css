@@ -213,6 +213,7 @@ input[type=button].button-secondary:hover {
 .popFocrasts {
 display: table;
 margin-bottom: 10vh;
+margin-top: 5vh;
 }
 
 table { 
@@ -239,4 +240,8 @@ td {
 
 .btnBackground {
   background-color: rgb(218, 218, 218);
+}
+
+.weatherIconTable {
+  width: 5vh;
 }
