@@ -1,22 +1,3 @@
-/////////////////////////////
-///  Import Dependencies ////
-/////////////////////////////
-const express = require('express');
-const axios = require('axios')
-require('dotenv').config()
-const weatherURL = process.env.API_WEATHER_APP
-
-///////////////////////
-///  Create Router ////
-///////////////////////
-const router = express.Router();
-
-
-
-
-
-
-
 let map;
 let marker;
 let geocoder;
@@ -27,6 +8,8 @@ let data = [];
 let lat;
 let long;
 let latlong;
+
+let coords = document.getElementById("hidden")
 
 async function initMap() {
     // Request libraries when needed, not in the script tag.
@@ -117,10 +100,7 @@ lat = lat.toString();
 long = long.toString();
 latlong = lat + ',' + long;
 
-// console.log(latlong)
-// console.log('This is the response: \n', data[0][0].geometry.viewport.eb.lo); //Lat
-// console.log('This is the response: \n', data[0][0].geometry.viewport.La.hi); //lon
-
+coords.innerHTML += `<p>${latlong}</p>`
 // END OF MY SATUFF
 return results;
 })
@@ -134,4 +114,6 @@ alert("Geocode was not successful for the following reason: " + e);
 
 initMap();
 
-module.exports = router;
+
+
+

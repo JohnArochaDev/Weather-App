@@ -258,3 +258,7 @@ td {
 .navFront {
   z-index: 2;
 }
+
+.hidden {
+  visibility: hidden;
+}
