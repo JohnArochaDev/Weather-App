@@ -208,3 +208,25 @@ input[type=button].button-secondary:hover {
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
 }
+
+.popFocrasts {
+display: table;
+margin-bottom: 10vh;
+}
+
+table { 
+  width: 400px; 
+  border-spacing: 10px; 
+} 
+
+td { 
+  width: 20vh;
+  padding: 10px; 
+  border-bottom: 1vh solid transparent; 
+  border-top: 1vh solid transparent; 
+  border-left: 1vh solid transparent; 
+  border-right: 1vh solid transparent; 
+  background-color: rgb(255,255,255); 
+  color: black; 
+  background-clip: padding-box; 
+}
