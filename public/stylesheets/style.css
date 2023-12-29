@@ -187,10 +187,19 @@ input[type=button].button-secondary:hover {
 }
 .column {
   display: grid;  
-  flex: 50%;
+  /* flex: 50%; */
   margin-left: 30vh;
   margin-right: 30vh;
   background-color: rgb(247, 247, 247);
+  /* height: 100%; */
+}
+
+.column2 {
+  margin-left: 30vh;
+  margin-right: 30vh;
+  background-color: rgb(247, 247, 247);
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
 .instructions {
