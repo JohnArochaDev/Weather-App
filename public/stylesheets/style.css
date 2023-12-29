@@ -105,17 +105,18 @@ input[type=button].button-secondary:hover {
 }
 
 .weatherIcon {
-  margin-top: -5vh;
-  margin-left: -5vh;
-  width: 17vh;
+  margin-top: 7vh;
+  margin-left: .7vh;
 }
 
 .weatherText {
-  padding-top: .7vh;
+  margin-top: 1vh;
+  margin-left: 6vh;
 }
 
 .weatherText2 {
-  padding-top: 2.5vh;
+  margin-top: 7vh;
+  margin-left: 6vh;
 }
 
 .black {
