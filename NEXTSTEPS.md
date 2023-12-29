@@ -4,13 +4,6 @@ DONE: MERGE https://developers.google.com/maps/documentation/javascript/adding-a
 DONE: WITH THIS https://developers.google.com/maps/documentation/javascript/examples/geocoding-simple#maps_geocoding_simple-javascript (Not working code that provides the lat and long data)
 
 
-HALF IMPLIMENTED: NEW WEATHER API:
-
-
-
-Next Step: Create the daily page with bootstrap and CSS
-
-
 
 HALF DONE: ENDPOINTS: 
 
@@ -109,18 +102,19 @@ DONE: Hourly:
     "gb-defra-index": 1
     }
 
-Daily:
 
 
 
-
-
-
-
-
-
-
-
+New York                        
+Los Angeles                        
+Chicago                        
+Houston                        
+Phoenix                        
+Philadelphia                        
+San Antonio                        
+San Diego                        
+Dallas                        
+San Jose                        
 
 
 
