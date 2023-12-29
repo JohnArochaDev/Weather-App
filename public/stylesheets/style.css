@@ -8,6 +8,12 @@
  * that contains the map. 
  */
 
+/* body {
+  background-image: url(https://images.pexels.com/photos/7130505/pexels-photo-7130505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
 #map {
   height: 50%;
   width: 50%
@@ -134,7 +140,17 @@ input[type=button].button-secondary:hover {
   color: black;
 }
 
-/* .middleBorder {
-  border-left: black solid .3vh;
-  border-right: black solid .3vh;
-} */
+.bg {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.navIcon {
+m
+}

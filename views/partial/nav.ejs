@@ -1,14 +1,30 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+
+<nav class="navbar navbar-expand-lg" style="background-color: #95b8d1">
     <div class="container-fluid">
-        <a href="/" class="navbar-brand me-3">Home</a>
-            <a href="/" class="nav-link text-warning me-3">Hello 'USER'</a>
-        <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand navIcon" href="/">
+            <img src="../../public/images/nav/day.svg" alt="Bootstrap" width="50vh" >
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div id="navbarNav" class="collapse navbar-collapse me-3">
-                <a href="/weather/daily" class="nav-link text-light me-3">Daily</a>
-                <a href="/weather/weekly" class="nav-link text-light me-3">Weekly</a>
-                <a href="/users/login" class="nav-link text-light me-3">Log In</a>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Link
+                </a>
+                <ul class="dropdown-menu">
+                    <a href="/weather/daily" class="nav-link">Daily</a>
+                    <a href="/weather/weekly" class="nav-link">Weekly</a>
+                    <li><hr class="dropdown-divider"></li>
+                    <a href="/users/login" class="nav-link">Log In</a>
+                </ul>
+            </li>
+            </ul>
         </div>
     </div>
 </nav>
