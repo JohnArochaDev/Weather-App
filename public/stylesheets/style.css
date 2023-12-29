@@ -152,7 +152,6 @@ input[type=button].button-secondary:hover {
   z-index: -1;
 }
 
-
 .weatherIconHome {
   margin-top: 10vh;
   height: 17vh;
@@ -179,25 +178,28 @@ input[type=button].button-secondary:hover {
 
 .featured {
   height: 20vh;
+  margin-top: 5vh;
 }
-
-/* .column {
-  display: grid;
-  grid-template-columns: 50vh 50vh;
-  justify-content: space-between;
-  margin-left: 40vh;
-  margin-right: 40vh;
-  background-color: white;
-} */
 
 .row {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .column {
   display: grid;  
   flex: 50%;
   margin-left: 40vh;
   margin-right: 40vh;
-  background-color: white;
+  background-color: rgb(247, 247, 247);
+}
+
+.instructions {
+  width: 100vh;
+  margin-bottom: 3vh;
+  margin-top: 3vh;
+}
+
+.size {
+  width: 100%;
+  height: auto;
 }
