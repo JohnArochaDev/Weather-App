@@ -269,3 +269,7 @@ td {
   margin-top: 10vh;
   margin-right: 7vh;
 }
+
+.front {
+  z-index: 10;
+}

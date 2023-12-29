@@ -6,7 +6,9 @@ var logger = require('morgan');
 
 var weatherRouter = require('./controllers/weatherControllers');
 
+
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
