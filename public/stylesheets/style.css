@@ -254,3 +254,7 @@ td {
 .weatherIconTable {
   width: 5vh;
 }
+
+.navFront {
+  z-index: 2;
+}
