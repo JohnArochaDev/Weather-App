@@ -17,6 +17,7 @@
 #map {
   height:50%;
   width:50%
+  
 }
 
 /* 
@@ -175,6 +176,11 @@ input[type=button].button-secondary:hover {
 
 .map {
   z-index: 1;
+  border-radius: 25px;
+  border: 1px solid rgb(210,210,210);
+  padding: 27px;
+  width: 200px;
+  height: 150px;
 }
 
 .featured {
