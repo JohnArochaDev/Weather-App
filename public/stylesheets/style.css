@@ -163,7 +163,7 @@ input[type=button].button-secondary:hover {
 }
 
 .tempHome {
-  margin-top: 27vh;
+  margin-top: 15vh;
   margin-left: 5vh;
 }
 
@@ -207,6 +207,7 @@ input[type=button].button-secondary:hover {
 .card-img {
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
+  /* height: 45vh; */
 }
 
 .popFocrasts {
