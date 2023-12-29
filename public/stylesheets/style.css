@@ -15,8 +15,8 @@
 } */
 
 #map {
-  height: 50%;
-  width: 50%
+  height:50%;
+  width:50%
 }
 
 /* 
@@ -151,16 +151,11 @@ input[type=button].button-secondary:hover {
   z-index: -1;
 }
 
-.row {
-  justify-content: space-evenly;
+.column {
+  justify-content: space-between;
   margin-left: 40vh;
   margin-right: 40vh;
   background-color: white;
-}
-
-.column {
-  margin-top: 10vh;
-  margin-bottom: 10vh;
 }
 
 .weatherIconHome {
@@ -180,4 +175,8 @@ input[type=button].button-secondary:hover {
 
 .map {
   z-index: 1;
+}
+
+.featured {
+  height: 20vh;
 }
