@@ -1,8 +1,32 @@
+/////////////////////////////
+///  Import Dependencies ////
+/////////////////////////////
+const express = require('express');
+const axios = require('axios')
+require('dotenv').config()
+const weatherURL = process.env.API_WEATHER_APP
+
+///////////////////////
+///  Create Router ////
+///////////////////////
+const router = express.Router();
+
+
+
+
+
+
+
 let map;
 let marker;
 let geocoder;
 let responseDiv;
 let response;
+
+let data = [];
+let lat;
+let long;
+let latlong;
 
 async function initMap() {
     // Request libraries when needed, not in the script tag.
@@ -39,7 +63,7 @@ responseDiv = document.createElement("div");
 responseDiv.id = "response-container";
 responseDiv.appendChild(response);
 //                                                                                               response IS the object   obj>location> lat: / lng:
-console.log('This is the response: \n', response);
+// console.log('This is the response: \n', response);
 
 const instructionsElement = document.createElement("p");
 
@@ -51,7 +75,7 @@ map.controls[google.maps.ControlPosition.TOP_LEFT].push(submitButton);
 map.controls[google.maps.ControlPosition.TOP_LEFT].push(clearButton);
 // map.controls[google.maps.ControlPosition.LEFT_TOP].push(instructionsElement);
 //                                                                                               This was the instructions, it was blocking the view^^^^^^
-// map.controls[google.maps.ControlPosition.LEFT_TOP].push(responseDiv);
+map.controls[google.maps.ControlPosition.LEFT_TOP].push(responseDiv);
 //                                                                                                  THIS WAS THE WINDOW THAT POPPS UP WITH THE OBJECT!!!!!^^^^^^
 marker = new google.maps.Marker({
 map,
@@ -85,12 +109,29 @@ marker.setPosition(results[0].geometry.location);
 marker.setMap(map);
 responseDiv.style.display = "block";
 response.innerText = JSON.stringify(result, null, 2);
+// THis is my stuff
+data.push(results);
+lat = data[0][0].geometry.viewport.eb.lo;
+long = data[0][0].geometry.viewport.La.hi;
+lat = lat.toString();
+long = long.toString();
+latlong = lat + ',' + long;
+
+// console.log(latlong)
+// console.log('This is the response: \n', data[0][0].geometry.viewport.eb.lo); //Lat
+// console.log('This is the response: \n', data[0][0].geometry.viewport.La.hi); //lon
+
+// END OF MY SATUFF
 return results;
 })
 .catch((e) => {
 alert("Geocode was not successful for the following reason: " + e);
 });
+// THis is my stuff
 }
 
 
+
 initMap();
+
+module.exports = router;
