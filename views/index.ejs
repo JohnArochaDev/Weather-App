@@ -1,317 +1,303 @@
 <%- include('./partial/header') %>
 
+
 <div class="col">
-  <img src="../public/images/home/space.jpg" class="card-img" alt="..." size="auto">
-  <div class="row">
-      <div class="card-img-overlay">
-          <form class="d-flex search container" role="search">
-            <input class="form-control me-2" type="search" placeholder="Zip code" aria-label="Search">
-            <button class="btn btn-outline btnBackground" type="submit">Search</button>
-        </form>
-      </div>
-  </div>
+    <img src="../public/images/home/space.jpg" class="card-img" alt="..." size="auto">
+    <div class="row">
+        <div class="card-img-overlay">
+            <form class="d-flex search container" role="search">
+                <input class="form-control me-2" type="search" placeholder="Zip code" aria-label="Search">
+                <button class="btn btn-outline btnBackground" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
 </div>
 
-
-
 <div class="column" style="height:100%;">
-  <div class="row">
-
+<div class="row">
     <div class="card instructions">
-      <h5 class="card-header">Google Maps</h5>
+    <h5 class="card-header">Google Maps</h5>
     <div class="card-body">
-      <h5 class="card-title">Find the weather from a map!</h5>
-      <p class="card-text">Simply click or search to find the forcast</p>
+    <h5 class="card-title">Find the weather from a map!</h5>
+    <p class="card-text">Simply click or search to find the forcast</p>
     </div>
-  </div>
-
-  <div class="row" style="height:100%">
+</div>
+<div class="row" style="height:100%">
     
     <div id="map" class="map"></div>
     
     <div class="card w-25 text-center featured">
-      <div class="card-header"><strong>Saved places</strong></div>
-      <div class="card-body">
+    <div class="card-header"><strong>Saved places</strong></div>
+    <div class="card-body">
         <h6 class="card-title">See the forcast at all of your favorite places!</h6>
-      </div>
-      <a href="#" class="btn btn-primary">Let's go</a>
     </div>
-  
+    <a href="#" class="btn btn-primary">Let's go</a>
+    </div>
 
-  <div class="row column2">
+<div class="row column2">
     <table class="popFocrasts">
-      <tr>
+    <tr>
         <td><% if (homeCondition[0] == 'Clear' ||homeCondition[0] == 'Sunny') { %>
-          <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
-          <!-- CLOUDY -->
-      <% } else if (homeCondition[0] == 'Cloudy' || homeCondition[0] == 'Overcast') {%>
-          <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
-          <!-- RAIN -->
-      <% } else if (homeCondition[0] == 'Mist' || homeCondition[0] == 'Light drizzle' || homeCondition[0] == 'Moderate or heavy rain shower'|| homeCondition[0] == 'Patchy light drizzle' || homeCondition[0] == 'Light rain' || homeCondition[0] == 'Patchy rain possible' || homeCondition[0] == 'Patchy light rain' || homeCondition[0] == 'Moderate rain' || homeCondition[0] == 'Heavy rain' || homeCondition[0] == 'Light rain shower' || homeCondition[0] == 'Moderate rain at times' || homeCondition[0] == 'Heavy rain at times') {%>
-          <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
-          <!-- THUNDERSTORM -->
-      <% } else if (homeCondition[0] == 'Patchy light rain with thunder' || homeCondition[0] == 'Moderate or heavy rain with thunder' || homeCondition[0] == 'Torrential rain shower' || homeCondition[0] == 'Thundery outbreaks possible') {%>
-          <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
-          <!-- SNOW -->
-      <% } else if (homeCondition[0] == 'Light snow' || homeCondition[0] == 'Light snow showers' || homeCondition[0] == 'Patchy snow possible' || homeCondition[0] == 'Patchy sleet possible' || homeCondition[0] == 'Freezing drizzle' || homeCondition[0] == 'Moderate or heavy sleet' || homeCondition[0] == 'Patchy light snow' || homeCondition[0] == 'Patchy moderate snow' || homeCondition[0] == 'Light sleet showers' || homeCondition[0] == 'Moderate snow' || homeCondition[0] == 'Light sleet' || homeCondition[0] == 'Heavy freezing drizzle' || homeCondition[0] == 'Patchy freezing drizzle possible' || homeCondition[0] == 'Moderate or heavy sleet showers' || homeCondition[0] == 'Light showers of ice pellets' || homeCondition[0] == 'Moderate or heavy showers of ice pellets' || homeCondition[0] == 'Patchy freezing drizzle possible' || homeCondition[0] == 'Moderate or heavy freezing rain' || homeCondition[0] == 'Ice pellets' || homeCondition[0] == 'Patchy heavy snow' || homeCondition[0] == 'Light freezing rain') {%>
-          <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
-          <!-- BLIZZARD -->
-      <% } else if (homeCondition[0] == 'Blizzard' || homeCondition[0] == 'Blowing snow' || homeCondition[0] == 'Heavy snow' || homeCondition[0] == 'Patchy light snow with thunder' || homeCondition[0] == 'Moderate or heavy snow showers' || homeCondition[0] == 'Moderate or heavy snow with thunder') {%>
-          <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
-          <!-- PARTLY CLOUDY -->
-          <% } else if (homeCondition[0] == 'Partly cloudy') { %>
-              <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
-          <!-- WINDY -->
-      <% } else {%>
-          <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-  <% } %><%= homelocName[0] %> <span style="float:right;"><%= homeTemp[0] %>°F</span></td>
+        <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
+        <!-- CLOUDY -->
+    <% } else if (homeCondition[0] == 'Cloudy' || homeCondition[0] == 'Overcast') {%>
+        <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
+        <!-- RAIN -->
+    <% } else if (homeCondition[0] == 'Mist' || homeCondition[0] == 'Light drizzle' || homeCondition[0] == 'Moderate or heavy rain shower'|| homeCondition[0] == 'Patchy light drizzle' || homeCondition[0] == 'Light rain' || homeCondition[0] == 'Patchy rain possible' || homeCondition[0] == 'Patchy light rain' || homeCondition[0] == 'Moderate rain' || homeCondition[0] == 'Heavy rain' || homeCondition[0] == 'Light rain shower' || homeCondition[0] == 'Moderate rain at times' || homeCondition[0] == 'Heavy rain at times') {%>
+        <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
+        <!-- THUNDERSTORM -->
+    <% } else if (homeCondition[0] == 'Patchy light rain with thunder' || homeCondition[0] == 'Moderate or heavy rain with thunder' || homeCondition[0] == 'Torrential rain shower' || homeCondition[0] == 'Thundery outbreaks possible') {%>
+        <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
+        <!-- SNOW -->
+    <% } else if (homeCondition[0] == 'Light snow' || homeCondition[0] == 'Light snow showers' || homeCondition[0] == 'Patchy snow possible' || homeCondition[0] == 'Patchy sleet possible' || homeCondition[0] == 'Freezing drizzle' || homeCondition[0] == 'Moderate or heavy sleet' || homeCondition[0] == 'Patchy light snow' || homeCondition[0] == 'Patchy moderate snow' || homeCondition[0] == 'Light sleet showers' || homeCondition[0] == 'Moderate snow' || homeCondition[0] == 'Light sleet' || homeCondition[0] == 'Heavy freezing drizzle' || homeCondition[0] == 'Patchy freezing drizzle possible' || homeCondition[0] == 'Moderate or heavy sleet showers' || homeCondition[0] == 'Light showers of ice pellets' || homeCondition[0] == 'Moderate or heavy showers of ice pellets' || homeCondition[0] == 'Patchy freezing drizzle possible' || homeCondition[0] == 'Moderate or heavy freezing rain' || homeCondition[0] == 'Ice pellets' || homeCondition[0] == 'Patchy heavy snow' || homeCondition[0] == 'Light freezing rain') {%>
+        <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
+        <!-- BLIZZARD -->
+    <% } else if (homeCondition[0] == 'Blizzard' || homeCondition[0] == 'Blowing snow' || homeCondition[0] == 'Heavy snow' || homeCondition[0] == 'Patchy light snow with thunder' || homeCondition[0] == 'Moderate or heavy snow showers' || homeCondition[0] == 'Moderate or heavy snow with thunder') {%>
+        <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
+        <!-- PARTLY CLOUDY -->
+        <% } else if (homeCondition[0] == 'Partly cloudy') { %>
+            <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
+        <!-- WINDY -->
+    <% } else {%>
+        <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
+<% } %><%= homelocName[0] %> <span style="float:right;"><%= homeTemp[0] %>°F</span></td>
         <td><% if (homeCondition[1] == 'Clear' ||homeCondition[1] == 'Sunny') { %>
-          <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
-          <!-- CLOUDY -->
-      <% } else if (homeCondition[1] == 'Cloudy' || homeCondition[1] == 'Overcast') {%>
-          <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
-          <!-- RAIN -->
-      <% } else if (homeCondition[1] == 'Mist' || homeCondition[1] == 'Light drizzle' || homeCondition[1] == 'Moderate or heavy rain shower'|| homeCondition[1] == 'Patchy light drizzle' || homeCondition[1] == 'Light rain' || homeCondition[1] == 'Patchy rain possible' || homeCondition[1] == 'Patchy light rain' || homeCondition[1] == 'Moderate rain' || homeCondition[1] == 'Heavy rain' || homeCondition[1] == 'Light rain shower' || homeCondition[1] == 'Moderate rain at times' || homeCondition[1] == 'Heavy rain at times') {%>
-          <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
-          <!-- THUNDERSTORM -->
-      <% } else if (homeCondition[1] == 'Patchy light rain with thunder' || homeCondition[1] == 'Moderate or heavy rain with thunder' || homeCondition[1] == 'Torrential rain shower' || homeCondition[1] == 'Thundery outbreaks possible') {%>
-          <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
-          <!-- SNOW -->
-      <% } else if (homeCondition[1] == 'Light snow' || homeCondition[1] == 'Light snow showers' || homeCondition[1] == 'Patchy snow possible' || homeCondition[1] == 'Patchy sleet possible' || homeCondition[1] == 'Freezing drizzle' || homeCondition[1] == 'Moderate or heavy sleet' || homeCondition[1] == 'Patchy light snow' || homeCondition[1] == 'Patchy moderate snow' || homeCondition[1] == 'Light sleet showers' || homeCondition[1] == 'Moderate snow' || homeCondition[1] == 'Light sleet' || homeCondition[1] == 'Heavy freezing drizzle' || homeCondition[1] == 'Patchy freezing drizzle possible' || homeCondition[1] == 'Moderate or heavy sleet showers' || homeCondition[1] == 'Light showers of ice pellets' || homeCondition[1] == 'Moderate or heavy showers of ice pellets' || homeCondition[1] == 'Patchy freezing drizzle possible' || homeCondition[1] == 'Moderate or heavy freezing rain' || homeCondition[1] == 'Ice pellets' || homeCondition[1] == 'Patchy heavy snow' || homeCondition[1] == 'Light freezing rain') {%>
-          <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
-          <!-- BLIZZARD -->
-      <% } else if (homeCondition[1] == 'Blizzard' || homeCondition[1] == 'Blowing snow' || homeCondition[1] == 'Heavy snow' || homeCondition[1] == 'Patchy light snow with thunder' || homeCondition[1] == 'Moderate or heavy snow showers' || homeCondition[1] == 'Moderate or heavy snow with thunder') {%>
-          <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
-          <!-- PARTLY CLOUDY -->
-          <% } else if (homeCondition[1] == 'Partly cloudy') { %>
-              <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
-          <!-- WINDY -->
-      <% } else {%>
-          <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-  <% } %><%= homelocName[1] %>  <span style="float:right;"><%= homeTemp[1] %>°F</span></td>
-      </tr>
-      <tr>
+        <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
+        <!-- CLOUDY -->
+    <% } else if (homeCondition[1] == 'Cloudy' || homeCondition[1] == 'Overcast') {%>
+        <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
+        <!-- RAIN -->
+    <% } else if (homeCondition[1] == 'Mist' || homeCondition[1] == 'Light drizzle' || homeCondition[1] == 'Moderate or heavy rain shower'|| homeCondition[1] == 'Patchy light drizzle' || homeCondition[1] == 'Light rain' || homeCondition[1] == 'Patchy rain possible' || homeCondition[1] == 'Patchy light rain' || homeCondition[1] == 'Moderate rain' || homeCondition[1] == 'Heavy rain' || homeCondition[1] == 'Light rain shower' || homeCondition[1] == 'Moderate rain at times' || homeCondition[1] == 'Heavy rain at times') {%>
+        <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
+        <!-- THUNDERSTORM -->
+    <% } else if (homeCondition[1] == 'Patchy light rain with thunder' || homeCondition[1] == 'Moderate or heavy rain with thunder' || homeCondition[1] == 'Torrential rain shower' || homeCondition[1] == 'Thundery outbreaks possible') {%>
+        <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
+        <!-- SNOW -->
+    <% } else if (homeCondition[1] == 'Light snow' || homeCondition[1] == 'Light snow showers' || homeCondition[1] == 'Patchy snow possible' || homeCondition[1] == 'Patchy sleet possible' || homeCondition[1] == 'Freezing drizzle' || homeCondition[1] == 'Moderate or heavy sleet' || homeCondition[1] == 'Patchy light snow' || homeCondition[1] == 'Patchy moderate snow' || homeCondition[1] == 'Light sleet showers' || homeCondition[1] == 'Moderate snow' || homeCondition[1] == 'Light sleet' || homeCondition[1] == 'Heavy freezing drizzle' || homeCondition[1] == 'Patchy freezing drizzle possible' || homeCondition[1] == 'Moderate or heavy sleet showers' || homeCondition[1] == 'Light showers of ice pellets' || homeCondition[1] == 'Moderate or heavy showers of ice pellets' || homeCondition[1] == 'Patchy freezing drizzle possible' || homeCondition[1] == 'Moderate or heavy freezing rain' || homeCondition[1] == 'Ice pellets' || homeCondition[1] == 'Patchy heavy snow' || homeCondition[1] == 'Light freezing rain') {%>
+        <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
+        <!-- BLIZZARD -->
+    <% } else if (homeCondition[1] == 'Blizzard' || homeCondition[1] == 'Blowing snow' || homeCondition[1] == 'Heavy snow' || homeCondition[1] == 'Patchy light snow with thunder' || homeCondition[1] == 'Moderate or heavy snow showers' || homeCondition[1] == 'Moderate or heavy snow with thunder') {%>
+        <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
+        <!-- PARTLY CLOUDY -->
+        <% } else if (homeCondition[1] == 'Partly cloudy') { %>
+            <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
+        <!-- WINDY -->
+    <% } else {%>
+        <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
+<% } %><%= homelocName[1] %>  <span style="float:right;"><%= homeTemp[1] %>°F</span></td>
+    </tr>
+    <tr>
         <td><% if (homeCondition[2] == 'Clear' ||homeCondition[2] == 'Sunny') { %>
-          <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
-          <!-- CLOUDY -->
-      <% } else if (homeCondition[2] == 'Cloudy' || homeCondition[2] == 'Overcast') {%>
-          <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
-          <!-- RAIN -->
-      <% } else if (homeCondition[2] == 'Mist' || homeCondition[2] == 'Light drizzle' || homeCondition[2] == 'Moderate or heavy rain shower'|| homeCondition[2] == 'Patchy light drizzle' || homeCondition[2] == 'Light rain' || homeCondition[2] == 'Patchy rain possible' || homeCondition[2] == 'Patchy light rain' || homeCondition[2] == 'Moderate rain' || homeCondition[2] == 'Heavy rain' || homeCondition[2] == 'Light rain shower' || homeCondition[2] == 'Moderate rain at times' || homeCondition[2] == 'Heavy rain at times') {%>
-          <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
-          <!-- THUNDERSTORM -->
-      <% } else if (homeCondition[2] == 'Patchy light rain with thunder' || homeCondition[2] == 'Moderate or heavy rain with thunder' || homeCondition[2] == 'Torrential rain shower' || homeCondition[2] == 'Thundery outbreaks possible') {%>
-          <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
-          <!-- SNOW -->
-      <% } else if (homeCondition[2] == 'Light snow' || homeCondition[2] == 'Light snow showers' || homeCondition[2] == 'Patchy snow possible' || homeCondition[2] == 'Patchy sleet possible' || homeCondition[2] == 'Freezing drizzle' || homeCondition[2] == 'Moderate or heavy sleet' || homeCondition[2] == 'Patchy light snow' || homeCondition[2] == 'Patchy moderate snow' || homeCondition[2] == 'Light sleet showers' || homeCondition[2] == 'Moderate snow' || homeCondition[2] == 'Light sleet' || homeCondition[2] == 'Heavy freezing drizzle' || homeCondition[2] == 'Patchy freezing drizzle possible' || homeCondition[2] == 'Moderate or heavy sleet showers' || homeCondition[2] == 'Light showers of ice pellets' || homeCondition[2] == 'Moderate or heavy showers of ice pellets' || homeCondition[2] == 'Patchy freezing drizzle possible' || homeCondition[2] == 'Moderate or heavy freezing rain' || homeCondition[2] == 'Ice pellets' || homeCondition[2] == 'Patchy heavy snow' || homeCondition[2] == 'Light freezing rain') {%>
-          <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
-          <!-- BLIZZARD -->
-      <% } else if (homeCondition[2] == 'Blizzard' || homeCondition[2] == 'Blowing snow' || homeCondition[2] == 'Heavy snow' || homeCondition[2] == 'Patchy light snow with thunder' || homeCondition[2] == 'Moderate or heavy snow showers' || homeCondition[2] == 'Moderate or heavy snow with thunder') {%>
-          <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
-          <!-- PARTLY CLOUDY -->
-          <% } else if (homeCondition[2] == 'Partly cloudy') { %>
-              <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
-          <!-- WINDY -->
-      <% } else {%>
-          <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-  <% } %><%= homelocName[2] %> <span style="float:right;"><%= homeTemp[2] %>°F</span></td>
+        <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
+        <!-- CLOUDY -->
+    <% } else if (homeCondition[2] == 'Cloudy' || homeCondition[2] == 'Overcast') {%>
+        <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
+        <!-- RAIN -->
+    <% } else if (homeCondition[2] == 'Mist' || homeCondition[2] == 'Light drizzle' || homeCondition[2] == 'Moderate or heavy rain shower'|| homeCondition[2] == 'Patchy light drizzle' || homeCondition[2] == 'Light rain' || homeCondition[2] == 'Patchy rain possible' || homeCondition[2] == 'Patchy light rain' || homeCondition[2] == 'Moderate rain' || homeCondition[2] == 'Heavy rain' || homeCondition[2] == 'Light rain shower' || homeCondition[2] == 'Moderate rain at times' || homeCondition[2] == 'Heavy rain at times') {%>
+        <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
+        <!-- THUNDERSTORM -->
+    <% } else if (homeCondition[2] == 'Patchy light rain with thunder' || homeCondition[2] == 'Moderate or heavy rain with thunder' || homeCondition[2] == 'Torrential rain shower' || homeCondition[2] == 'Thundery outbreaks possible') {%>
+        <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
+        <!-- SNOW -->
+    <% } else if (homeCondition[2] == 'Light snow' || homeCondition[2] == 'Light snow showers' || homeCondition[2] == 'Patchy snow possible' || homeCondition[2] == 'Patchy sleet possible' || homeCondition[2] == 'Freezing drizzle' || homeCondition[2] == 'Moderate or heavy sleet' || homeCondition[2] == 'Patchy light snow' || homeCondition[2] == 'Patchy moderate snow' || homeCondition[2] == 'Light sleet showers' || homeCondition[2] == 'Moderate snow' || homeCondition[2] == 'Light sleet' || homeCondition[2] == 'Heavy freezing drizzle' || homeCondition[2] == 'Patchy freezing drizzle possible' || homeCondition[2] == 'Moderate or heavy sleet showers' || homeCondition[2] == 'Light showers of ice pellets' || homeCondition[2] == 'Moderate or heavy showers of ice pellets' || homeCondition[2] == 'Patchy freezing drizzle possible' || homeCondition[2] == 'Moderate or heavy freezing rain' || homeCondition[2] == 'Ice pellets' || homeCondition[2] == 'Patchy heavy snow' || homeCondition[2] == 'Light freezing rain') {%>
+        <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
+        <!-- BLIZZARD -->
+    <% } else if (homeCondition[2] == 'Blizzard' || homeCondition[2] == 'Blowing snow' || homeCondition[2] == 'Heavy snow' || homeCondition[2] == 'Patchy light snow with thunder' || homeCondition[2] == 'Moderate or heavy snow showers' || homeCondition[2] == 'Moderate or heavy snow with thunder') {%>
+        <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
+        <!-- PARTLY CLOUDY -->
+        <% } else if (homeCondition[2] == 'Partly cloudy') { %>
+            <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
+        <!-- WINDY -->
+    <% } else {%>
+        <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
+<% } %><%= homelocName[2] %> <span style="float:right;"><%= homeTemp[2] %>°F</span></td>
         <td><% if (homeCondition[3] == 'Clear' ||homeCondition[3] == 'Sunny') { %>
-          <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
-          <!-- CLOUDY -->
-      <% } else if (homeCondition[3] == 'Cloudy' || homeCondition[3] == 'Overcast') {%>
-          <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
-          <!-- RAIN -->
-      <% } else if (homeCondition[3] == 'Mist' || homeCondition[3] == 'Light drizzle' || homeCondition[3] == 'Moderate or heavy rain shower'|| homeCondition[3] == 'Patchy light drizzle' || homeCondition[3] == 'Light rain' || homeCondition[3] == 'Patchy rain possible' || homeCondition[3] == 'Patchy light rain' || homeCondition[3] == 'Moderate rain' || homeCondition[3] == 'Heavy rain' || homeCondition[3] == 'Light rain shower' || homeCondition[3] == 'Moderate rain at times' || homeCondition[3] == 'Heavy rain at times') {%>
-          <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
-          <!-- THUNDERSTORM -->
-      <% } else if (homeCondition[3] == 'Patchy light rain with thunder' || homeCondition[3] == 'Moderate or heavy rain with thunder' || homeCondition[3] == 'Torrential rain shower' || homeCondition[3] == 'Thundery outbreaks possible') {%>
-          <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
-          <!-- SNOW -->
-      <% } else if (homeCondition[3] == 'Light snow' || homeCondition[3] == 'Light snow showers' || homeCondition[3] == 'Patchy snow possible' || homeCondition[3] == 'Patchy sleet possible' || homeCondition[3] == 'Freezing drizzle' || homeCondition[3] == 'Moderate or heavy sleet' || homeCondition[3] == 'Patchy light snow' || homeCondition[3] == 'Patchy moderate snow' || homeCondition[3] == 'Light sleet showers' || homeCondition[3] == 'Moderate snow' || homeCondition[3] == 'Light sleet' || homeCondition[3] == 'Heavy freezing drizzle' || homeCondition[3] == 'Patchy freezing drizzle possible' || homeCondition[3] == 'Moderate or heavy sleet showers' || homeCondition[3] == 'Light showers of ice pellets' || homeCondition[3] == 'Moderate or heavy showers of ice pellets' || homeCondition[3] == 'Patchy freezing drizzle possible' || homeCondition[3] == 'Moderate or heavy freezing rain' || homeCondition[3] == 'Ice pellets' || homeCondition[3] == 'Patchy heavy snow' || homeCondition[3] == 'Light freezing rain') {%>
-          <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
-          <!-- BLIZZARD -->
-      <% } else if (homeCondition[3] == 'Blizzard' || homeCondition[3] == 'Blowing snow' || homeCondition[3] == 'Heavy snow' || homeCondition[3] == 'Patchy light snow with thunder' || homeCondition[3] == 'Moderate or heavy snow showers' || homeCondition[3] == 'Moderate or heavy snow with thunder') {%>
-          <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
-          <!-- PARTLY CLOUDY -->
-          <% } else if (homeCondition[3] == 'Partly cloudy') { %>
-              <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
-          <!-- WINDY -->
-      <% } else {%>
-          <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-  <% } %><%= homelocName[3] %> <span style="float:right;"><%= homeTemp[3] %>°F</span></td>
-      </tr>
-      <tr>
+        <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
+        <!-- CLOUDY -->
+    <% } else if (homeCondition[3] == 'Cloudy' || homeCondition[3] == 'Overcast') {%>
+        <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
+        <!-- RAIN -->
+    <% } else if (homeCondition[3] == 'Mist' || homeCondition[3] == 'Light drizzle' || homeCondition[3] == 'Moderate or heavy rain shower'|| homeCondition[3] == 'Patchy light drizzle' || homeCondition[3] == 'Light rain' || homeCondition[3] == 'Patchy rain possible' || homeCondition[3] == 'Patchy light rain' || homeCondition[3] == 'Moderate rain' || homeCondition[3] == 'Heavy rain' || homeCondition[3] == 'Light rain shower' || homeCondition[3] == 'Moderate rain at times' || homeCondition[3] == 'Heavy rain at times') {%>
+        <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
+        <!-- THUNDERSTORM -->
+    <% } else if (homeCondition[3] == 'Patchy light rain with thunder' || homeCondition[3] == 'Moderate or heavy rain with thunder' || homeCondition[3] == 'Torrential rain shower' || homeCondition[3] == 'Thundery outbreaks possible') {%>
+        <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
+        <!-- SNOW -->
+    <% } else if (homeCondition[3] == 'Light snow' || homeCondition[3] == 'Light snow showers' || homeCondition[3] == 'Patchy snow possible' || homeCondition[3] == 'Patchy sleet possible' || homeCondition[3] == 'Freezing drizzle' || homeCondition[3] == 'Moderate or heavy sleet' || homeCondition[3] == 'Patchy light snow' || homeCondition[3] == 'Patchy moderate snow' || homeCondition[3] == 'Light sleet showers' || homeCondition[3] == 'Moderate snow' || homeCondition[3] == 'Light sleet' || homeCondition[3] == 'Heavy freezing drizzle' || homeCondition[3] == 'Patchy freezing drizzle possible' || homeCondition[3] == 'Moderate or heavy sleet showers' || homeCondition[3] == 'Light showers of ice pellets' || homeCondition[3] == 'Moderate or heavy showers of ice pellets' || homeCondition[3] == 'Patchy freezing drizzle possible' || homeCondition[3] == 'Moderate or heavy freezing rain' || homeCondition[3] == 'Ice pellets' || homeCondition[3] == 'Patchy heavy snow' || homeCondition[3] == 'Light freezing rain') {%>
+        <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
+        <!-- BLIZZARD -->
+    <% } else if (homeCondition[3] == 'Blizzard' || homeCondition[3] == 'Blowing snow' || homeCondition[3] == 'Heavy snow' || homeCondition[3] == 'Patchy light snow with thunder' || homeCondition[3] == 'Moderate or heavy snow showers' || homeCondition[3] == 'Moderate or heavy snow with thunder') {%>
+        <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
+        <!-- PARTLY CLOUDY -->
+        <% } else if (homeCondition[3] == 'Partly cloudy') { %>
+            <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
+        <!-- WINDY -->
+    <% } else {%>
+        <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
+<% } %><%= homelocName[3] %> <span style="float:right;"><%= homeTemp[3] %>°F</span></td>
+    </tr>
+    <tr>
         <td><% if (homeCondition[4] == 'Clear' ||homeCondition[4] == 'Sunny') { %>
-          <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
-          <!-- CLOUDY -->
-      <% } else if (homeCondition[4] == 'Cloudy' || homeCondition[4] == 'Overcast') {%>
-          <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
-          <!-- RAIN -->
-      <% } else if (homeCondition[4] == 'Mist' || homeCondition[4] == 'Light drizzle' || homeCondition[4] == 'Moderate or heavy rain shower'|| homeCondition[4] == 'Patchy light drizzle' || homeCondition[4] == 'Light rain' || homeCondition[4] == 'Patchy rain possible' || homeCondition[4] == 'Patchy light rain' || homeCondition[4] == 'Moderate rain' || homeCondition[4] == 'Heavy rain' || homeCondition[4] == 'Light rain shower' || homeCondition[4] == 'Moderate rain at times' || homeCondition[4] == 'Heavy rain at times') {%>
-          <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
-          <!-- THUNDERSTORM -->
-      <% } else if (homeCondition[4] == 'Patchy light rain with thunder' || homeCondition[4] == 'Moderate or heavy rain with thunder' || homeCondition[4] == 'Torrential rain shower' || homeCondition[4] == 'Thundery outbreaks possible') {%>
-          <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
-          <!-- SNOW -->
-      <% } else if (homeCondition[4] == 'Light snow' || homeCondition[4] == 'Light snow showers' || homeCondition[4] == 'Patchy snow possible' || homeCondition[4] == 'Patchy sleet possible' || homeCondition[4] == 'Freezing drizzle' || homeCondition[4] == 'Moderate or heavy sleet' || homeCondition[4] == 'Patchy light snow' || homeCondition[4] == 'Patchy moderate snow' || homeCondition[4] == 'Light sleet showers' || homeCondition[4] == 'Moderate snow' || homeCondition[4] == 'Light sleet' || homeCondition[4] == 'Heavy freezing drizzle' || homeCondition[4] == 'Patchy freezing drizzle possible' || homeCondition[4] == 'Moderate or heavy sleet showers' || homeCondition[4] == 'Light showers of ice pellets' || homeCondition[4] == 'Moderate or heavy showers of ice pellets' || homeCondition[4] == 'Patchy freezing drizzle possible' || homeCondition[4] == 'Moderate or heavy freezing rain' || homeCondition[4] == 'Ice pellets' || homeCondition[4] == 'Patchy heavy snow' || homeCondition[4] == 'Light freezing rain') {%>
-          <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
-          <!-- BLIZZARD -->
-      <% } else if (homeCondition[4] == 'Blizzard' || homeCondition[4] == 'Blowing snow' || homeCondition[4] == 'Heavy snow' || homeCondition[4] == 'Patchy light snow with thunder' || homeCondition[4] == 'Moderate or heavy snow showers' || homeCondition[4] == 'Moderate or heavy snow with thunder') {%>
-          <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
-          <!-- PARTLY CLOUDY -->
-          <% } else if (homeCondition[4] == 'Partly cloudy') { %>
-              <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
-          <!-- WINDY -->
-      <% } else {%>
-          <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-  <% } %><%= homelocName[4] %> <span style="float:right;"><%= homeTemp[4] %>°F</span></td>
+        <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
+        <!-- CLOUDY -->
+    <% } else if (homeCondition[4] == 'Cloudy' || homeCondition[4] == 'Overcast') {%>
+        <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
+        <!-- RAIN -->
+    <% } else if (homeCondition[4] == 'Mist' || homeCondition[4] == 'Light drizzle' || homeCondition[4] == 'Moderate or heavy rain shower'|| homeCondition[4] == 'Patchy light drizzle' || homeCondition[4] == 'Light rain' || homeCondition[4] == 'Patchy rain possible' || homeCondition[4] == 'Patchy light rain' || homeCondition[4] == 'Moderate rain' || homeCondition[4] == 'Heavy rain' || homeCondition[4] == 'Light rain shower' || homeCondition[4] == 'Moderate rain at times' || homeCondition[4] == 'Heavy rain at times') {%>
+        <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
+        <!-- THUNDERSTORM -->
+    <% } else if (homeCondition[4] == 'Patchy light rain with thunder' || homeCondition[4] == 'Moderate or heavy rain with thunder' || homeCondition[4] == 'Torrential rain shower' || homeCondition[4] == 'Thundery outbreaks possible') {%>
+        <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
+        <!-- SNOW -->
+    <% } else if (homeCondition[4] == 'Light snow' || homeCondition[4] == 'Light snow showers' || homeCondition[4] == 'Patchy snow possible' || homeCondition[4] == 'Patchy sleet possible' || homeCondition[4] == 'Freezing drizzle' || homeCondition[4] == 'Moderate or heavy sleet' || homeCondition[4] == 'Patchy light snow' || homeCondition[4] == 'Patchy moderate snow' || homeCondition[4] == 'Light sleet showers' || homeCondition[4] == 'Moderate snow' || homeCondition[4] == 'Light sleet' || homeCondition[4] == 'Heavy freezing drizzle' || homeCondition[4] == 'Patchy freezing drizzle possible' || homeCondition[4] == 'Moderate or heavy sleet showers' || homeCondition[4] == 'Light showers of ice pellets' || homeCondition[4] == 'Moderate or heavy showers of ice pellets' || homeCondition[4] == 'Patchy freezing drizzle possible' || homeCondition[4] == 'Moderate or heavy freezing rain' || homeCondition[4] == 'Ice pellets' || homeCondition[4] == 'Patchy heavy snow' || homeCondition[4] == 'Light freezing rain') {%>
+        <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
+        <!-- BLIZZARD -->
+    <% } else if (homeCondition[4] == 'Blizzard' || homeCondition[4] == 'Blowing snow' || homeCondition[4] == 'Heavy snow' || homeCondition[4] == 'Patchy light snow with thunder' || homeCondition[4] == 'Moderate or heavy snow showers' || homeCondition[4] == 'Moderate or heavy snow with thunder') {%>
+        <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
+        <!-- PARTLY CLOUDY -->
+        <% } else if (homeCondition[4] == 'Partly cloudy') { %>
+            <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
+        <!-- WINDY -->
+    <% } else {%>
+        <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
+<% } %><%= homelocName[4] %> <span style="float:right;"><%= homeTemp[4] %>°F</span></td>
         <td><% if (homeCondition[5] == 'Clear' ||homeCondition[5] == 'Sunny') { %>
-          <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
-          <!-- CLOUDY -->
-      <% } else if (homeCondition[5] == 'Cloudy' || homeCondition[5] == 'Overcast') {%>
-          <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
-          <!-- RAIN -->
-      <% } else if (homeCondition[5] == 'Mist' || homeCondition[5] == 'Light drizzle' || homeCondition[5] == 'Moderate or heavy rain shower'|| homeCondition[5] == 'Patchy light drizzle' || homeCondition[5] == 'Light rain' || homeCondition[5] == 'Patchy rain possible' || homeCondition[5] == 'Patchy light rain' || homeCondition[5] == 'Moderate rain' || homeCondition[5] == 'Heavy rain' || homeCondition[5] == 'Light rain shower' || homeCondition[5] == 'Moderate rain at times' || homeCondition[5] == 'Heavy rain at times') {%>
-          <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
-          <!-- THUNDERSTORM -->
-      <% } else if (homeCondition[5] == 'Patchy light rain with thunder' || homeCondition[5] == 'Moderate or heavy rain with thunder' || homeCondition[5] == 'Torrential rain shower' || homeCondition[5] == 'Thundery outbreaks possible') {%>
-          <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
-          <!-- SNOW -->
-      <% } else if (homeCondition[5] == 'Light snow' || homeCondition[5] == 'Light snow showers' || homeCondition[5] == 'Patchy snow possible' || homeCondition[5] == 'Patchy sleet possible' || homeCondition[5] == 'Freezing drizzle' || homeCondition[5] == 'Moderate or heavy sleet' || homeCondition[5] == 'Patchy light snow' || homeCondition[5] == 'Patchy moderate snow' || homeCondition[5] == 'Light sleet showers' || homeCondition[5] == 'Moderate snow' || homeCondition[5] == 'Light sleet' || homeCondition[5] == 'Heavy freezing drizzle' || homeCondition[5] == 'Patchy freezing drizzle possible' || homeCondition[5] == 'Moderate or heavy sleet showers' || homeCondition[5] == 'Light showers of ice pellets' || homeCondition[5] == 'Moderate or heavy showers of ice pellets' || homeCondition[5] == 'Patchy freezing drizzle possible' || homeCondition[5] == 'Moderate or heavy freezing rain' || homeCondition[5] == 'Ice pellets' || homeCondition[5] == 'Patchy heavy snow' || homeCondition[5] == 'Light freezing rain') {%>
-          <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
-          <!-- BLIZZARD -->
-      <% } else if (homeCondition[5] == 'Blizzard' || homeCondition[5] == 'Blowing snow' || homeCondition[5] == 'Heavy snow' || homeCondition[5] == 'Patchy light snow with thunder' || homeCondition[5] == 'Moderate or heavy snow showers' || homeCondition[5] == 'Moderate or heavy snow with thunder') {%>
-          <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
-          <!-- PARTLY CLOUDY -->
-          <% } else if (homeCondition[5] == 'Partly cloudy') { %>
-              <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
-          <!-- WINDY -->
-      <% } else {%>
-          <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-  <% } %><%= homelocName[5] %> <span style="float:right;"><%= homeTemp[5] %>°F</span></td>
-      </tr>
-      <tr>
+        <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
+        <!-- CLOUDY -->
+    <% } else if (homeCondition[5] == 'Cloudy' || homeCondition[5] == 'Overcast') {%>
+        <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
+        <!-- RAIN -->
+    <% } else if (homeCondition[5] == 'Mist' || homeCondition[5] == 'Light drizzle' || homeCondition[5] == 'Moderate or heavy rain shower'|| homeCondition[5] == 'Patchy light drizzle' || homeCondition[5] == 'Light rain' || homeCondition[5] == 'Patchy rain possible' || homeCondition[5] == 'Patchy light rain' || homeCondition[5] == 'Moderate rain' || homeCondition[5] == 'Heavy rain' || homeCondition[5] == 'Light rain shower' || homeCondition[5] == 'Moderate rain at times' || homeCondition[5] == 'Heavy rain at times') {%>
+        <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
+        <!-- THUNDERSTORM -->
+    <% } else if (homeCondition[5] == 'Patchy light rain with thunder' || homeCondition[5] == 'Moderate or heavy rain with thunder' || homeCondition[5] == 'Torrential rain shower' || homeCondition[5] == 'Thundery outbreaks possible') {%>
+        <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
+        <!-- SNOW -->
+    <% } else if (homeCondition[5] == 'Light snow' || homeCondition[5] == 'Light snow showers' || homeCondition[5] == 'Patchy snow possible' || homeCondition[5] == 'Patchy sleet possible' || homeCondition[5] == 'Freezing drizzle' || homeCondition[5] == 'Moderate or heavy sleet' || homeCondition[5] == 'Patchy light snow' || homeCondition[5] == 'Patchy moderate snow' || homeCondition[5] == 'Light sleet showers' || homeCondition[5] == 'Moderate snow' || homeCondition[5] == 'Light sleet' || homeCondition[5] == 'Heavy freezing drizzle' || homeCondition[5] == 'Patchy freezing drizzle possible' || homeCondition[5] == 'Moderate or heavy sleet showers' || homeCondition[5] == 'Light showers of ice pellets' || homeCondition[5] == 'Moderate or heavy showers of ice pellets' || homeCondition[5] == 'Patchy freezing drizzle possible' || homeCondition[5] == 'Moderate or heavy freezing rain' || homeCondition[5] == 'Ice pellets' || homeCondition[5] == 'Patchy heavy snow' || homeCondition[5] == 'Light freezing rain') {%>
+        <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
+        <!-- BLIZZARD -->
+    <% } else if (homeCondition[5] == 'Blizzard' || homeCondition[5] == 'Blowing snow' || homeCondition[5] == 'Heavy snow' || homeCondition[5] == 'Patchy light snow with thunder' || homeCondition[5] == 'Moderate or heavy snow showers' || homeCondition[5] == 'Moderate or heavy snow with thunder') {%>
+        <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
+        <!-- PARTLY CLOUDY -->
+        <% } else if (homeCondition[5] == 'Partly cloudy') { %>
+            <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
+        <!-- WINDY -->
+    <% } else {%>
+        <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
+<% } %><%= homelocName[5] %> <span style="float:right;"><%= homeTemp[5] %>°F</span></td>
+    </tr>
+    <tr>
         <td><% if (homeCondition[6] == 'Clear' ||homeCondition[6] == 'Sunny') { %>
-          <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
-          <!-- CLOUDY -->
-      <% } else if (homeCondition[6] == 'Cloudy' || homeCondition[6] == 'Overcast') {%>
-          <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
-          <!-- RAIN -->
-      <% } else if (homeCondition[6] == 'Mist' || homeCondition[6] == 'Light drizzle' || homeCondition[6] == 'Moderate or heavy rain shower'|| homeCondition[6] == 'Patchy light drizzle' || homeCondition[6] == 'Light rain' || homeCondition[6] == 'Patchy rain possible' || homeCondition[6] == 'Patchy light rain' || homeCondition[6] == 'Moderate rain' || homeCondition[6] == 'Heavy rain' || homeCondition[6] == 'Light rain shower' || homeCondition[6] == 'Moderate rain at times' || homeCondition[6] == 'Heavy rain at times') {%>
-          <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
-          <!-- THUNDERSTORM -->
-      <% } else if (homeCondition[6] == 'Patchy light rain with thunder' || homeCondition[6] == 'Moderate or heavy rain with thunder' || homeCondition[6] == 'Torrential rain shower' || homeCondition[6] == 'Thundery outbreaks possible') {%>
-          <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
-          <!-- SNOW -->
-      <% } else if (homeCondition[6] == 'Light snow' || homeCondition[6] == 'Light snow showers' || homeCondition[6] == 'Patchy snow possible' || homeCondition[6] == 'Patchy sleet possible' || homeCondition[6] == 'Freezing drizzle' || homeCondition[6] == 'Moderate or heavy sleet' || homeCondition[6] == 'Patchy light snow' || homeCondition[6] == 'Patchy moderate snow' || homeCondition[6] == 'Light sleet showers' || homeCondition[6] == 'Moderate snow' || homeCondition[6] == 'Light sleet' || homeCondition[6] == 'Heavy freezing drizzle' || homeCondition[6] == 'Patchy freezing drizzle possible' || homeCondition[6] == 'Moderate or heavy sleet showers' || homeCondition[6] == 'Light showers of ice pellets' || homeCondition[6] == 'Moderate or heavy showers of ice pellets' || homeCondition[6] == 'Patchy freezing drizzle possible' || homeCondition[6] == 'Moderate or heavy freezing rain' || homeCondition[6] == 'Ice pellets' || homeCondition[6] == 'Patchy heavy snow' || homeCondition[6] == 'Light freezing rain') {%>
-          <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
-          <!-- BLIZZARD -->
-      <% } else if (homeCondition[6] == 'Blizzard' || homeCondition[6] == 'Blowing snow' || homeCondition[6] == 'Heavy snow' || homeCondition[6] == 'Patchy light snow with thunder' || homeCondition[6] == 'Moderate or heavy snow showers' || homeCondition[6] == 'Moderate or heavy snow with thunder') {%>
-          <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
-          <!-- PARTLY CLOUDY -->
-          <% } else if (homeCondition[6] == 'Partly cloudy') { %>
-              <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
-          <!-- WINDY -->
-      <% } else {%>
-          <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-  <% } %><%= homelocName[6] %> <span style="float:right;"><%= homeTemp[6] %>°F</span></td>
+        <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
+        <!-- CLOUDY -->
+    <% } else if (homeCondition[6] == 'Cloudy' || homeCondition[6] == 'Overcast') {%>
+        <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
+        <!-- RAIN -->
+    <% } else if (homeCondition[6] == 'Mist' || homeCondition[6] == 'Light drizzle' || homeCondition[6] == 'Moderate or heavy rain shower'|| homeCondition[6] == 'Patchy light drizzle' || homeCondition[6] == 'Light rain' || homeCondition[6] == 'Patchy rain possible' || homeCondition[6] == 'Patchy light rain' || homeCondition[6] == 'Moderate rain' || homeCondition[6] == 'Heavy rain' || homeCondition[6] == 'Light rain shower' || homeCondition[6] == 'Moderate rain at times' || homeCondition[6] == 'Heavy rain at times') {%>
+        <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
+        <!-- THUNDERSTORM -->
+    <% } else if (homeCondition[6] == 'Patchy light rain with thunder' || homeCondition[6] == 'Moderate or heavy rain with thunder' || homeCondition[6] == 'Torrential rain shower' || homeCondition[6] == 'Thundery outbreaks possible') {%>
+        <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
+        <!-- SNOW -->
+    <% } else if (homeCondition[6] == 'Light snow' || homeCondition[6] == 'Light snow showers' || homeCondition[6] == 'Patchy snow possible' || homeCondition[6] == 'Patchy sleet possible' || homeCondition[6] == 'Freezing drizzle' || homeCondition[6] == 'Moderate or heavy sleet' || homeCondition[6] == 'Patchy light snow' || homeCondition[6] == 'Patchy moderate snow' || homeCondition[6] == 'Light sleet showers' || homeCondition[6] == 'Moderate snow' || homeCondition[6] == 'Light sleet' || homeCondition[6] == 'Heavy freezing drizzle' || homeCondition[6] == 'Patchy freezing drizzle possible' || homeCondition[6] == 'Moderate or heavy sleet showers' || homeCondition[6] == 'Light showers of ice pellets' || homeCondition[6] == 'Moderate or heavy showers of ice pellets' || homeCondition[6] == 'Patchy freezing drizzle possible' || homeCondition[6] == 'Moderate or heavy freezing rain' || homeCondition[6] == 'Ice pellets' || homeCondition[6] == 'Patchy heavy snow' || homeCondition[6] == 'Light freezing rain') {%>
+        <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
+        <!-- BLIZZARD -->
+    <% } else if (homeCondition[6] == 'Blizzard' || homeCondition[6] == 'Blowing snow' || homeCondition[6] == 'Heavy snow' || homeCondition[6] == 'Patchy light snow with thunder' || homeCondition[6] == 'Moderate or heavy snow showers' || homeCondition[6] == 'Moderate or heavy snow with thunder') {%>
+        <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
+        <!-- PARTLY CLOUDY -->
+        <% } else if (homeCondition[6] == 'Partly cloudy') { %>
+            <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
+        <!-- WINDY -->
+    <% } else {%>
+        <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
+<% } %><%= homelocName[6] %> <span style="float:right;"><%= homeTemp[6] %>°F</span></td>
         <td><% if (homeCondition[7] == 'Clear' ||homeCondition[7] == 'Sunny') { %>
-          <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
-          <!-- CLOUDY -->
-      <% } else if (homeCondition[7] == 'Cloudy' || homeCondition[7] == 'Overcast') {%>
-          <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
-          <!-- RAIN -->
-      <% } else if (homeCondition[7] == 'Mist' || homeCondition[7] == 'Light drizzle' || homeCondition[7] == 'Moderate or heavy rain shower'|| homeCondition[7] == 'Patchy light drizzle' || homeCondition[7] == 'Light rain' || homeCondition[7] == 'Patchy rain possible' || homeCondition[7] == 'Patchy light rain' || homeCondition[7] == 'Moderate rain' || homeCondition[7] == 'Heavy rain' || homeCondition[7] == 'Light rain shower' || homeCondition[7] == 'Moderate rain at times' || homeCondition[7] == 'Heavy rain at times') {%>
-          <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
-          <!-- THUNDERSTORM -->
-      <% } else if (homeCondition[7] == 'Patchy light rain with thunder' || homeCondition[7] == 'Moderate or heavy rain with thunder' || homeCondition[7] == 'Torrential rain shower' || homeCondition[7] == 'Thundery outbreaks possible') {%>
-          <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
-          <!-- SNOW -->
-      <% } else if (homeCondition[7] == 'Light snow' || homeCondition[7] == 'Light snow showers' || homeCondition[7] == 'Patchy snow possible' || homeCondition[7] == 'Patchy sleet possible' || homeCondition[7] == 'Freezing drizzle' || homeCondition[7] == 'Moderate or heavy sleet' || homeCondition[7] == 'Patchy light snow' || homeCondition[7] == 'Patchy moderate snow' || homeCondition[7] == 'Light sleet showers' || homeCondition[7] == 'Moderate snow' || homeCondition[7] == 'Light sleet' || homeCondition[7] == 'Heavy freezing drizzle' || homeCondition[7] == 'Patchy freezing drizzle possible' || homeCondition[7] == 'Moderate or heavy sleet showers' || homeCondition[7] == 'Light showers of ice pellets' || homeCondition[7] == 'Moderate or heavy showers of ice pellets' || homeCondition[7] == 'Patchy freezing drizzle possible' || homeCondition[7] == 'Moderate or heavy freezing rain' || homeCondition[7] == 'Ice pellets' || homeCondition[7] == 'Patchy heavy snow' || homeCondition[7] == 'Light freezing rain') {%>
-          <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
-          <!-- BLIZZARD -->
-      <% } else if (homeCondition[7] == 'Blizzard' || homeCondition[7] == 'Blowing snow' || homeCondition[7] == 'Heavy snow' || homeCondition[7] == 'Patchy light snow with thunder' || homeCondition[7] == 'Moderate or heavy snow showers' || homeCondition[7] == 'Moderate or heavy snow with thunder') {%>
-          <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
-          <!-- PARTLY CLOUDY -->
-          <% } else if (homeCondition[7] == 'Partly cloudy') { %>
-              <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
-          <!-- WINDY -->
-      <% } else {%>
-          <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-  <% } %><%= homelocName[7] %> <span style="float:right;"><%= homeTemp[7] %>°F</span></td>
-      </tr>
-      <tr>
+        <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
+        <!-- CLOUDY -->
+    <% } else if (homeCondition[7] == 'Cloudy' || homeCondition[7] == 'Overcast') {%>
+        <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
+        <!-- RAIN -->
+    <% } else if (homeCondition[7] == 'Mist' || homeCondition[7] == 'Light drizzle' || homeCondition[7] == 'Moderate or heavy rain shower'|| homeCondition[7] == 'Patchy light drizzle' || homeCondition[7] == 'Light rain' || homeCondition[7] == 'Patchy rain possible' || homeCondition[7] == 'Patchy light rain' || homeCondition[7] == 'Moderate rain' || homeCondition[7] == 'Heavy rain' || homeCondition[7] == 'Light rain shower' || homeCondition[7] == 'Moderate rain at times' || homeCondition[7] == 'Heavy rain at times') {%>
+        <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
+        <!-- THUNDERSTORM -->
+    <% } else if (homeCondition[7] == 'Patchy light rain with thunder' || homeCondition[7] == 'Moderate or heavy rain with thunder' || homeCondition[7] == 'Torrential rain shower' || homeCondition[7] == 'Thundery outbreaks possible') {%>
+        <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
+        <!-- SNOW -->
+    <% } else if (homeCondition[7] == 'Light snow' || homeCondition[7] == 'Light snow showers' || homeCondition[7] == 'Patchy snow possible' || homeCondition[7] == 'Patchy sleet possible' || homeCondition[7] == 'Freezing drizzle' || homeCondition[7] == 'Moderate or heavy sleet' || homeCondition[7] == 'Patchy light snow' || homeCondition[7] == 'Patchy moderate snow' || homeCondition[7] == 'Light sleet showers' || homeCondition[7] == 'Moderate snow' || homeCondition[7] == 'Light sleet' || homeCondition[7] == 'Heavy freezing drizzle' || homeCondition[7] == 'Patchy freezing drizzle possible' || homeCondition[7] == 'Moderate or heavy sleet showers' || homeCondition[7] == 'Light showers of ice pellets' || homeCondition[7] == 'Moderate or heavy showers of ice pellets' || homeCondition[7] == 'Patchy freezing drizzle possible' || homeCondition[7] == 'Moderate or heavy freezing rain' || homeCondition[7] == 'Ice pellets' || homeCondition[7] == 'Patchy heavy snow' || homeCondition[7] == 'Light freezing rain') {%>
+        <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
+        <!-- BLIZZARD -->
+    <% } else if (homeCondition[7] == 'Blizzard' || homeCondition[7] == 'Blowing snow' || homeCondition[7] == 'Heavy snow' || homeCondition[7] == 'Patchy light snow with thunder' || homeCondition[7] == 'Moderate or heavy snow showers' || homeCondition[7] == 'Moderate or heavy snow with thunder') {%>
+        <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
+        <!-- PARTLY CLOUDY -->
+        <% } else if (homeCondition[7] == 'Partly cloudy') { %>
+            <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
+        <!-- WINDY -->
+    <% } else {%>
+        <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
+<% } %><%= homelocName[7] %> <span style="float:right;"><%= homeTemp[7] %>°F</span></td>
+    </tr>
+    <tr>
         <td><% if (homeCondition[8] == 'Clear' ||homeCondition[8] == 'Sunny') { %>
-          <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
-          <!-- CLOUDY -->
-      <% } else if (homeCondition[8] == 'Cloudy' || homeCondition[8] == 'Overcast') {%>
-          <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
-          <!-- RAIN -->
-      <% } else if (homeCondition[8] == 'Mist' || homeCondition[8] == 'Light drizzle' || homeCondition[8] == 'Moderate or heavy rain shower'|| homeCondition[8] == 'Patchy light drizzle' || homeCondition[8] == 'Light rain' || homeCondition[8] == 'Patchy rain possible' || homeCondition[8] == 'Patchy light rain' || homeCondition[8] == 'Moderate rain' || homeCondition[8] == 'Heavy rain' || homeCondition[8] == 'Light rain shower' || homeCondition[8] == 'Moderate rain at times' || homeCondition[8] == 'Heavy rain at times') {%>
-          <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
-          <!-- THUNDERSTORM -->
-      <% } else if (homeCondition[8] == 'Patchy light rain with thunder' || homeCondition[8] == 'Moderate or heavy rain with thunder' || homeCondition[8] == 'Torrential rain shower' || homeCondition[8] == 'Thundery outbreaks possible') {%>
-          <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
-          <!-- SNOW -->
-      <% } else if (homeCondition[8] == 'Light snow' || homeCondition[8] == 'Light snow showers' || homeCondition[8] == 'Patchy snow possible' || homeCondition[8] == 'Patchy sleet possible' || homeCondition[8] == 'Freezing drizzle' || homeCondition[8] == 'Moderate or heavy sleet' || homeCondition[8] == 'Patchy light snow' || homeCondition[8] == 'Patchy moderate snow' || homeCondition[8] == 'Light sleet showers' || homeCondition[8] == 'Moderate snow' || homeCondition[8] == 'Light sleet' || homeCondition[8] == 'Heavy freezing drizzle' || homeCondition[8] == 'Patchy freezing drizzle possible' || homeCondition[8] == 'Moderate or heavy sleet showers' || homeCondition[8] == 'Light showers of ice pellets' || homeCondition[8] == 'Moderate or heavy showers of ice pellets' || homeCondition[8] == 'Patchy freezing drizzle possible' || homeCondition[8] == 'Moderate or heavy freezing rain' || homeCondition[8] == 'Ice pellets' || homeCondition[8] == 'Patchy heavy snow' || homeCondition[8] == 'Light freezing rain') {%>
-          <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
-          <!-- BLIZZARD -->
-      <% } else if (homeCondition[8] == 'Blizzard' || homeCondition[8] == 'Blowing snow' || homeCondition[8] == 'Heavy snow' || homeCondition[8] == 'Patchy light snow with thunder' || homeCondition[8] == 'Moderate or heavy snow showers' || homeCondition[8] == 'Moderate or heavy snow with thunder') {%>
-          <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
-          <!-- PARTLY CLOUDY -->
-          <% } else if (homeCondition[8] == 'Partly cloudy') { %>
-              <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
-          <!-- WINDY -->
-      <% } else {%>
-          <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-  <% } %><%= homelocName[8] %> <span style="float:right;"><%= homeTemp[8] %>°F</span></td>
+        <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
+        <!-- CLOUDY -->
+    <% } else if (homeCondition[8] == 'Cloudy' || homeCondition[8] == 'Overcast') {%>
+        <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
+        <!-- RAIN -->
+    <% } else if (homeCondition[8] == 'Mist' || homeCondition[8] == 'Light drizzle' || homeCondition[8] == 'Moderate or heavy rain shower'|| homeCondition[8] == 'Patchy light drizzle' || homeCondition[8] == 'Light rain' || homeCondition[8] == 'Patchy rain possible' || homeCondition[8] == 'Patchy light rain' || homeCondition[8] == 'Moderate rain' || homeCondition[8] == 'Heavy rain' || homeCondition[8] == 'Light rain shower' || homeCondition[8] == 'Moderate rain at times' || homeCondition[8] == 'Heavy rain at times') {%>
+        <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
+        <!-- THUNDERSTORM -->
+    <% } else if (homeCondition[8] == 'Patchy light rain with thunder' || homeCondition[8] == 'Moderate or heavy rain with thunder' || homeCondition[8] == 'Torrential rain shower' || homeCondition[8] == 'Thundery outbreaks possible') {%>
+        <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
+        <!-- SNOW -->
+    <% } else if (homeCondition[8] == 'Light snow' || homeCondition[8] == 'Light snow showers' || homeCondition[8] == 'Patchy snow possible' || homeCondition[8] == 'Patchy sleet possible' || homeCondition[8] == 'Freezing drizzle' || homeCondition[8] == 'Moderate or heavy sleet' || homeCondition[8] == 'Patchy light snow' || homeCondition[8] == 'Patchy moderate snow' || homeCondition[8] == 'Light sleet showers' || homeCondition[8] == 'Moderate snow' || homeCondition[8] == 'Light sleet' || homeCondition[8] == 'Heavy freezing drizzle' || homeCondition[8] == 'Patchy freezing drizzle possible' || homeCondition[8] == 'Moderate or heavy sleet showers' || homeCondition[8] == 'Light showers of ice pellets' || homeCondition[8] == 'Moderate or heavy showers of ice pellets' || homeCondition[8] == 'Patchy freezing drizzle possible' || homeCondition[8] == 'Moderate or heavy freezing rain' || homeCondition[8] == 'Ice pellets' || homeCondition[8] == 'Patchy heavy snow' || homeCondition[8] == 'Light freezing rain') {%>
+        <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
+        <!-- BLIZZARD -->
+    <% } else if (homeCondition[8] == 'Blizzard' || homeCondition[8] == 'Blowing snow' || homeCondition[8] == 'Heavy snow' || homeCondition[8] == 'Patchy light snow with thunder' || homeCondition[8] == 'Moderate or heavy snow showers' || homeCondition[8] == 'Moderate or heavy snow with thunder') {%>
+        <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
+        <!-- PARTLY CLOUDY -->
+        <% } else if (homeCondition[8] == 'Partly cloudy') { %>
+            <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
+        <!-- WINDY -->
+    <% } else {%>
+        <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
+<% } %><%= homelocName[8] %> <span style="float:right;"><%= homeTemp[8] %>°F</span></td>
         <td><% if (homeCondition[9] == 'Clear' ||homeCondition[9] == 'Sunny') { %>
-          <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
-          <!-- CLOUDY -->
-      <% } else if (homeCondition[9] == 'Cloudy' || homeCondition[9] == 'Overcast') {%>
-          <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
-          <!-- RAIN -->
-      <% } else if (homeCondition[9] == 'Mist' || homeCondition[9] == 'Light drizzle' || homeCondition[9] == 'Moderate or heavy rain shower'|| homeCondition[9] == 'Patchy light drizzle' || homeCondition[9] == 'Light rain' || homeCondition[9] == 'Patchy rain possible' || homeCondition[9] == 'Patchy light rain' || homeCondition[9] == 'Moderate rain' || homeCondition[9] == 'Heavy rain' || homeCondition[9] == 'Light rain shower' || homeCondition[9] == 'Moderate rain at times' || homeCondition[9] == 'Heavy rain at times') {%>
-          <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
-          <!-- THUNDERSTORM -->
-      <% } else if (homeCondition[9] == 'Patchy light rain with thunder' || homeCondition[9] == 'Moderate or heavy rain with thunder' || homeCondition[9] == 'Torrential rain shower' || homeCondition[9] == 'Thundery outbreaks possible') {%>
-          <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
-          <!-- SNOW -->
-      <% } else if (homeCondition[9] == 'Light snow' || homeCondition[9] == 'Light snow showers' || homeCondition[9] == 'Patchy snow possible' || homeCondition[9] == 'Patchy sleet possible' || homeCondition[9] == 'Freezing drizzle' || homeCondition[9] == 'Moderate or heavy sleet' || homeCondition[9] == 'Patchy light snow' || homeCondition[9] == 'Patchy moderate snow' || homeCondition[9] == 'Light sleet showers' || homeCondition[9] == 'Moderate snow' || homeCondition[9] == 'Light sleet' || homeCondition[9] == 'Heavy freezing drizzle' || homeCondition[9] == 'Patchy freezing drizzle possible' || homeCondition[9] == 'Moderate or heavy sleet showers' || homeCondition[9] == 'Light showers of ice pellets' || homeCondition[9] == 'Moderate or heavy showers of ice pellets' || homeCondition[9] == 'Patchy freezing drizzle possible' || homeCondition[9] == 'Moderate or heavy freezing rain' || homeCondition[9] == 'Ice pellets' || homeCondition[9] == 'Patchy heavy snow' || homeCondition[9] == 'Light freezing rain') {%>
-          <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
-          <!-- BLIZZARD -->
-      <% } else if (homeCondition[9] == 'Blizzard' || homeCondition[9] == 'Blowing snow' || homeCondition[9] == 'Heavy snow' || homeCondition[9] == 'Patchy light snow with thunder' || homeCondition[9] == 'Moderate or heavy snow showers' || homeCondition[9] == 'Moderate or heavy snow with thunder') {%>
-          <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
-          <!-- PARTLY CLOUDY -->
-          <% } else if (homeCondition[9] == 'Partly cloudy') { %>
-              <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
-          <!-- WINDY -->
-      <% } else {%>
-          <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-  <% } %><%= homelocName[9] %> <span style="float:right;"><%= homeTemp[9] %>°F</span></td>
-      </tr>
+        <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
+        <!-- CLOUDY -->
+    <% } else if (homeCondition[9] == 'Cloudy' || homeCondition[9] == 'Overcast') {%>
+        <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
+        <!-- RAIN -->
+    <% } else if (homeCondition[9] == 'Mist' || homeCondition[9] == 'Light drizzle' || homeCondition[9] == 'Moderate or heavy rain shower'|| homeCondition[9] == 'Patchy light drizzle' || homeCondition[9] == 'Light rain' || homeCondition[9] == 'Patchy rain possible' || homeCondition[9] == 'Patchy light rain' || homeCondition[9] == 'Moderate rain' || homeCondition[9] == 'Heavy rain' || homeCondition[9] == 'Light rain shower' || homeCondition[9] == 'Moderate rain at times' || homeCondition[9] == 'Heavy rain at times') {%>
+        <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
+        <!-- THUNDERSTORM -->
+    <% } else if (homeCondition[9] == 'Patchy light rain with thunder' || homeCondition[9] == 'Moderate or heavy rain with thunder' || homeCondition[9] == 'Torrential rain shower' || homeCondition[9] == 'Thundery outbreaks possible') {%>
+        <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
+        <!-- SNOW -->
+    <% } else if (homeCondition[9] == 'Light snow' || homeCondition[9] == 'Light snow showers' || homeCondition[9] == 'Patchy snow possible' || homeCondition[9] == 'Patchy sleet possible' || homeCondition[9] == 'Freezing drizzle' || homeCondition[9] == 'Moderate or heavy sleet' || homeCondition[9] == 'Patchy light snow' || homeCondition[9] == 'Patchy moderate snow' || homeCondition[9] == 'Light sleet showers' || homeCondition[9] == 'Moderate snow' || homeCondition[9] == 'Light sleet' || homeCondition[9] == 'Heavy freezing drizzle' || homeCondition[9] == 'Patchy freezing drizzle possible' || homeCondition[9] == 'Moderate or heavy sleet showers' || homeCondition[9] == 'Light showers of ice pellets' || homeCondition[9] == 'Moderate or heavy showers of ice pellets' || homeCondition[9] == 'Patchy freezing drizzle possible' || homeCondition[9] == 'Moderate or heavy freezing rain' || homeCondition[9] == 'Ice pellets' || homeCondition[9] == 'Patchy heavy snow' || homeCondition[9] == 'Light freezing rain') {%>
+        <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
+        <!-- BLIZZARD -->
+    <% } else if (homeCondition[9] == 'Blizzard' || homeCondition[9] == 'Blowing snow' || homeCondition[9] == 'Heavy snow' || homeCondition[9] == 'Patchy light snow with thunder' || homeCondition[9] == 'Moderate or heavy snow showers' || homeCondition[9] == 'Moderate or heavy snow with thunder') {%>
+        <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
+        <!-- PARTLY CLOUDY -->
+        <% } else if (homeCondition[9] == 'Partly cloudy') { %>
+            <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
+        <!-- WINDY -->
+    <% } else {%>
+        <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
+<% } %><%= homelocName[9] %> <span style="float:right;"><%= homeTemp[9] %>°F</span></td>
+    </tr>
     </table>
-  </div>
-
-
-
-
-  </div>
 </div>
-
+</div>
+</div>
 <div class="hidden" id="hidden"></div>
-
-
 <div>
-  <img src="../public/images/background/gradient light blue.jpg" class="bg">
+<img src="../public/images/background/gradient light blue.jpg" class="bg">
 </div>
-
-
-
 <script>
-  (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
     key: "AIzaSyANtLR5ZVcSDGk3iTqHu9LYNQlNjs90Qzw",
     v: "weekly",
-  });
+});
 </script>
 <%- include('./partial/footer') %>

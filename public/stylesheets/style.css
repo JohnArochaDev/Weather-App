@@ -149,7 +149,7 @@ input[type=button].button-secondary:hover {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: -2;
 }
 
 .weatherIconHome {
@@ -261,4 +261,10 @@ td {
 
 .hidden {
   visibility: hidden;
+}
+
+.fg {
+  z-index: 2;
+  margin-top: 10vh;
+  margin-right: 7vh;
 }
