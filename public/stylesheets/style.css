@@ -177,3 +177,7 @@ input[type=button].button-secondary:hover {
   margin-top: 27vh;
   margin-left: 5vh;
 }
+
+.map {
+  z-index: 1;
+}
