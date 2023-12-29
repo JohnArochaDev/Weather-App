@@ -188,8 +188,8 @@ input[type=button].button-secondary:hover {
 .column {
   display: grid;  
   flex: 50%;
-  margin-left: 40vh;
-  margin-right: 40vh;
+  margin-left: 30vh;
+  margin-right: 30vh;
   background-color: rgb(247, 247, 247);
 }
 
@@ -230,4 +230,13 @@ td {
   background-color: rgb(255,255,255); 
   color: black; 
   background-clip: padding-box; 
+}
+
+.search {
+  margin-top: 25vh;
+  width: 30vh;
+}
+
+.btnBackground {
+  background-color: rgb(218, 218, 218);
 }

@@ -25,6 +25,8 @@ let long = -85.45500539999999
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+
+    
     axios(`${weatherURL}${lat},${long}&days=3&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
         // render the results on a 'show' page: aka 'detail' page
         .then(apiRes => {

@@ -4,35 +4,10 @@
   <img src="../public/images/home/space.jpg" class="card-img" alt="..." size="auto">
   <div class="row">
       <div class="card-img-overlay">
-        <div class="card-text">
-          <!-- CLEAR -->
-          <% if (hour.condition.text == 'Clear' ||hour.condition.text == 'Sunny') { %>
-          <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconHome">
-          <!-- CLOUDY -->
-          <% } else if (hour.condition.text == 'Cloudy' || hour.condition.text == 'Overcast') {%>
-          <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconHome">
-          <!-- RAIN -->
-          <% } else if (hour.condition.text == 'Mist' || hour.condition.text == 'Light drizzle' || hour.condition.text == 'Moderate or heavy rain shower'|| hour.condition.text == 'Patchy light drizzle' || hour.condition.text == 'Light rain' || hour.condition.text == 'Patchy rain possible' || hour.condition.text == 'Patchy light rain' || hour.condition.text == 'Moderate rain' || hour.condition.text == 'Heavy rain' || hour.condition.text == 'Light rain shower' || hour.condition.text == 'Moderate rain at times' || hour.condition.text == 'Heavy rain at times') {%>
-          <img src="../../public/images/icons/rain.png" alt="" class="weatherIconHome">
-          <!-- THUNDERSTORM -->
-          <% } else if (hour.condition.text == 'Patchy light rain with thunder' || hour.condition.text == 'Moderate or heavy rain with thunder' || hour.condition.text == 'Torrential rain shower' || hour.condition.text == 'Thundery outbreaks possible') {%>
-          <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconHome">
-          <!-- SNOW -->
-          <% } else if (hour.condition.text == 'Light snow' || hour.condition.text == 'Light snow showers' || hour.condition.text == 'Patchy snow possible' || hour.condition.text == 'Patchy sleet possible' || hour.condition.text == 'Freezing drizzle' || hour.condition.text == 'Moderate or heavy sleet' || hour.condition.text == 'Patchy light snow' || hour.condition.text == 'Patchy moderate snow' || hour.condition.text == 'Light sleet showers' || hour.condition.text == 'Moderate snow' || hour.condition.text == 'Light sleet' || hour.condition.text == 'Heavy freezing drizzle' || hour.condition.text == 'Patchy freezing drizzle possible' || hour.condition.text == 'Moderate or heavy sleet showers' || hour.condition.text == 'Light showers of ice pellets' || hour.condition.text == 'Moderate or heavy showers of ice pellets' || hour.condition.text == 'Patchy freezing drizzle possible' || hour.condition.text == 'Moderate or heavy freezing rain' || hour.condition.text == 'Ice pellets' || hour.condition.text == 'Patchy heavy snow' || hour.condition.text == 'Light freezing rain') {%>
-          <img src="../../public/images/icons/snow.png" alt="" class="weatherIconHome">
-          <!-- BLIZZARD -->
-          <% } else if (hour.condition.text == 'Blizzard' || hour.condition.text == 'Blowing snow' || hour.condition.text == 'Heavy snow' || hour.condition.text == 'Patchy light snow with thunder' || hour.condition.text == 'Moderate or heavy snow showers' || hour.condition.text == 'Moderate or heavy snow with thunder') {%>
-          <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconHome">
-          <!-- PARTLY CLOUDY -->
-          <% } else if (hour.condition.text == 'Partly cloudy') { %>
-          <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconHome">
-          <!-- WINDY -->
-          <% } else {%>
-          <img src="../../public/images/icons/wind.png" alt="" class="weatherIconHome">
-          <% } %>
-          <h4 class="card-text conditionHome black"><%= hour.condition.text %></h4>
-          <h2 class="card-title tempHome black"><strong><%= hour.temp_f %>°F</strong></h2>
-        </div>
+          <form class="d-flex search container" role="search">
+            <input class="form-control me-2" type="search" placeholder="Zip code" aria-label="Search">
+            <button class="btn btn-outline btnBackground" type="submit">Search</button>
+        </form>
       </div>
   </div>
 </div>
@@ -51,7 +26,9 @@
   </div>
 
   <div class="row" style="height:100%">
-
+    
+    <div id="map" class="map"></div>
+    
     <div class="card w-25 text-center featured">
       <div class="card-header"><strong>Saved places</strong></div>
       <div class="card-body">
@@ -60,7 +37,6 @@
       <a href="#" class="btn btn-primary">Let's go</a>
     </div>
     
-    <div id="map" class="map"></div>
     
   <div class="row">
     <table class="popFocrasts">
