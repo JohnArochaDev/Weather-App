@@ -30,7 +30,16 @@ router.get('/', function(req, res, next) {
 
 
 
-
+const newYork = '40.7127753,-74.0059728'
+const losAngeles = '34.0549076,-118.242643'
+const chicago = '41.8781136,-87.629798'
+const houston = '29.7604267,-95.3698028'
+const phoenix = '33.4483771,-112.0740373'
+const philadelphia = '39.9525839,-75.1652215'
+const sanAntonio = '29.4251905,-98.4945922'
+const sanDiego = '32.715738,-117.1610838'
+const dallas = '32.7766642,-96.79698789999999'
+const sanJose = '37.33874,-121.8852525'
 
 
 
