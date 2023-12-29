@@ -24,32 +24,32 @@ let long = -85.45500539999999
 //////////////////////////////
 
 /* GET home page. */
-// router.get('/', function(req, res, next) {
-//     res.render('index', { title: 'Express'})
-// })
-
-
-
-
-
-
-
 router.get('/', function(req, res, next) {
-
-    axios(`${weatherURL}${lat},${long}&days=3&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
-    // render the results on a 'show' page: aka 'detail' page
-    .then(apiRes => {
-        let weather = apiRes.data
-        let locName = weather.location.name
-        let forecast1 = weather.forecast.forecastday[0]
-        let locRegion = weather.location.region
-        res.render('index', { title: 'Express', weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11})
-        })
-    .catch(err => {
-        console.log('error', err)
-        res.redirect(`/error?error=${err}`)
-    })
+    res.render('index', { title: 'Express'})
 })
+
+
+
+
+
+
+
+// router.get('/', function(req, res, next) {
+
+//     axios(`${weatherURL}${lat},${long}&days=3&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+//     // render the results on a 'show' page: aka 'detail' page
+//     .then(apiRes => {
+//         let weather = apiRes.data
+//         let locName = weather.location.name
+//         let forecast1 = weather.forecast.forecastday[0]
+//         let locRegion = weather.location.region
+//         res.render('index', { title: 'Express', weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11})
+//         })
+//     .catch(err => {
+//         console.log('error', err)
+//         res.redirect(`/error?error=${err}`)
+//     })
+// })
 
 
 

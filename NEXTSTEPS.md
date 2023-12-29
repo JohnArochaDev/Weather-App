@@ -105,16 +105,16 @@ DONE: Hourly:
 
 
 
-New York                        
-Los Angeles                        
-Chicago                        
-Houston                        
-Phoenix                        
-Philadelphia                        
-San Antonio                        
-San Diego                        
-Dallas                        
-San Jose                        
+New York     40.7127753,-74.0059728
+Los Angeles     34.0549076,-118.242643
+Chicago         41.8781136,-87.629798
+Houston         29.7604267,-95.3698028
+Phoenix         33.4483771,-112.0740373
+Philadelphia            39.9525839,-75.1652215
+San Antonio         29.4251905,-98.4945922
+San Diego           32.715738,-117.1610838
+Dallas          32.7766642,-96.79698789999999
+San Jose            37.33874,-121.8852525
 
 
 
