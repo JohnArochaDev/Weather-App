@@ -59,7 +59,7 @@
                 <!-- Col -->
 
 
-                <div id="carouselExample" class="carousel slide slider container" >
+                <div id="carouselExample" class="carousel slide slider container">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="container grid text-center" style="--bs-columns: 3;" data-bs-interval="10000">
@@ -608,10 +608,112 @@
 
             </div>
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-                <div class="col">
-                    <div class="row">
-                    </div>
+
+
+                <div id="carouselExample" class="carousel slide slider container" >
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="container grid text-center" style="--bs-columns: 3;" data-bs-interval="10000">
+                                <div class="row justify-content-around">
+
+                                    <!-- first icon -->
+                                    <div class="col col-3">
+                                        <% if (hour1.condition.text == 'Clear' ||hour1.condition.text == 'Sunny') { %>
+                                            <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
+                                            <!-- CLOUDY -->
+                                        <% } else if (hour1.condition.text == 'Cloudy' || hour1.condition.text == 'Overcast') {%>
+                                            <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconSmall">
+                                            <!-- RAIN -->
+                                        <% } else if (hour1.condition.text == 'Mist' || hour1.condition.text == 'Light drizzle' || hour1.condition.text == 'Moderate or heavy rain shower'|| hour1.condition.text == 'Patchy light drizzle' || hour1.condition.text == 'Light rain' || hour1.condition.text == 'Patchy rain possible' || hour1.condition.text == 'Patchy light rain' || hour1.condition.text == 'Moderate rain' || hour1.condition.text == 'Heavy rain' || hour1.condition.text == 'Light rain shower' || hour1.condition.text == 'Moderate rain at times' || hour1.condition.text == 'Heavy rain at times') {%>
+                                            <img src="../../public/images/icons/rain.png" alt="" class="weatherIconSmall">
+                                            <!-- THUNDERSTORM -->
+                                        <% } else if (hour1.condition.text == 'Patchy light rain with thunder' || hour1.condition.text == 'Moderate or heavy rain with thunder' || hour1.condition.text == 'Torrential rain shower' || hour1.condition.text == 'Thundery outbreaks possible') {%>
+                                            <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconSmall">
+                                            <!-- SNOW -->
+                                        <% } else if (hour1.condition.text == 'Light snow' || hour1.condition.text == 'Light snow showers' || hour1.condition.text == 'Patchy snow possible' || hour1.condition.text == 'Patchy sleet possible' || hour1.condition.text == 'Freezing drizzle' || hour1.condition.text == 'Moderate or heavy sleet' || hour1.condition.text == 'Patchy light snow' || hour1.condition.text == 'Patchy moderate snow' || hour1.condition.text == 'Light sleet showers' || hour1.condition.text == 'Moderate snow' || hour1.condition.text == 'Light sleet' || hour1.condition.text == 'Heavy freezing drizzle' || hour1.condition.text == 'Patchy freezing drizzle possible' || hour1.condition.text == 'Moderate or heavy sleet showers' || hour1.condition.text == 'Light showers of ice pellets' || hour1.condition.text == 'Moderate or heavy showers of ice pellets' || hour1.condition.text == 'Patchy freezing drizzle possible' || hour1.condition.text == 'Moderate or heavy freezing rain' || hour1.condition.text == 'Ice pellets' || hour1.condition.text == 'Patchy heavy snow' || hour1.condition.text == 'Light freezing rain') {%>
+                                            <img src="../../public/images/icons/snow.png" alt="" class="weatherIconSmall">
+                                            <!-- BLIZZARD -->
+                                        <% } else if (hour1.condition.text == 'Blizzard' || hour1.condition.text == 'Blowing snow' || hour1.condition.text == 'Heavy snow' || hour1.condition.text == 'Patchy light snow with thunder' || hour1.condition.text == 'Moderate or heavy snow showers' || hour1.condition.text == 'Moderate or heavy snow with thunder') {%>
+                                            <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconSmall">
+                                            <!-- PARTLY CLOUDY -->
+                                            <% } else if (hour1.condition.text == 'Partly cloudy') { %>
+                                                <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconSmall">
+                                            <!-- WINDY -->
+                                        <% } else {%>
+                                            <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
+                                    <% } %>
+                                    </div>
+
+                                    <!-- second icon -->
+                                    
+                                    <!-- third icon -->
+                                    
+                                    <!-- fourth icon -->
+                                </div>
+                                <div class="row justify-content-around">
+                                    <!-- first temp -->
+                                    <div class="col col-3">
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour1.temp_f %>°F</strong></h5>
+                                    </div>
+                                    <!-- second temp -->
+
+                                    <!-- third temp -->
+
+                                    <!-- fourth temp -->
+
+                                </div>
+                                <div class="row justify-content-around">
+                                    <!-- first condition -->
+                                    <div class="col col-3">
+                                        <h7 class="card-text weatherText blackSmall"><%= hour1.condition.text %></h7>
+                                    </div>
+                                    <!-- second condition -->
+
+                                    <!-- third condition -->
+
+                                    <!-- fourth condition -->
+
+                                </div>
+
+                                <div class="row justify-content-around">
+                                    <!-- first time -->
+                                    <div class="col col-3 weatherText3">
+                                        <% let timeConversion111 =  hour1.time[11] + hour1.time[12];   timeConversion111 = (timeConversion111 % 12) || 12;  let finalTime111 = timeConversion111; %>
+                                        <h7><%= finalTime111 + hour1.time[13] + hour1.time[14] + hour1.time[15]%></h7>
+                                    </div>
+                                    <!-- second time -->
+
+                                    <!-- third time -->
+
+                                    <!-- fourth time -->
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Carosel 2 -->
+                        
+
+
+                        <!-- Carosel 3 -->
+                        
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
+
+
+            </div>
+
+
+
             </div>
         </div>
     </div>
