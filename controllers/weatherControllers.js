@@ -207,8 +207,6 @@ router.get('/weather/daily', (req, res) => {
                 hourTime.push(forecast2.hour[idx])
                 idx++
             }
-console.log('this is the idx: \n', idx)
-
             let hour = hourTime[0]
             let hour1 = hourTime[1]
             let hour2 = hourTime[2]
