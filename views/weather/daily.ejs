@@ -50,8 +50,8 @@
     <div class="row">
         <nav class="dropdown">
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Hourly Forcast</button>
-                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Daily Forcast</button>
+                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Hourly Forecast</button>
+                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Daily Forecast</button>
             </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
@@ -66,6 +66,7 @@
                             <div class="container grid text-center" style="--bs-columns: 3;" data-bs-interval="10000">
                                 <div class="row justify-content-around">
 
+                                    <!-- first icon -->
                                     <div class="col col-3">
                                         <% if (hour1.condition.text == 'Clear' ||hour1.condition.text == 'Sunny') { %>
                                             <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
@@ -93,6 +94,7 @@
                                     <% } %>
                                     </div>
 
+                                    <!-- second icon -->
                                     <div class="col col-3">
                                         <% if (hour2.condition.text == 'Clear' ||hour2.condition.text == 'Sunny') { %>
                                                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
@@ -120,6 +122,7 @@
                                         <% } %>
                                     </div>
 
+                                    <!-- third icon -->
                                     <div class="col col-3">
                                         <% if (hour3.condition.text == 'Clear' ||hour3.condition.text == 'Sunny') { %>
                                                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
@@ -146,59 +149,7 @@
                                                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                         <% } %>
                                     </div>
-                                </div>
-
-                                <div class="row justify-content-around">
-                                    <div class="col col-3">
-                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour1.temp_f %>°F</strong></h5>
-                                    </div>
-                                    <div class="col col-3 middleBorder">
-                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour2.temp_f %>°F</strong></h5>
-                                    </div>
-                                    <div class="col col-3">
-                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour3.temp_f %>°F</strong></h5>
-                                    </div>
-                                </div>
-
-                                <div class="row justify-content-around">
-                                    <div class="col col-3">
-                                        <h7 class="card-text weatherText blackSmall"><%= hour1.condition.text %></h7>
-                                    </div>
-
-                                    <div class="col col-3 middleBorder">
-                                        <h7 class="card-text weatherText blackSmall"><%= hour2.condition.text %></h7>
-                                    </div>
-
-                                    <div class="col col-3">
-                                        <h7 class="card-text weatherText blackSmall"><%= hour3.condition.text %></h7>
-                                    </div>
-
-                                </div>
-
-                                <div class="row justify-content-around">
-                                    <div class="col col-3">
-                                        <% let timeConversion1 =  hour1.time[11] + hour1.time[12];   timeConversion1 = (timeConversion1 % 12) || 12;  let finalTime1 = timeConversion1; %>
-                                        <h7><%= finalTime1 + hour1.time[13] + hour1.time[14] + hour1.time[15]%></h7>
-                                    </div>
-
-                                    <div class="col col-3 middleBorder">
-                                        <% let timeConversion2 = hour2.time[11] + hour2.time[12];   timeConversion2 = (timeConversion2 % 12) || 12;  let finalTime2 = timeConversion2; %>
-                                        <h7><%= finalTime2 + hour2.time[13] + hour2.time[14] + hour2.time[15]%></h7>
-                                    </div>
-
-                                    <div class="col col-3">
-                                        <% let timeConversion3 =  hour3.time[11] + hour3.time[12];   timeConversion3 = (timeConversion3 % 12) || 12;  let finalTime3 = timeConversion3; %>
-                                        <h7><%= finalTime3 + hour3.time[13] + hour3.time[14] + hour3.time[15]%></h7>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- Carosel 2 -->
-                        <div class="carousel-item">
-                            <div class="container grid text-center" style="--bs-columns: 3;" data-bs-interval="10000">
-                                <div class="row justify-content-around">
+                                    <!-- fourth icon -->
                                     <div class="col col-3">
                                         <% if (hour3.condition.text == 'Clear' ||hour3.condition.text == 'Sunny') { %>
                                             <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
@@ -225,7 +176,77 @@
                                             <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                     <% } %>
                                     </div>
+                                </div>
 
+                                <div class="row justify-content-around">
+                                    <!-- first temp -->
+                                    <div class="col col-3">
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour1.temp_f %>°F</strong></h5>
+                                    </div>
+                                    <!-- second temp -->
+                                    <div class="col col-3 middleBorder">
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour2.temp_f %>°F</strong></h5>
+                                    </div>
+                                    <!-- third temp -->
+                                    <div class="col col-3">
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour3.temp_f %>°F</strong></h5>
+                                    </div>
+                                    <!-- fourth temp -->
+                                    <div class="col col-3">
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour4.temp_f %>°F</strong></h5>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-around">
+                                    <!-- first condition -->
+                                    <div class="col col-3">
+                                        <h7 class="card-text weatherText blackSmall"><%= hour1.condition.text %></h7>
+                                    </div>
+                                    <!-- second condition -->
+                                    <div class="col col-3 middleBorder">
+                                        <h7 class="card-text weatherText blackSmall"><%= hour2.condition.text %></h7>
+                                    </div>
+                                    <!-- third condition -->
+                                    <div class="col col-3">
+                                        <h7 class="card-text weatherText blackSmall"><%= hour3.condition.text %></h7>
+                                    </div>
+                                    <!-- fourth condition -->
+                                    <div class="col col-3">
+                                        <h7 class="card-text weatherText blackSmall"><%= hour3.condition.text %></h7>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-around">
+                                    <!-- first time -->
+                                    <div class="col col-3">
+                                        <% let timeConversion1 =  hour1.time[11] + hour1.time[12];   timeConversion1 = (timeConversion1 % 12) || 12;  let finalTime1 = timeConversion1; %>
+                                        <h7><%= finalTime1 + hour1.time[13] + hour1.time[14] + hour1.time[15]%></h7>
+                                    </div>
+                                    <!-- second time -->
+                                    <div class="col col-3 middleBorder">
+                                        <% let timeConversion2 = hour2.time[11] + hour2.time[12];   timeConversion2 = (timeConversion2 % 12) || 12;  let finalTime2 = timeConversion2; %>
+                                        <h7><%= finalTime2 + hour2.time[13] + hour2.time[14] + hour2.time[15]%></h7>
+                                    </div>
+                                    <!-- third time -->
+                                    <div class="col col-3">
+                                        <% let timeConversion3 =  hour3.time[11] + hour3.time[12];   timeConversion3 = (timeConversion3 % 12) || 12;  let finalTime3 = timeConversion3; %>
+                                        <h7><%= finalTime3 + hour3.time[13] + hour3.time[14] + hour3.time[15]%></h7>
+                                    </div>
+                                    <!-- fourth time -->
+                                    <div class="col col-3">
+                                        <% let timeConversion4 =  hour4.time[11] + hour4.time[12];   timeConversion4 = (timeConversion4 % 12) || 12;  let finalTime4 = timeConversion4; %>
+                                        <h7><%= finalTime4 + hour4.time[13] + hour4.time[14] + hour4.time[15]%></h7>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Carosel 2 -->
+                        <div class="carousel-item">
+                            <div class="container grid text-center" style="--bs-columns: 3;" data-bs-interval="10000">
+                                <div class="row justify-content-around">
+                                    <!-- fifth icon -->
                                     <div class="col col-3 middleBorder">
                                         <% if (hour4.condition.text == 'Clear' ||hour4.condition.text == 'Sunny') { %>
                                                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
@@ -252,7 +273,7 @@
                                                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                         <% } %>
                                     </div>
-
+                                    <!-- sixth icon -->
                                     <div class="col col-3">
                                         <% if (hour5.condition.text == 'Clear' ||hour5.condition.text == 'Sunny') { %>
                                                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
@@ -282,10 +303,6 @@
                                 </div>
 
                                 <div class="row justify-content-around">
-                                    <div class="col col-3">
-                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour3.temp_f %>°F</strong></h5>
-                                    </div>
-
                                     <div class="col col-3 middleBorder">
                                         <h7 class="card-title weatherText2 blackSmall"><strong><%= hour4.temp_f %>°F</strong></h5>
                                     </div>
@@ -296,9 +313,8 @@
                                 </div>
 
                                 <div class="row justify-content-around">
-                                    <div class="col col-3">
-                                        <h7 class="card-text weatherText blackSmall"><%= hour3.condition.text %></h7>
-                                    </div>
+
+                                    <!-- here -->
 
                                     <div class="col col-3 middleBorder">
                                         <h7 class="card-text weatherText blackSmall"><%= hour4.condition.text %></h7>
@@ -310,10 +326,8 @@
                                 </div>
 
                                 <div class="row justify-content-around">
-                                    <div class="col col-3">
-                                        <% let timeConversion4 =  hour4.time[11] + hour4.time[12];   timeConversion4 = (timeConversion4 % 12) || 12;  let finalTime4 = timeConversion4; %>
-                                        <h7><%= finalTime4 + hour4.time[13] + hour4.time[14] + hour4.time[15]%></h7>
-                                    </div>
+
+                                    <!-- here -->
 
                                     <div class="col col-3 middleBorder">
                                         <% let timeConversion5 = hour5.time[11] + hour5.time[12];   timeConversion5 = (timeConversion5 % 12) || 12;  let finalTime5 = timeConversion5; %>
@@ -333,6 +347,7 @@
                         <div class="carousel-item">
                             <div class="container grid text-center" style="--bs-columns: 3;" data-bs-interval="10000">
                                 <div class="row justify-content-around">
+                                    <!-- seventh icon -->
                                     <div class="col col-3">
                                         <% if (hour6.condition.text == 'Clear' ||hour6.condition.text == 'Sunny') { %>
                                             <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
@@ -359,7 +374,7 @@
                                             <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                     <% } %>
                                     </div>
-
+                                    <!-- eighth icon -->
                                     <div class="col col-3 middleBorder">
                                         <% if (hour7.condition.text == 'Clear' ||hour7.condition.text == 'Sunny') { %>
                                                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
@@ -386,7 +401,7 @@
                                                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                         <% } %>
                                     </div>
-
+                                    <!-- nineth icon -->
                                     <div class="col col-3">
                                         <% if (hour8.condition.text == 'Clear' ||hour8.condition.text == 'Sunny') { %>
                                                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
