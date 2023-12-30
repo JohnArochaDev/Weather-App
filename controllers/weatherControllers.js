@@ -47,9 +47,9 @@ let homelocName = []
 let homeTemp = []
 let homeCondition = []
 
-router.get('/', function(req, res, next) {
+router.get('/', async function(req, res, next) {
 
-    axios(`${weatherURL}${newYork}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    await axios(`${weatherURL}${newYork}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
     // render the results on a 'show' page: aka 'detail' page
     .then(apiRes => {
         let weather = apiRes.data
@@ -61,7 +61,7 @@ router.get('/', function(req, res, next) {
         homeCondition.push(condition)
         // console.log('1 This is the Home Name: \n', homelocName,'1 This is the Temp Name: \n', homeTemp,'1 This is the Cindition Name: \n', homeCondition)
     })
-    axios(`${weatherURL}${losAngeles}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    await axios(`${weatherURL}${losAngeles}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
     // render the results on a 'show' page: aka 'detail' page
     .then(apiRes => {
         let weather = apiRes.data
@@ -73,7 +73,7 @@ router.get('/', function(req, res, next) {
         homeCondition.push(condition)
         // console.log('2 This is the Home Name: \n', homelocName,'2 This is the Temp Name: \n', homeTemp,'2 This is the Cindition Name: \n', homeCondition)
     })
-    axios(`${weatherURL}${chicago}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    await axios(`${weatherURL}${chicago}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
     // render the results on a 'show' page: aka 'detail' page
     .then(apiRes => {
         let weather = apiRes.data
@@ -85,7 +85,7 @@ router.get('/', function(req, res, next) {
         homeCondition.push(condition)
         // console.log('3 This is the Home Name: \n', homelocName,'3 This is the Temp Name: \n', homeTemp,'3 This is the Cindition Name: \n', homeCondition)
     })
-    axios(`${weatherURL}${houston}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    await axios(`${weatherURL}${houston}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
     // render the results on a 'show' page: aka 'detail' page
     .then(apiRes => {
         let weather = apiRes.data
@@ -97,7 +97,7 @@ router.get('/', function(req, res, next) {
         homeCondition.push(condition)
         // console.log('4 This is the Home Name: \n', homelocName,'4 This is the Temp Name: \n', homeTemp,'4 This is the Cindition Name: \n', homeCondition)
     })
-    axios(`${weatherURL}${phoenix}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    await axios(`${weatherURL}${phoenix}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
     // render the results on a 'show' page: aka 'detail' page
     .then(apiRes => {
         let weather = apiRes.data
@@ -109,7 +109,7 @@ router.get('/', function(req, res, next) {
         homeCondition.push(condition)
         // console.log('5 This is the Home Name: \n', homelocName,'5 This is the Temp Name: \n', homeTemp,'5 This is the Cindition Name: \n', homeCondition)
     })
-    axios(`${weatherURL}${philadelphia}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    await axios(`${weatherURL}${philadelphia}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
     // render the results on a 'show' page: aka 'detail' page
     .then(apiRes => {
         let weather = apiRes.data
@@ -121,7 +121,7 @@ router.get('/', function(req, res, next) {
         homeCondition.push(condition)
         // console.log('6 This is the Home Name: \n', homelocName,'6 This is the Temp Name: \n', homeTemp,'6 This is the Cindition Name: \n', homeCondition)
     })
-    axios(`${weatherURL}${sanAntonio}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    await axios(`${weatherURL}${sanAntonio}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
     // render the results on a 'show' page: aka 'detail' page
     .then(apiRes => {
         let weather = apiRes.data
@@ -133,7 +133,7 @@ router.get('/', function(req, res, next) {
         homeCondition.push(condition)
         // console.log('7 This is the Home Name: \n', homelocName,'7 This is the Temp Name: \n', homeTemp,'7 This is the Cindition Name: \n', homeCondition)
     })
-    axios(`${weatherURL}${sanDiego}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    await axios(`${weatherURL}${sanDiego}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
     // render the results on a 'show' page: aka 'detail' page
     .then(apiRes => {
         let weather = apiRes.data
@@ -145,7 +145,7 @@ router.get('/', function(req, res, next) {
         homeCondition.push(condition)
         // console.log('8 This is the Home Name: \n', homelocName,'8 This is the Temp Name: \n', homeTemp,'8 This is the Cindition Name: \n', homeCondition)
     })
-    axios(`${weatherURL}${dallas}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    await axios(`${weatherURL}${dallas}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
     // render the results on a 'show' page: aka 'detail' page
     .then(apiRes => {
         let weather = apiRes.data
@@ -157,7 +157,7 @@ router.get('/', function(req, res, next) {
         homeCondition.push(condition)
         // console.log('9 This is the Home Name: \n', homelocName,'9 This is the Temp Name: \n', homeTemp,'9 This is the Cindition Name: \n', homeCondition)
     })
-    axios(`${weatherURL}${sanJose}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+    await axios(`${weatherURL}${sanJose}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
     // render the results on a 'show' page: aka 'detail' page
     .then(apiRes => {
         let weather = apiRes.data
