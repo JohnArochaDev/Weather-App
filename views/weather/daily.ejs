@@ -702,40 +702,59 @@
                                 <div class="row justify-content-around">
                                     <!-- first high temp -->
                                     <div class="col col-3">
-                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour1.temp_f %>°F</strong></h5>
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= forecast1.day.maxtemp_f %>°F</strong></h7>
                                     </div>
                                     <!-- second high temp -->
-
+                                    <div class="col col-3">
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= forecast2.day.maxtemp_f %>°F</strong></h7>
+                                    </div>
                                     <!-- third high temp -->
-
-                                    <!-- fourth high temp -->
-
+                                    <div class="col col-3">
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= forecast3.day.maxtemp_f %>°F</strong></h7>
+                                    </div>
                                 </div>
 
                                 <div class="row justify-content-around">
                                     <!-- first lowtemp -->
-                                    <div class="col col-3 weatherText3">
-                                        <% let timeConversion111 =  hour1.time[11] + hour1.time[12];   timeConversion111 = (timeConversion111 % 12) || 12;  let finalTime111 = timeConversion111; %>
-                                        <h7><%= finalTime111 + hour1.time[13] + hour1.time[14] + hour1.time[15]%></h7>
+                                    <div class="col col-3">
+                                        <h9 class="card-title weatherText2 blackSmall"><%= forecast1.day.mintemp_f %>°F</h9>
                                     </div>
                                     <!-- second low temp -->
-
+                                    <div class="col col-3">
+                                        <h9 class="card-title weatherText2 blackSmall"><%= forecast2.day.mintemp_f %>°F</h9>
+                                    </div>
                                     <!-- third low temp -->
-
-                                    <!-- fourth low temp -->
-
+                                    <div class="col col-3">
+                                        <h9 class="card-title weatherText2 blackSmall"><%= forecast3.day.mintemp_f %>°F</h9>
+                                    </div>
                                 </div>
                                 <div class="row justify-content-around">
                                     <!-- first condition -->
                                     <div class="col col-3">
-                                        <h7 class="card-text weatherText blackSmall"><%= hour1.condition.text %></h7>
+                                        <h7 class="card-text weatherText blackSmall"><%= forecast1.day.condition.text %></h7>
                                     </div>
                                     <!-- second condition -->
-
+                                    <div class="col col-3">
+                                        <h7 class="card-text weatherText blackSmall"><%= forecast2.day.condition.text %></h7>
+                                    </div>
                                     <!-- third condition -->
-
-                                    <!-- fourth condition -->
-
+                                    <div class="col col-3">
+                                        <h7 class="card-text weatherText blackSmall"><%= forecast3.day.condition.text %></h7>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-around">
+                                    <!-- Day -->
+                                    <div class="col col-3">
+                                        <h7 class="card-text weatherText blackSmall">Today</h7>
+                                    </div>
+                                    <!-- Day 2-->
+                                    <div class="col col-3">
+                                        <h7 class="card-text weatherText blackSmall">Today</h7>
+                                    </div>
+                                    <!-- Day 3-->
+                                    <div class="col col-3">
+                                        <h7 class="card-text weatherText blackSmall">Today</h7>
+                                    </div>
                                 </div>
                             </div>
                         </div>
