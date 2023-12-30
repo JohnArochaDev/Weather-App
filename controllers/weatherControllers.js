@@ -224,27 +224,25 @@ router.get('/weather/daily', (req, res) => {
             console.log(hour8.time)
             console.log(hour9.time)
             // console.log('7 8 9 not working: \n', hourTime)
-            //TESTING
+            //FIRST
             let newString = null;
             let month;
             let dayco = forecast1.date[8] += forecast1.date[9];
-            let dayConversion = parseInt(dayco);
+            let dayConversion = dayco;
             let monco = forecast1.date[5] += forecast1.date[6];
             let monthConversion = monco.toString();
-
             if (monthConversion.indexOf("-") >= 0) {
                 newString = monthConversion.replace("-", "");
             }
-
             if (newString) {
                 if (newString === 1) {
-                    month = "January";
+                    month = "Jan";
                 } else if (newString === 2) {
-                    month = "February";
+                    month = "Feb";
                 } else if (newString === 3) {
-                    month = "March";
+                    month = "Mar";
                 } else if (newString === 4) {
-                    month = "April";
+                    month = "Apr";
                 } else if (newString === 5) {
                     month = "May";
                 } else if (newString === 6) {
@@ -252,24 +250,24 @@ router.get('/weather/daily', (req, res) => {
                 } else if (newString === 7) {
                     month = "July";
                 } else if (newString === 8) {
-                    month = "August";
+                    month = "Aug";
                 } else if (newString === 9) {
-                    month = "September";
+                    month = "Sept";
                 } else if (newString === 10) {
-                    month = "October";
+                    month = "Oct";
                 } else if (newString === 11) {
-                    month = "November";
+                    month = "Nov";
                 } else {
-                    month = "December";
+                    month = "Dec";
                 }
             } else if (monthConversion === 1) {
-                month = "January";
+                month = "Jan";
             } else if (monthConversion === 2) {
-                month = "February";
+                month = "Feb";
             } else if (monthConversion === 3) {
-                month = "March";
+                month = "Mar";
             } else if (monthConversion === 4) {
-                month = "April";
+                month = "Apr";
             } else if (monthConversion === 5) {
                 month = "May";
             } else if (monthConversion === 6) {
@@ -277,20 +275,142 @@ router.get('/weather/daily', (req, res) => {
             } else if (monthConversion === 7) {
                 month = "July";
             } else if (monthConversion === 8) {
-                month = "August";
+                month = "Aug";
             } else if (monthConversion === 9) {
-                month = "September";
+                month = "Sept";
             } else if (monthConversion === 10) {
-                month = "October";
+                month = "Oct";
             } else if (monthConversion === 11) {
-                month = "November";
+                month = "Nov";
             } else {
-                month = "December";
+                month = "Dec";
             }
-            
             console.log('This is the month: \n', month)
-            //TESTING
-            res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, forecast1, forecast2, forecast3})
+            //SECOND
+            let newString1 = null;
+            let month1;
+            let dayco1 = forecast2.date[8] += forecast2.date[9];
+            let dayConversion1 = dayco1;
+            let monco1 = forecast2.date[5] += forecast2.date[6];
+            let monthConversion1 = monco1.toString();
+            if (monthConversion1.indexOf("-") >= 0) {
+                newString1 = monthConversion1.replace("-", "");
+            }
+            if (newString1) {
+                if (newString1 === 1) {
+                    month1 = "Jan";
+                } else if (newString1 === 2) {
+                    month1 = "Feb";
+                } else if (newString1 === 3) {
+                    month1 = "Mar";
+                } else if (newString1 === 4) {
+                    month1 = "Apr";
+                } else if (newString1 === 5) {
+                    month1 = "May";
+                } else if (newString1 === 6) {
+                    month1 = "June";
+                } else if (newString1 === 7) {
+                    month1 = "July";
+                } else if (newString1 === 8) {
+                    month1 = "Aug";
+                } else if (newString1 === 9) {
+                    month1 = "Sept";
+                } else if (newString1 === 10) {
+                    month1 = "Oct";
+                } else if (newString1 === 11) {
+                    month1 = "Nov";
+                } else {
+                    month1 = "Dec";
+                }
+            } else if (monthConversion1 === 1) {
+                month1 = "Jan";
+            } else if (monthConversion1 === 2) {
+                month1 = "Feb";
+            } else if (monthConversion1 === 3) {
+                month1 = "Mar";
+            } else if (monthConversion1 === 4) {
+                month1 = "Apr";
+            } else if (monthConversion1 === 5) {
+                month1 = "May";
+            } else if (monthConversion1 === 6) {
+                month1 = "June";
+            } else if (monthConversion1 === 7) {
+                month1 = "July";
+            } else if (monthConversion1 === 8) {
+                month1 = "Aug";
+            } else if (monthConversion1 === 9) {
+                month1 = "Sept";
+            } else if (monthConversion1 === 10) {
+                month1 = "Oct";
+            } else if (monthConversion1 === 11) {
+                month1 = "Nov";
+            } else {
+                month1 = "Dec";
+            }
+            console.log(month1)
+            //THIRD
+            let newString2 = null;
+            let month2;
+            let dayco2 = forecast2.date[8] += forecast2.date[9];
+            let dayConversion2 = dayco2;
+            let monco2 = forecast3.date[5] += forecast3.date[6];
+            let monthConversion2 = monco2.toString();
+            if (monthConversion2.indexOf("-") >= 0) {
+                newString2 = monthConversion2.replace("-", "");
+            }
+            if (newString2) {
+                if (newString2 === 1) {
+                    month2 = "Jan";
+                } else if (newString2 === 2) {
+                    month2 = "Feb";
+                } else if (newString2 === 3) {
+                    month2 = "Mar";
+                } else if (newString2 === 4) {
+                    month2 = "Apr";
+                } else if (newString2 === 5) {
+                    month2 = "May";
+                } else if (newString2 === 6) {
+                    month2 = "June";
+                } else if (newString2 === 7) {
+                    month2 = "July";
+                } else if (newString2 === 8) {
+                    month2 = "Aug";
+                } else if (newString2 === 9) {
+                    month2 = "Sept";
+                } else if (newString2 === 10) {
+                    month2 = "Oct";
+                } else if (newString2 === 11) {
+                    month2 = "Nov";
+                } else {
+                    month2 = "Dec";
+                }
+            } else if (monthConversion2 === 1) {
+                month2 = "Jan";
+            } else if (monthConversion2 === 2) {
+                month2 = "Feb";
+            } else if (monthConversion2 === 3) {
+                month2 = "Mar";
+            } else if (monthConversion2 === 4) {
+                month2 = "Apr";
+            } else if (monthConversion2 === 5) {
+                month2 = "May";
+            } else if (monthConversion2 === 6) {
+                month2 = "June";
+            } else if (monthConversion2 === 7) {
+                month2 = "July";
+            } else if (monthConversion2 === 8) {
+                month2 = "Aug";
+            } else if (monthConversion2 === 9) {
+                month2 = "Sept";
+            } else if (monthConversion2 === 10) {
+                month2 = "Oct";
+            } else if (monthConversion2 === 11) {
+                month2 = "Nov";
+            } else {
+                month2 = "Dec";
+            }
+            console.log(dayConversion2)
+            res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, forecast1, forecast2, forecast3, month1, month2, dayConversion1, dayConversion2})
         })
         .catch(err => {
             console.log('error', err)
