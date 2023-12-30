@@ -194,6 +194,7 @@ router.get('/weather/daily', (req, res) => {
             let locName = weather.location.name
             let forecast1 = weather.forecast.forecastday[0] // DAY OF
             let forecast2 = weather.forecast.forecastday[1] // TOMORROW
+            let forecast3 = weather.forecast.forecastday[2] // TOMORROWs TOMOROW
             let locRegion = weather.location.region
             let locTime = weather.location.localtime
             let hours = forecast1.hour
@@ -226,7 +227,7 @@ console.log('this is the idx: \n', idx)
             console.log(hour9.time)
             // console.log('7 8 9 not working: \n', hourTime)
             //TESTING
-            res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11})
+            res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, forecast1, forecast2, forecast3})
         })
         .catch(err => {
             console.log('error', err)
