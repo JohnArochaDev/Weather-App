@@ -109,14 +109,33 @@ input[type=button].button-secondary:hover {
   margin-left: .7vh;
 }
 
+.weatherTextTopCon {
+  margin-top: 1vh;
+  margin-left: auto;
+}
+
+.weatherTextTop {
+  margin-top: 7vh;
+  margin-left: auto;
+}
+
+/* condition */
 .weatherText {
   margin-top: 1vh;
-  margin-left: 6vh;
+  margin-bottom: 1vh;
+  margin-left: auto;
 }
 
 .weatherText2 {
-  margin-top: 7vh;
-  margin-left: 6vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  margin-left: auto;
+}
+
+.weatherText3 {
+  margin-top: 1vh;
+  margin-bottom: 2vh;
+  margin-left: auto;
 }
 
 .black {
@@ -135,7 +154,7 @@ input[type=button].button-secondary:hover {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
+  width: 10vh;
 }
 
 .blackSmall {
@@ -272,4 +291,55 @@ td {
 
 .front {
   z-index: 10;
+}
+
+.bgtrans {
+  background: rgba(0, 0, 0, 0);
+}
+
+[data-bs-theme="blue"] {
+  --bs-body-color: var(--bs-black);
+  --bs-body-color-rgb: #{to-rgb($black)};
+  --bs-body-bg: var(--bs-grey);
+  --bs-body-bg-rgb: #{to-rgb($black)};
+  --bs-tertiary-bg: #{$black-600};
+
+  .dropdown-menu {
+    --bs-dropdown-bg: #{mix($black-500, $black-600)};
+    --bs-dropdown-link-active-bg: #{$black-700};
+  }
+
+  .btn-secondary {
+    --bs-btn-bg: #{mix($gray-600, $black-400, .5)};
+    --bs-btn-border-color: #{rgba($black, .25)};
+    --bs-btn-hover-bg: #{darken(mix($gray-600, $black-400, .5), 5%)};
+    --bs-btn-hover-border-color: #{rgba($black, .25)};
+    --bs-btn-active-bg: #{darken(mix($gray-600, $black-400, .5), 10%)};
+    --bs-btn-active-border-color: #{rgba($black, .5)};
+    --bs-btn-focus-border-color: #{rgba($black, .5)};
+    --bs-btn-focus-box-shadow: 0 0 0 .25rem rgba(0, 0, 0, 0.2);
+  }
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  margin-top: 3vh;
+  height: 100px;
+  width: 100px;
+  background-size: 100%, 100%;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '→';
+  font-size: 4vh;
+  color: rgb(0, 0, 0);
+}
+
+.carousel-control-prev-icon:after 
+{
+  content: '←';
+  font-size: 4vh;
+  color: rgb(0, 0, 0);
 }
