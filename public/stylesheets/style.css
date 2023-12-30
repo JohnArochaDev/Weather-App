@@ -111,12 +111,12 @@ input[type=button].button-secondary:hover {
 
 .weatherTextTopCon {
   margin-top: 1vh;
-  margin-left: auto;
+  margin-left: 5vh;
 }
 
 .weatherTextTop {
-  margin-top: 7vh;
-  margin-left: auto;
+  margin-top: 11vh;
+  margin-left: 5vh;
 }
 
 /* condition */
@@ -342,4 +342,26 @@ td {
   content: '←';
   font-size: 4vh;
   color: rgb(0, 0, 0);
+}
+
+.location {
+  margin-right: 5vh;
+}
+
+.time {
+  margin-right: -2.5vh;
+}
+
+.favButton {
+  margin-top: 10vh;
+  z-index: 10;
+}
+
+.favButton:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.link {
+  color: black;
+  text-decoration: underline solid black;
 }

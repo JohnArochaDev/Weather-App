@@ -8,7 +8,7 @@
     <img src="../public/images/home/space2.jpg" class="card-img" size="auto">
     <div class="row">
         <div class="card-img-overlay">
-            <h1 class="fg"><span style="float:right;"><%= finalTime + weather.location.localtime[13] + weather.location.localtime[14] + weather.location.localtime[15]%></span></h1>
+            <h1 class="fg"><span class='time' style="float:right;"><%= finalTime + weather.location.localtime[13] + weather.location.localtime[14] + weather.location.localtime[15]%></span></h1>
         </div>
     </div>
     <div class="row">
@@ -40,7 +40,7 @@
                         <img src="../../public/images/icons/wind.png" alt="" class="weatherIcon">
                 <% } %>
                 <h1 class="card-title weatherTextTop black"><strong><%= hour.temp_f %>°F</strong></h1>
-                <h4 class="card-text weatherTextTopCon black"><strong><%= hour.condition.text %></strong></h4>
+                <h4 class="card-text weatherTextTopCon black"><strong><%= hour.condition.text %></strong> <span class='location' style="float:right;"><strong><%= weather.location.name %>, <%= weather.location.region %></strong></span></h4>
             </div>
         </div>
     </div>
@@ -746,6 +746,7 @@
         </div>
     </div>
 </div>
+<div class="d-grid gap-2 col-3 mx-auto"><button type="button" class="btn btn-outline-dark favButton"><a href="/favorites"><span class="link">Favorite</span></a></button></div>
 
 
 
