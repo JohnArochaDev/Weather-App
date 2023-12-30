@@ -28,7 +28,7 @@ let long = -85.45500539999999
 //     res.render('index', { title: 'Express'})
 // })
 
-
+const obj = [1, '-']
 
 const newYork = '40.7127753,-74.0059728'
 const losAngeles = '34.0549076,-118.242643'
@@ -224,6 +224,71 @@ router.get('/weather/daily', (req, res) => {
             console.log(hour8.time)
             console.log(hour9.time)
             // console.log('7 8 9 not working: \n', hourTime)
+            //TESTING
+            let newString = null;
+            let month;
+            let dayco = forecast1.date[8] += forecast1.date[9];
+            let dayConversion = parseInt(dayco);
+            let monco = forecast1.date[5] += forecast1.date[6];
+            let monthConversion = monco.toString();
+
+            if (monthConversion.indexOf("-") >= 0) {
+                newString = monthConversion.replace("-", "");
+            }
+
+            if (newString) {
+                if (newString === 1) {
+                    month = "January";
+                } else if (newString === 2) {
+                    month = "February";
+                } else if (newString === 3) {
+                    month = "March";
+                } else if (newString === 4) {
+                    month = "April";
+                } else if (newString === 5) {
+                    month = "May";
+                } else if (newString === 6) {
+                    month = "June";
+                } else if (newString === 7) {
+                    month = "July";
+                } else if (newString === 8) {
+                    month = "August";
+                } else if (newString === 9) {
+                    month = "September";
+                } else if (newString === 10) {
+                    month = "October";
+                } else if (newString === 11) {
+                    month = "November";
+                } else {
+                    month = "December";
+                }
+            } else if (monthConversion === 1) {
+                month = "January";
+            } else if (monthConversion === 2) {
+                month = "February";
+            } else if (monthConversion === 3) {
+                month = "March";
+            } else if (monthConversion === 4) {
+                month = "April";
+            } else if (monthConversion === 5) {
+                month = "May";
+            } else if (monthConversion === 6) {
+                month = "June";
+            } else if (monthConversion === 7) {
+                month = "July";
+            } else if (monthConversion === 8) {
+                month = "August";
+            } else if (monthConversion === 9) {
+                month = "September";
+            } else if (monthConversion === 10) {
+                month = "October";
+            } else if (monthConversion === 11) {
+                month = "November";
+            } else {
+                month = "December";
+            }
+            
+            console.log('This is the month: \n', month)
             //TESTING
             res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, forecast1, forecast2, forecast3})
         })
