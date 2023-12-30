@@ -300,53 +300,6 @@
                                                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                         <% } %>
                                     </div>
-                                </div>
-
-                                <div class="row justify-content-around">
-                                    <div class="col col-3 middleBorder">
-                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour4.temp_f %>°F</strong></h5>
-                                    </div>
-
-                                    <div class="col col-3">
-                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour5.temp_f %>°F</strong></h5>
-                                    </div>
-                                </div>
-
-                                <div class="row justify-content-around">
-
-                                    <!-- here -->
-
-                                    <div class="col col-3 middleBorder">
-                                        <h7 class="card-text weatherText blackSmall"><%= hour4.condition.text %></h7>
-                                    </div>
-
-                                    <div class="col col-3">
-                                        <h7 class="card-text weatherText blackSmall"><%= hour5.condition.text %></h7>
-                                    </div>
-                                </div>
-
-                                <div class="row justify-content-around">
-
-                                    <!-- here -->
-
-                                    <div class="col col-3 middleBorder">
-                                        <% let timeConversion5 = hour5.time[11] + hour5.time[12];   timeConversion5 = (timeConversion5 % 12) || 12;  let finalTime5 = timeConversion5; %>
-                                        <h7><%= finalTime5 + hour5.time[13] + hour5.time[14] + hour5.time[15]%></h7>
-                                    </div>
-
-                                    <div class="col col-3">
-                                        <% let timeConversion6 =  hour6.time[11] + hour6.time[12];   timeConversion6 = (timeConversion6 % 12) || 12;  let finalTime6 = timeConversion6; %>
-                                        <h7><%= finalTime6 + hour6.time[13] + hour6.time[14] + hour6.time[15]%></h7>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- Carosel 3 -->
-                        <div class="carousel-item">
-                            <div class="container grid text-center" style="--bs-columns: 3;" data-bs-interval="10000">
-                                <div class="row justify-content-around">
                                     <!-- seventh icon -->
                                     <div class="col col-3">
                                         <% if (hour6.condition.text == 'Clear' ||hour6.condition.text == 'Sunny') { %>
@@ -401,6 +354,74 @@
                                                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                         <% } %>
                                     </div>
+                                </div>
+                                    <!-- fifth temp -->
+                                <div class="row justify-content-around">
+                                    <div class="col col-3 middleBorder">
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour4.temp_f %>°F</strong></h5>
+                                    </div>
+                                    <!-- sixth temp -->
+                                    <div class="col col-3">
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour5.temp_f %>°F</strong></h5>
+                                    </div>
+                                    <!-- seventh temp -->
+                                    <div class="col col-3">
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour6.temp_f %>°F</strong></h5>
+                                    </div>
+                                    <!-- eighth temp -->
+                                    <div class="col col-3 middleBorder">
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour7.temp_f %>°F</strong></h5>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-around">
+                                    <!-- fifth condition -->
+                                    <div class="col col-3 middleBorder">
+                                        <h7 class="card-text weatherText blackSmall"><%= hour4.condition.text %></h7>
+                                    </div>
+                                    <!-- sixth condition -->
+                                    <div class="col col-3">
+                                        <h7 class="card-text weatherText blackSmall"><%= hour5.condition.text %></h7>
+                                    </div>
+                                    <!-- seventh condition -->
+                                    <div class="col col-3">
+                                        <h7 class="card-text weatherText blackSmall"><%= hour6.condition.text %></h7>
+                                    </div>
+                                    <!-- eigth condition -->
+                                    <div class="col col-3 middleBorder">
+                                        <h7 class="card-text weatherText blackSmall"><%= hour7.condition.text %></h7>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-around">
+                                    <!-- fifth time -->
+                                    <div class="col col-3 middleBorder">
+                                        <% let timeConversion5 = hour5.time[11] + hour5.time[12];   timeConversion5 = (timeConversion5 % 12) || 12;  let finalTime5 = timeConversion5; %>
+                                        <h7><%= finalTime5 + hour5.time[13] + hour5.time[14] + hour5.time[15]%></h7>
+                                    </div>
+                                    <!-- sixth time -->
+                                    <div class="col col-3">
+                                        <% let timeConversion6 =  hour6.time[11] + hour6.time[12];   timeConversion6 = (timeConversion6 % 12) || 12;  let finalTime6 = timeConversion6; %>
+                                        <h7><%= finalTime6 + hour6.time[13] + hour6.time[14] + hour6.time[15]%></h7>
+                                    </div>
+                                    <!-- seventh time -->
+                                    <div class="col col-3">
+                                        <% let timeConversion7 =  hour7.time[11] + hour7.time[12];   timeConversion7 = (timeConversion7 % 12) || 12;  let finalTime7 = timeConversion7; %>
+                                        <h7><%= finalTime7 + hour7.time[13] + hour7.time[14] + hour7.time[15]%></h7>
+                                    </div>
+                                    <!-- eighth time -->
+                                    <div class="col col-3 middleBorder">
+                                        <% let timeConversion8 = hour8.time[11] + hour8.time[12];   timeConversion8 = (timeConversion8 % 12) || 12;  let finalTime8 = timeConversion8; %>
+                                        <h7><%= finalTime8 + hour8.time[13] + hour8.time[14] + hour8.time[15]%></h7>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Carosel 3 -->
+                        <div class="carousel-item">
+                            <div class="container grid text-center" style="--bs-columns: 3;" data-bs-interval="10000">
+                                <div class="row justify-content-around">
                                     <!-- nineth icon -->
                                     <div class="col col-3">
                                         <% if (hour8.condition.text == 'Clear' ||hour8.condition.text == 'Sunny') { %>
@@ -428,51 +449,40 @@
                                                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                         <% } %>
                                     </div>
+                                    <!-- tenth icon -->
+                                    <!-- eleventh icon -->
+                                    <!-- twelth icon -->
                                 </div>
 
                                 <div class="row justify-content-around">
-                                    <div class="col col-3">
-                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour6.temp_f %>°F</strong></h5>
-                                    </div>
-
-                                    <div class="col col-3 middleBorder">
-                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour7.temp_f %>°F</strong></h5>
-                                    </div>
-
+                                    <!-- nineth temp -->
                                     <div class="col col-3">
                                         <h7 class="card-title weatherText2 blackSmall"><strong><%= hour8.temp_f %>°F</strong></h5>
                                     </div>
+                                    <!-- tenth temp -->
+                                    <!-- eleventh temp -->
+                                    <!-- twelth temp -->
                                 </div>
 
                                 <div class="row justify-content-around">
-                                    <div class="col col-3">
-                                        <h7 class="card-text weatherText blackSmall"><%= hour6.condition.text %></h7>
-                                    </div>
-
-                                    <div class="col col-3 middleBorder">
-                                        <h7 class="card-text weatherText blackSmall"><%= hour7.condition.text %></h7>
-                                    </div>
-                                    
+                                    <!-- nineth condition -->
                                     <div class="col col-3">
                                         <h7 class="card-text weatherText blackSmall"><%= hour8.condition.text %></h7>
                                     </div>
+                                    <!-- tenth condition -->
+                                    <!-- eleventh condition -->
+                                    <!-- twelth condition -->
                                 </div>
 
                                 <div class="row justify-content-around">
-                                    <div class="col col-3">
-                                        <% let timeConversion7 =  hour7.time[11] + hour7.time[12];   timeConversion7 = (timeConversion7 % 12) || 12;  let finalTime7 = timeConversion7; %>
-                                        <h7><%= finalTime7 + hour7.time[13] + hour7.time[14] + hour7.time[15]%></h7>
-                                    </div>
-
-                                    <div class="col col-3 middleBorder">
-                                        <% let timeConversion8 = hour8.time[11] + hour8.time[12];   timeConversion8 = (timeConversion8 % 12) || 12;  let finalTime8 = timeConversion8; %>
-                                        <h7><%= finalTime8 + hour8.time[13] + hour8.time[14] + hour8.time[15]%></h7>
-                                    </div>
-
+                                    <!-- nineth time -->
                                     <div class="col col-3">
                                         <% let timeConversion9 =  hour9.time[11] + hour9.time[12];   timeConversion9 = (timeConversion9 % 12) || 12;  let finalTime9 = timeConversion9; %>
                                         <h7><%= finalTime9 + hour9.time[13] + hour9.time[14] + hour9.time[15]%></h7>
                                     </div>
+                                    <!-- tenth time -->
+                                    <!-- eleventh time -->
+                                    <!-- twelth time -->
                                 </div>
                             </div>
                         </div>
