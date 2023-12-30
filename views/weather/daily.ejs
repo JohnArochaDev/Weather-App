@@ -1,10 +1,5 @@
 <%- include('../partial/header') %>
 
-
-
-
-
-
 <% let timeConversion = weather.location.localtime[11] + weather.location.localtime[12];   timeConversion = (timeConversion % 12) || 12;  let finalTime = timeConversion; %>
 
 <img src="../../public/images/background/gradient darker blue.jpg" class="bg">
@@ -49,8 +44,6 @@
             </div>
         </div>
     </div>
-
-
 <div class="column front" data-bs-theme="blue" style="background-color: #00000011;">
     <div class="row" >
         <nav class="dropdown">
@@ -61,15 +54,11 @@
         </nav>
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-                <!-- Col -->
-
-
                 <div id="carouselExample" class="carousel slide slider container">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="container grid text-center" style="--bs-columns: 3;" data-bs-interval="10000">
                                 <div class="row justify-content-around">
-
                                     <!-- first icon -->
                                     <div class="col col-3">
                                         <% if (hour1.condition.text == 'Clear' ||hour1.condition.text == 'Sunny') { %>
@@ -97,7 +86,6 @@
                                             <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                     <% } %>
                                     </div>
-
                                     <!-- second icon -->
                                     <div class="col col-3">
                                         <% if (hour2.condition.text == 'Clear' ||hour2.condition.text == 'Sunny') { %>
@@ -125,7 +113,6 @@
                                                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                         <% } %>
                                     </div>
-
                                     <!-- third icon -->
                                     <div class="col col-3">
                                         <% if (hour3.condition.text == 'Clear' ||hour3.condition.text == 'Sunny') { %>
@@ -181,7 +168,6 @@
                                     <% } %>
                                     </div>
                                 </div>
-
                                 <div class="row justify-content-around">
                                     <!-- first temp -->
                                     <div class="col col-3">
@@ -200,7 +186,6 @@
                                         <h7 class="card-title weatherText2 blackSmall"><strong><%= hour4.temp_f %>°F</strong></h5>
                                     </div>
                                 </div>
-
                                 <div class="row justify-content-around">
                                     <!-- first condition -->
                                     <div class="col col-3">
@@ -219,7 +204,6 @@
                                         <h7 class="card-text weatherText blackSmall"><%= hour3.condition.text %></h7>
                                     </div>
                                 </div>
-
                                 <div class="row justify-content-around">
                                     <!-- first time -->
                                     <div class="col col-3 weatherText3">
@@ -244,8 +228,6 @@
                                 </div>
                             </div>
                         </div>
-
-
                         <!-- Carosel 2 -->
                         <div class="carousel-item">
                             <div class="container grid text-center" style="--bs-columns: 3;" data-bs-interval="10000">
@@ -395,7 +377,6 @@
                                         <h7 class="card-text weatherText blackSmall"><%= hour7.condition.text %></h7>
                                     </div>
                                 </div>
-
                                 <div class="row justify-content-around">
                                     <!-- fifth time -->
                                     <div class="col col-3 weatherText3">
@@ -420,8 +401,6 @@
                                 </div>
                             </div>
                         </div>
-
-
                         <!-- Carosel 3 -->
                         <div class="carousel-item">
                             <div class="container grid text-center" style="--bs-columns: 3;" data-bs-interval="10000">
@@ -535,7 +514,6 @@
                                         <% } %>
                                     </div>
                                 </div>
-
                                 <div class="row justify-content-around">
                                     <!-- nineth temp -->
                                     <div class="col col-3">
@@ -554,7 +532,6 @@
                                         <h7 class="card-title weatherText2 blackSmall"><strong><%= hour11.temp_f %>°F</strong></h5>
                                     </div>
                                 </div>
-
                                 <div class="row justify-content-around">
                                     <!-- nineth condition -->
                                     <div class="col col-3">
@@ -573,7 +550,6 @@
                                         <h7 class="card-text weatherText blackSmall"><%= hour11.condition.text %></h7>
                                     </div>
                                 </div>
-
                                 <div class="row justify-content-around">
                                     <!-- nineth time -->
                                     <div class="col col-3 weatherText3">
@@ -599,7 +575,6 @@
                             </div>
                         </div>
                     </div>
-
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
@@ -609,12 +584,8 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-
-
             </div>
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-
-
                 <div id="carouselExample" class="carousel slide slider container" >
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -647,7 +618,6 @@
                                             <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                     <% } %>
                                     </div>
-
                                     <!-- second icon -->
                                     <div class="col col-3">
                                         <% if (forecast2.day.condition.text == 'Clear' ||forecast2.day.condition.text == 'Sunny') { %>
@@ -718,7 +688,6 @@
                                         <h7 class="card-title weatherText2 blackSmall"><strong><%= forecast3.day.maxtemp_f %>°F</strong></h7>
                                     </div>
                                 </div>
-
                                 <div class="row justify-content-around">
                                     <!-- first lowtemp -->
                                     <div class="col col-3">
@@ -763,15 +732,6 @@
                                 </div>
                             </div>
                         </div>
-
-
-                        <!-- Carosel 2 -->
-                        
-
-
-                        <!-- Carosel 3 -->
-                        
-
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
@@ -781,12 +741,7 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-
-
             </div>
-
-
-
             </div>
         </div>
     </div>
