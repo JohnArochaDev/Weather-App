@@ -58,7 +58,7 @@ map.controls[google.maps.ControlPosition.TOP_LEFT].push(submitButton);
 map.controls[google.maps.ControlPosition.TOP_LEFT].push(clearButton);
 // map.controls[google.maps.ControlPosition.LEFT_TOP].push(instructionsElement);
 //                                                                                               This was the instructions, it was blocking the view^^^^^^
-map.controls[google.maps.ControlPosition.LEFT_TOP].push(responseDiv);
+// map.controls[google.maps.ControlPosition.LEFT_TOP].push(responseDiv);
 //                                                                                                  THIS WAS THE WINDOW THAT POPPS UP WITH THE OBJECT!!!!!^^^^^^
 marker = new google.maps.Marker({
 map,
