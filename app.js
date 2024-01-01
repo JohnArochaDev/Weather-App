@@ -3,8 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+// Just added this
+require('dotenv').config()
+const session = require('express-session')
+const middleware = require('./utils/middleware')
 
 var weatherRouter = require('./controllers/weatherControllers');
+var userRouter = require('./controllers/userControllers');
 
 
 var app = express();
@@ -13,6 +18,8 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+middleware(app)
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -26,6 +33,8 @@ app.use('/public', express.static('public'));
 
 
 app.use('/', weatherRouter);
+app.use('/users', userRouter)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
