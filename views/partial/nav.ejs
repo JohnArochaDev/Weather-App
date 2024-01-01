@@ -6,6 +6,7 @@
             <img src="../../public/images/nav/day.svg" alt="Bootstrap" width="50vh" >
             <strong>Weather</strong>
         </a>
+        <% if (loggedIn) {%>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -14,19 +15,41 @@
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Link</a>
-                <ul class="dropdown-menu">
-                    <a href="/weather/daily" class="nav-link">Daily</a>
-                    <a href="/weather/weekly" class="nav-link">Weekly</a>
-                    <li><hr class="dropdown-divider"></li>
-                    <a href="/users/login" class="nav-link">Log In</a>
-                </ul>
-            </li>
+            <div class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/weather/daily"><h7>Forecast</h7></a>
+            </div>
             </ul>
             <div class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/users/login"><h7><strong>Login</strong></h7></a>
+                <a class="nav-link active" aria-current="page" href="/users/logout"><h7>Log Out</h7></a>
             </div>
         </div>
+
+
+        <%} else {%>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Link</a>
+                    <ul class="dropdown-menu">
+                        <a href="/weather/daily" class="nav-link">Daily</a>
+                        <a href="/weather/weekly" class="nav-link">Weekly</a>
+                        <li><hr class="dropdown-divider"></li>
+                        <a href="/users/signup" class="nav-link">Sign Up</a>
+                    </ul>
+                </li>
+                </ul>
+                <div class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/users/login"><h7><strong>Login</strong></h7></a>
+                </div>
+            </div>
+            <% } %>
     </div>
 </nav>

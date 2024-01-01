@@ -48,7 +48,7 @@ let homeTemp = []
 let homeCondition = []
 
 router.get('/', async function(req, res, next) {
-
+    const { username, loggedIn, userId } = req.session
     await axios(`${weatherURL}${newYork}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
     // render the results on a 'show' page: aka 'detail' page
     .then(apiRes => {
@@ -168,7 +168,7 @@ router.get('/', async function(req, res, next) {
         let condition = weather.current.condition.text
         homeCondition.push(condition)
         // console.log('10 This is the Home Name: \n', homelocName,'10 This is the Temp Name: \n', homeTemp,'10 This is the Cindition Name: \n', homeCondition)
-        res.render('index', { title: 'Express', weather, homelocName, homeTemp, homeCondition})
+        res.render('index', { title: 'Express', weather, homelocName, homeTemp, homeCondition, username, loggedIn, userId})
     })
         .catch(err => {
             console.log('error', err)
@@ -187,6 +187,7 @@ router.get('/', async function(req, res, next) {
 
 // This will be for the hourly forcasts with Lattitude and Longitude data !!!!!!!!!!!!!!!!!!!!!!!
 router.get('/weather/daily', (req, res) => {
+    const { username, loggedIn, userId } = req.session
     axios(`${weatherURL}${lat},${long}&days=3&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
         // render the results on a 'show' page: aka 'detail' page
         .then(apiRes => {
@@ -410,7 +411,7 @@ router.get('/weather/daily', (req, res) => {
                 month2 = "Dec";
             }
             console.log(dayConversion2)
-            res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, forecast1, forecast2, forecast3, month1, month2, dayConversion1, dayConversion2})
+            res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, forecast1, forecast2, forecast3, month1, month2, dayConversion1, dayConversion2, username, loggedIn, userId})
         })
         .catch(err => {
             console.log('error', err)
@@ -420,7 +421,7 @@ router.get('/weather/daily', (req, res) => {
 
 
 router.get('/', async function(req, res, next) {
-
+    const { username, loggedIn, userId } = req.session
     await axios(`${weatherURL}${newYork}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
     // render the results on a 'show' page: aka 'detail' page
     .then(apiRes => {
@@ -540,7 +541,7 @@ router.get('/', async function(req, res, next) {
         let condition = weather.current.condition.text
         homeCondition.push(condition)
         // console.log('10 This is the Home Name: \n', homelocName,'10 This is the Temp Name: \n', homeTemp,'10 This is the Cindition Name: \n', homeCondition)
-        res.render('index', { title: 'Express', weather, homelocName, homeTemp, homeCondition})
+        res.render('index', { title: 'Express', weather, homelocName, homeTemp, homeCondition, username, loggedIn, userId})
     })
         .catch(err => {
             console.log('error', err)
@@ -552,7 +553,7 @@ router.get('/', async function(req, res, next) {
 
 // This will be for the hourly forcasts with a ZIP CODE INSTEAD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 router.get('/weather/daily/:zip', (req, res) => {
-
+    const { username, loggedIn, userId } = req.session
     const zipcode  = req.params.zip
 
     axios(`${weatherURL}${zipcode}&days=3&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
@@ -778,7 +779,7 @@ router.get('/weather/daily/:zip', (req, res) => {
                 month2 = "Dec";
             }
             console.log(dayConversion2)
-            res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, forecast1, forecast2, forecast3, month1, month2, dayConversion1, dayConversion2})
+            res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, forecast1, forecast2, forecast3, month1, month2, dayConversion1, dayConversion2, username, loggedIn, userId})
         })
         .catch(err => {
             console.log('error', err)
