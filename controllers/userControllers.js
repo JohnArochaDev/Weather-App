@@ -17,9 +17,9 @@ const router = express.Router()
 
 router.get('/signup', (req, res) => {
     const { username, loggedIn, userId } = req.session
-
     res.render('users/signup', { username, loggedIn, userId })
 })
+
 router.post('/signup', async (req, res) => {
     const { username, loggedIn, userId } = req.session
     const newUser = req.body
@@ -37,13 +37,11 @@ router.post('/signup', async (req, res) => {
         })
 })
 
-
 router.get('/login', (req, res) => {
     const { username, loggedIn, userId } = req.session
 
     res.render('users/login', { username, loggedIn, userId })
 })
-
 
 router.post('/login', async (req, res) => {
     const { username, password } = req.body
@@ -52,7 +50,6 @@ router.post('/login', async (req, res) => {
             // if the user exists
             if (user) {
                 const result = await bcrypt.compare(password, user.password)
-
                 if (result) {
                     req.session.username = username
                     req.session.loggedIn = true
@@ -61,7 +58,6 @@ router.post('/login', async (req, res) => {
                 } else {
                     res.redirect(`/error?error=something%20wrong%20with%20credentials`)
                 }
-
             } else {
                 res.redirect(`/error`)
             }
@@ -71,7 +67,6 @@ router.post('/login', async (req, res) => {
             res.redirect(`/error?error=${err}`)
         })
 })
-
 
 router.get('/logout', (req, res) => {
     const { username, loggedIn, userId } = req.session

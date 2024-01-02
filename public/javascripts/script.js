@@ -3,12 +3,10 @@ let marker;
 let geocoder;
 let responseDiv;
 let response;
-
 let data = [];
 let lat;
 let long;
 let latlong;
-
 let coords = document.getElementById("hidden")
 
 async function initMap() {

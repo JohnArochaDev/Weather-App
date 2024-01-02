@@ -16,19 +16,11 @@ const router = express.Router();
 ////////////////////////
 let lat = 42.3761504
 let long = -85.45500539999999
-
 // TEST COORDS     42.3761504,-85.45500539999999
 
 //////////////////////////////
 ///  Routes + Controllers ////
 //////////////////////////////
-
-/* GET home page. */
-// router.get('/', function(req, res, next) {
-//     res.render('index', { title: 'Express'})
-// })
-
-const obj = [1, '-']
 
 const newYork = '40.7127753,-74.0059728'
 const losAngeles = '34.0549076,-118.242643'
@@ -40,8 +32,6 @@ const sanAntonio = '29.4251905,-98.4945922'
 const sanDiego = '32.715738,-117.1610838'
 const dallas = '32.7766642,-96.79698789999999'
 const sanJose = '37.33874,-121.8852525'
-
-
 
 let homelocName = []
 let homeTemp = []
@@ -176,7 +166,6 @@ router.get('/', async function(req, res, next) {
             res.redirect(`/error?error=${err}`)
     })
 })
-
 
 // This will be for the hourly forcasts with Lattitude and Longitude data !!!!!!!!!!!!!!!!!!!!!!!
 router.get('/weather/daily/:coords', (req, res) => {
@@ -418,7 +407,6 @@ router.get('/weather/daily/:coords', (req, res) => {
 router.get('/weather/daily/:zip', (req, res) => {
     const { username, loggedIn, userId } = req.session
     const zipcode  = req.params.zip
-
     axios(`${weatherURL}${zipcode}&days=3&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
         // render the results on a 'show' page: aka 'detail' page
         .then(apiRes => {
@@ -434,7 +422,6 @@ router.get('/weather/daily/:zip', (req, res) => {
             let localTime = locTime[11] + locTime[12]
             let hourTime = hours.splice(localTime)
             let idx = 0;
-
             while (hourTime.length < 12) {
                 hourTime.push(forecast2.hour[idx])
                 idx++
