@@ -13,7 +13,7 @@ const router = express.Router()
 //////////////////////////////
 //// Routes + Controllers ////
 //////////////////////////////
-// GET -> SignUp - /users/signup
+
 router.get('/signup', (req, res) => {
     const { username, loggedIn, userId } = req.session
 
@@ -36,14 +36,14 @@ router.post('/signup', async (req, res) => {
         })
 })
 
-// GET -> Login -> /users/login
+
 router.get('/login', (req, res) => {
     const { username, loggedIn, userId } = req.session
 
     res.render('users/login', { username, loggedIn, userId })
 })
 
-// POST -> Login
+
 router.post('/login', async (req, res) => {
     const { username, password } = req.body
     User.findOne({ username })
@@ -71,17 +71,23 @@ router.post('/login', async (req, res) => {
         })
 })
 
-// GET -> Logout - /users/logout
+
 router.get('/logout', (req, res) => {
     const { username, loggedIn, userId } = req.session
 
     res.render('users/logout', { username, loggedIn, userId })
 })
-// DELETE -> Logout
+
 router.delete('/logout', (req, res) => {
     req.session.destroy(() => {
         res.redirect('/')
     })
+})
+
+router.get('/favorites', (req, res) => {
+    const { username, loggedIn, userId } = req.session
+
+    res.render('users/favorites', { username, loggedIn, userId })
 })
 
 ///////////////////////
