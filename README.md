@@ -1,5 +1,5 @@
-### Pokédex
-A Pokedéx is an electronic device created and designed to catalog and provide information regarding the various species of Pokémon featured in the Pokémon series.
+### Weather
+This website will allow you to view the current weather, as well as the forcasted weather anywhere on earth.
 
 
 ## User Story
@@ -15,12 +15,12 @@ As a user, I want the ability to...
   - Display a 7 day forcast and a current forcast
 
 ## Wireframe
-![alt text](Public/images/Wireframe.png)
+![alt text](public/images/Wireframe.png)
 
 
 
 
 ## ERD
 
-![alt text](Public/images/ERD.png)
+![alt text](public/images/ERD.png)
 
