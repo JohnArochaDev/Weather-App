@@ -1,16 +1,27 @@
 <%- include('../partial/header') %>
 
-    <div class="container-sm">
+    <img src="../public/images/home/space3.jpg" class="card-img bg1" size="auto">
+
+
+    <div class="container mt-4">
         <form action="/users/signup" method="POST">
             <fieldset>
-                <legend>Welcome, Please Create an Account</legend>
-                <label class="form-label">Username:</label>
-                <input type="text" class="form-control" name="username" placeholder="username" required>
-                <label class="form-label">Password:</label>
-                <input type="password" class="form-control" name="password" placeholder="password" required>
+                <legend>Create Account</legend>
+                <div class="form-floating mb-3 w-50">
+                    <input class="form-control" id="floatingInput" placeholder="username" name="username" required>
+                    <label class="form-floating mb-3 w-50">Username:</label>
+                </div>
+                <div class="form-floating w-50">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" required>
+                    <label class="form-floating mb-3">Password:</label>
+                </div>
             </fieldset>
             <input type="submit" class="btn btn-success mt-3" value="Create Account">
         </form>
     </div>
+
+<div>
+    <img src="../../public/images/background/gradient multicolor.jpg" class="bg">
+</div>
 
 <%- include('../partial/footer') %>

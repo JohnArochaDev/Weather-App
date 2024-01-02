@@ -1,41 +1,28 @@
 <%- include('../partial/header') %>
 
-<div class="col">
-    <img src="../public/images/home/space3.jpg" class="card-img" alt="..." size="auto">
-    <div class="row">
-        <div class="card-img-overlay">
-        </div>
-    </div>
-</div>
+    <img src="../public/images/home/space3.jpg" class="card-img bg1" size="auto">
 
 
     <div class="container mt-4">
         <form action="/users/login" method="POST">
             <fieldset>
                 <legend>Welcome back!</legend>
-
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Email address</label>
+                <div class="form-floating mb-3 w-50">
+                    <input class="form-control" id="floatingInput" placeholder="username" name="username" required>
+                    <label class="form-floating mb-3 w-50">Username:</label>
                 </div>
-                <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Password</label>
+                <div class="form-floating w-50">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" required>
+                    <label class="form-floating mb-3">Password:</label>
                 </div>
-
-                <input type="text" class="form-control" name="username" placeholder="username" required>
-                <label class="form-floating mb-3">Username:</label>
-
-                <label class="form-floating mb-3">Password:</label>
-                <input type="password" class="form-control" name="password" placeholder="password" required>
-
             </fieldset>
             <input type="submit" class="btn btn-success mt-3" value="Log In">
+            <span style="float:right;"><a class="btn btn-primary mt-3" href="/users/signup">Sign Up</a></span>
         </form>
     </div>
 
 <div>
-        <img src="../../public/images/background/gradient multicolor.jpg" class="bg">
+    <img src="../../public/images/background/gradient multicolor.jpg" class="bg">
 </div>
 
 <%- include('../partial/footer') %>
