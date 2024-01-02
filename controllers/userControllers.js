@@ -4,6 +4,7 @@
 const express = require('express')
 const User = require('../models/user')
 const bcrypt = require('bcryptjs')
+const Favorite = require('../models/favorite')
 
 ///////////////////////
 //// Create Router ////
@@ -84,10 +85,9 @@ router.delete('/logout', (req, res) => {
     })
 })
 
-router.get('/favorites', (req, res) => {
+router.get('/favorites/:user', (req, res) => {
     const { username, loggedIn, userId } = req.session
-
-    res.render('users/favorites', { username, loggedIn, userId })
+    res.render('users/favorites', { username, loggedIn, userId,})
 })
 
 ///////////////////////

@@ -49,6 +49,7 @@ let homeCondition = []
 
 router.get('/', async function(req, res, next) {
     const { username, loggedIn, userId } = req.session
+    console.log(userId)
     await axios(`${weatherURL}${newYork}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
     // render the results on a 'show' page: aka 'detail' page
     .then(apiRes => {
