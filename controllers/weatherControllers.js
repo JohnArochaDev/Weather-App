@@ -168,7 +168,7 @@ router.get('/', async function(req, res, next) {
         let condition = weather.current.condition.text
         homeCondition.push(condition)
         // console.log('10 This is the Home Name: \n', homelocName,'10 This is the Temp Name: \n', homeTemp,'10 This is the Cindition Name: \n', homeCondition)
-        res.render('index', { title: 'Express', weather, homelocName, homeTemp, homeCondition, username, loggedIn, userId})
+        res.render('index', { title: 'Express', weather, homelocName, homeTemp, homeCondition, username, loggedIn, userId, newYork, losAngeles, chicago, houston, phoenix, philadelphia, sanAntonio, sanDiego, dallas, sanJose})
     })
         .catch(err => {
             console.log('error', err)

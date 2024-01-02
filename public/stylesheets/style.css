@@ -259,6 +259,7 @@ td {
   background-color: rgb(255,255,255); 
   color: black; 
   background-clip: padding-box; 
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.411) inset;
 }
 
 .search {
@@ -363,4 +364,9 @@ td {
 .link {
   color: black;
   text-decoration: underline solid black;
+}
+
+.noTag {
+  text-decoration: none;
+  color: black;
 }

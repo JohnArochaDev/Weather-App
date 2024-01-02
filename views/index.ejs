@@ -53,13 +53,16 @@
             <% } else if (homeCondition[0] == 'Blizzard' || homeCondition[0] == 'Blowing snow' || homeCondition[0] == 'Heavy snow' || homeCondition[0] == 'Patchy light snow with thunder' || homeCondition[0] == 'Moderate or heavy snow showers' || homeCondition[0] == 'Moderate or heavy snow with thunder') {%>
                 <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
                 <!-- PARTLY CLOUDY -->
-                <% } else if (homeCondition[0] == 'Partly cloudy') { %>
+            <% } else if (homeCondition[0] == 'Partly cloudy') { %>
                     <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
                 <!-- WINDY -->
             <% } else {%>
                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-        <% } %><%= homelocName[0] %> <span style="float:right;"><%= homeTemp[0] %>°F</span></td>
-                <td><% if (homeCondition[1] == 'Clear' ||homeCondition[1] == 'Sunny') { %>
+        <% } %><a class="noTag" href="weather/daily/<%= newYork %>"><%= homelocName[0] %></a>  <span style="float:right;"><%= homeTemp[0] %>°F</span></td>
+
+
+            </td>
+            <td><% if (homeCondition[1] == 'Clear' ||homeCondition[1] == 'Sunny') { %>
                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
                 <!-- CLOUDY -->
             <% } else if (homeCondition[1] == 'Cloudy' || homeCondition[1] == 'Overcast') {%>
@@ -82,33 +85,36 @@
                 <!-- WINDY -->
             <% } else {%>
                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-        <% } %><%= homelocName[1] %>  <span style="float:right;"><%= homeTemp[1] %>°F</span></td>
+        <% } %><a class="noTag" href="weather/daily/<%= losAngeles %>"><%= homelocName[1] %></a>  <span style="float:right;"><%= homeTemp[1] %>°F</span></td>
+        
             </tr>
             <tr>
                 <td><% if (homeCondition[2] == 'Clear' ||homeCondition[2] == 'Sunny') { %>
                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
                 <!-- CLOUDY -->
-            <% } else if (homeCondition[2] == 'Cloudy' || homeCondition[2] == 'Overcast') {%>
+                <% } else if (homeCondition[2] == 'Cloudy' || homeCondition[2] == 'Overcast') {%>
                 <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconTable">
                 <!-- RAIN -->
-            <% } else if (homeCondition[2] == 'Mist' || homeCondition[2] == 'Light drizzle' || homeCondition[2] == 'Moderate or heavy rain shower'|| homeCondition[2] == 'Patchy light drizzle' || homeCondition[2] == 'Light rain' || homeCondition[2] == 'Patchy rain possible' || homeCondition[2] == 'Patchy light rain' || homeCondition[2] == 'Moderate rain' || homeCondition[2] == 'Heavy rain' || homeCondition[2] == 'Light rain shower' || homeCondition[2] == 'Moderate rain at times' || homeCondition[2] == 'Heavy rain at times') {%>
+                <% } else if (homeCondition[2] == 'Mist' || homeCondition[2] == 'Light drizzle' || homeCondition[2] == 'Moderate or heavy rain shower'|| homeCondition[2] == 'Patchy light drizzle' || homeCondition[2] == 'Light rain' || homeCondition[2] == 'Patchy rain possible' || homeCondition[2] == 'Patchy light rain' || homeCondition[2] == 'Moderate rain' || homeCondition[2] == 'Heavy rain' || homeCondition[2] == 'Light rain shower' || homeCondition[2] == 'Moderate rain at times' || homeCondition[2] == 'Heavy rain at times') {%>
                 <img src="../../public/images/icons/rain.png" alt="" class="weatherIconTable">
                 <!-- THUNDERSTORM -->
-            <% } else if (homeCondition[2] == 'Patchy light rain with thunder' || homeCondition[2] == 'Moderate or heavy rain with thunder' || homeCondition[2] == 'Torrential rain shower' || homeCondition[2] == 'Thundery outbreaks possible') {%>
+                <% } else if (homeCondition[2] == 'Patchy light rain with thunder' || homeCondition[2] == 'Moderate or heavy rain with thunder' || homeCondition[2] == 'Torrential rain shower' || homeCondition[2] == 'Thundery outbreaks possible') {%>
                 <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconTable">
                 <!-- SNOW -->
-            <% } else if (homeCondition[2] == 'Light snow' || homeCondition[2] == 'Light snow showers' || homeCondition[2] == 'Patchy snow possible' || homeCondition[2] == 'Patchy sleet possible' || homeCondition[2] == 'Freezing drizzle' || homeCondition[2] == 'Moderate or heavy sleet' || homeCondition[2] == 'Patchy light snow' || homeCondition[2] == 'Patchy moderate snow' || homeCondition[2] == 'Light sleet showers' || homeCondition[2] == 'Moderate snow' || homeCondition[2] == 'Light sleet' || homeCondition[2] == 'Heavy freezing drizzle' || homeCondition[2] == 'Patchy freezing drizzle possible' || homeCondition[2] == 'Moderate or heavy sleet showers' || homeCondition[2] == 'Light showers of ice pellets' || homeCondition[2] == 'Moderate or heavy showers of ice pellets' || homeCondition[2] == 'Patchy freezing drizzle possible' || homeCondition[2] == 'Moderate or heavy freezing rain' || homeCondition[2] == 'Ice pellets' || homeCondition[2] == 'Patchy heavy snow' || homeCondition[2] == 'Light freezing rain') {%>
+                <% } else if (homeCondition[2] == 'Light snow' || homeCondition[2] == 'Light snow showers' || homeCondition[2] == 'Patchy snow possible' || homeCondition[2] == 'Patchy sleet possible' || homeCondition[2] == 'Freezing drizzle' || homeCondition[2] == 'Moderate or heavy sleet' || homeCondition[2] == 'Patchy light snow' || homeCondition[2] == 'Patchy moderate snow' || homeCondition[2] == 'Light sleet showers' || homeCondition[2] == 'Moderate snow' || homeCondition[2] == 'Light sleet' || homeCondition[2] == 'Heavy freezing drizzle' || homeCondition[2] == 'Patchy freezing drizzle possible' || homeCondition[2] == 'Moderate or heavy sleet showers' || homeCondition[2] == 'Light showers of ice pellets' || homeCondition[2] == 'Moderate or heavy showers of ice pellets' || homeCondition[2] == 'Patchy freezing drizzle possible' || homeCondition[2] == 'Moderate or heavy freezing rain' || homeCondition[2] == 'Ice pellets' || homeCondition[2] == 'Patchy heavy snow' || homeCondition[2] == 'Light freezing rain') {%>
                 <img src="../../public/images/icons/snow.png" alt="" class="weatherIconTable">
                 <!-- BLIZZARD -->
-            <% } else if (homeCondition[2] == 'Blizzard' || homeCondition[2] == 'Blowing snow' || homeCondition[2] == 'Heavy snow' || homeCondition[2] == 'Patchy light snow with thunder' || homeCondition[2] == 'Moderate or heavy snow showers' || homeCondition[2] == 'Moderate or heavy snow with thunder') {%>
+                <% } else if (homeCondition[2] == 'Blizzard' || homeCondition[2] == 'Blowing snow' || homeCondition[2] == 'Heavy snow' || homeCondition[2] == 'Patchy light snow with thunder' || homeCondition[2] == 'Moderate or heavy snow showers' || homeCondition[2] == 'Moderate or heavy snow with thunder') {%>
                 <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconTable">
                 <!-- PARTLY CLOUDY -->
                 <% } else if (homeCondition[2] == 'Partly cloudy') { %>
                     <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconTable">
                 <!-- WINDY -->
-            <% } else {%>
+                <% } else {%>
                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-        <% } %><%= homelocName[2] %> <span style="float:right;"><%= homeTemp[2] %>°F</span></td>
+        <% } %><a class="noTag" href="weather/daily/<%= chicago %>"><%= homelocName[2] %></a>  <span style="float:right;"><%= homeTemp[2] %>°F</span></td>
+
+
                 <td><% if (homeCondition[3] == 'Clear' ||homeCondition[3] == 'Sunny') { %>
                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
                 <!-- CLOUDY -->
@@ -132,7 +138,7 @@
                 <!-- WINDY -->
             <% } else {%>
                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-        <% } %><%= homelocName[3] %> <span style="float:right;"><%= homeTemp[3] %>°F</span></td>
+        <% } %><a class="noTag" href="weather/daily/<%= houston %>"><%= homelocName[3] %></a>  <span style="float:right;"><%= homeTemp[3] %>°F</span></td>
             </tr>
             <tr>
                 <td><% if (homeCondition[4] == 'Clear' ||homeCondition[4] == 'Sunny') { %>
@@ -158,7 +164,7 @@
                 <!-- WINDY -->
             <% } else {%>
                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-        <% } %><%= homelocName[4] %> <span style="float:right;"><%= homeTemp[4] %>°F</span></td>
+        <% } %><a class="noTag" href="weather/daily/<%= phoenix %>"><%= homelocName[4] %></a>  <span style="float:right;"><%= homeTemp[4] %>°F</span></td>
                 <td><% if (homeCondition[5] == 'Clear' ||homeCondition[5] == 'Sunny') { %>
                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
                 <!-- CLOUDY -->
@@ -182,7 +188,8 @@
                 <!-- WINDY -->
             <% } else {%>
                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-        <% } %><%= homelocName[5] %> <span style="float:right;"><%= homeTemp[5] %>°F</span></td>
+        <% } %><a class="noTag" href="weather/daily/<%= philadelphia %>"><%= homelocName[5] %></a>  <span style="float:right;"><%= homeTemp[5] %>°F</span></td>
+
             </tr>
             <tr>
                 <td><% if (homeCondition[6] == 'Clear' ||homeCondition[6] == 'Sunny') { %>
@@ -208,7 +215,8 @@
                 <!-- WINDY -->
             <% } else {%>
                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-        <% } %><%= homelocName[6] %> <span style="float:right;"><%= homeTemp[6] %>°F</span></td>
+        <% } %><a class="noTag" href="weather/daily/<%= sanAntonio %>"><%= homelocName[6] %></a>  <span style="float:right;"><%= homeTemp[6] %>°F</span></td>
+        
                 <td><% if (homeCondition[7] == 'Clear' ||homeCondition[7] == 'Sunny') { %>
                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
                 <!-- CLOUDY -->
@@ -232,7 +240,7 @@
                 <!-- WINDY -->
             <% } else {%>
                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-        <% } %><%= homelocName[7] %> <span style="float:right;"><%= homeTemp[7] %>°F</span></td>
+        <% } %><a class="noTag" href="weather/daily/<%= sanDiego %>"><%= homelocName[7] %></a>  <span style="float:right;"><%= homeTemp[7] %>°F</span></td>
             </tr>
             <tr>
                 <td><% if (homeCondition[8] == 'Clear' ||homeCondition[8] == 'Sunny') { %>
@@ -258,7 +266,8 @@
                 <!-- WINDY -->
             <% } else {%>
                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-        <% } %><%= homelocName[8] %> <span style="float:right;"><%= homeTemp[8] %>°F</span></td>
+        <% } %><a class="noTag" href="weather/daily/<%= dallas %>"><%= homelocName[8] %></a>  <span style="float:right;"><%= homeTemp[8] %>°F</span></td>
+
                 <td><% if (homeCondition[9] == 'Clear' ||homeCondition[9] == 'Sunny') { %>
                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconTable">
                 <!-- CLOUDY -->
@@ -282,7 +291,7 @@
                 <!-- WINDY -->
             <% } else {%>
                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconTable">
-        <% } %><%= homelocName[9] %> <span style="float:right;"><%= homeTemp[9] %>°F</span></td>
+        <% } %><a class="noTag" href="weather/daily/<%= sanJose %>"><%= homelocName[9] %></a>  <span style="float:right;"><%= homeTemp[9] %>°F</span></td>
             </tr>
         </table>
         </div>
