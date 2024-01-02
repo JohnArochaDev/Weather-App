@@ -1,16 +1,41 @@
 <%- include('../partial/header') %>
 
-    <div class="container-sm">
+<div class="col">
+    <img src="../public/images/home/space3.jpg" class="card-img" alt="..." size="auto">
+    <div class="row">
+        <div class="card-img-overlay">
+        </div>
+    </div>
+</div>
+
+
+    <div class="container mt-4">
         <form action="/users/login" method="POST">
             <fieldset>
-                <legend>Welcome back, please log in to continue</legend>
-                <label class="form-label">Username:</label>
+                <legend>Welcome back!</legend>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+
                 <input type="text" class="form-control" name="username" placeholder="username" required>
-                <label class="form-label">Password:</label>
+                <label class="form-floating mb-3">Username:</label>
+
+                <label class="form-floating mb-3">Password:</label>
                 <input type="password" class="form-control" name="password" placeholder="password" required>
+
             </fieldset>
             <input type="submit" class="btn btn-success mt-3" value="Log In">
         </form>
     </div>
+
+<div>
+        <img src="../../public/images/background/gradient multicolor.jpg" class="bg">
+</div>
 
 <%- include('../partial/footer') %>
