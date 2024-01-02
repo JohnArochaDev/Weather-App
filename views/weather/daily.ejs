@@ -748,7 +748,11 @@
         </div>
     </div>
 </div>
-<div class="d-grid gap-2 col-3 mx-auto"><button type="button" class="btn btn-outline-dark favButton"><a href="/favorites"><span class="link">Favorite</span></a></button></div>
+<% if (loggedIn) { %>
+        <div class="d-grid gap-2 col-3 mx-auto"><button type="button" class="btn btn-outline-dark favButton"><a href="/users/favorites/<%= userId %>"><span class="link">Favorite</span></a></button></div>
+    <% } else { %>
+        <div></div>
+    <% } %>
 
 
 
