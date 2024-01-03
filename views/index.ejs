@@ -4,9 +4,9 @@
     <img src="../public/images/home/space.jpg" class="card-img" alt="..." size="auto">
     <div class="row">
         <div class="card-img-overlay">
-            <form class="d-flex search container" role="search">
-                <input class="form-control me-2" type="search" placeholder="Zip code" aria-label="Search">
-                <a class="btn btn-outline btnBackground" href="weather/daily/<%=  %>">Search</a>
+            <form class="d-flex search container" action="weather/daily/zipcode">
+                <input name="zipcode" class="form-control me-2" type="search" placeholder="Zip code" aria-label="Search">
+                <button type="submit" class="btn btn-outline btnBackground">Search</button>
             </form>
         </div>
     </div>
