@@ -202,12 +202,6 @@ router.get('/weather/daily/zipcode', (req, res) => {
             let hour10 = hourTime[10]
             let hour11 = hourTime[11]
             let hour12 = hourTime[12]
-            //TESTING
-            // console.log(hour7.time)
-            // console.log(hour8.time)
-            // console.log(hour9.time)
-            // console.log('7 8 9 not working: \n', hourTime)
-            //FIRST
             let newString = null;
             let month;
             let dayco = forecast1.date[8] += forecast1.date[9];
@@ -218,179 +212,186 @@ router.get('/weather/daily/zipcode', (req, res) => {
                 newString = monthConversion.replace("-", "");
             }
             if (newString) {
-                if (newString === 1) {
+                console.log('newString was hit')
+                if (newString == '01') {
                     month = "Jan";
-                } else if (newString === 2) {
+                } else if (newString == '02') {
                     month = "Feb";
-                } else if (newString === 3) {
+                } else if (newString == '03') {
                     month = "Mar";
-                } else if (newString === 4) {
+                } else if (newString == '04') {
                     month = "Apr";
-                } else if (newString === 5) {
+                } else if (newString == '05') {
                     month = "May";
-                } else if (newString === 6) {
+                } else if (newString == '06') {
                     month = "June";
-                } else if (newString === 7) {
+                } else if (newString == '07') {
                     month = "July";
-                } else if (newString === 8) {
+                } else if (newString == '08') {
                     month = "Aug";
-                } else if (newString === 9) {
+                } else if (newString == '09') {
                     month = "Sept";
-                } else if (newString === 10) {
+                } else if (newString == '10') {
                     month = "Oct";
-                } else if (newString === 11) {
+                } else if (newString == '11') {
                     month = "Nov";
                 } else {
                     month = "Dec";
                 }
-            } else if (monthConversion === 1) {
+            } else if (monthConversion == '01') {
                 month = "Jan";
-            } else if (monthConversion === 2) {
+            } else if (monthConversion == '02') {
                 month = "Feb";
-            } else if (monthConversion === 3) {
+            } else if (monthConversion == '03') {
                 month = "Mar";
-            } else if (monthConversion === 4) {
+            } else if (monthConversion == '04') {
                 month = "Apr";
-            } else if (monthConversion === 5) {
+            } else if (monthConversion == '05') {
                 month = "May";
-            } else if (monthConversion === 6) {
+            } else if (monthConversion == '06') {
                 month = "June";
-            } else if (monthConversion === 7) {
+            } else if (monthConversion == '07') {
                 month = "July";
-            } else if (monthConversion === 8) {
+            } else if (monthConversion == '08') {
                 month = "Aug";
-            } else if (monthConversion === 9) {
+            } else if (monthConversion == '09') {
                 month = "Sept";
-            } else if (monthConversion === 10) {
+            } else if (monthConversion == '10') {
                 month = "Oct";
-            } else if (monthConversion === 11) {
+            } else if (monthConversion == '11') {
                 month = "Nov";
             } else {
                 month = "Dec";
+                console.log('month was hit')
             }
-            // console.log('This is the month: \n', month)
             //SECOND
             let newString1 = null;
             let month1;
             let dayco1 = forecast2.date[8] += forecast2.date[9];
             let dayConversion1 = dayco1;
+            console.log("1",dayConversion1)
             let monco1 = forecast2.date[5] += forecast2.date[6];
             let monthConversion1 = monco1.toString();
             if (monthConversion1.indexOf("-") >= 0) {
                 newString1 = monthConversion1.replace("-", "");
             }
             if (newString1) {
-                if (newString1 === 1) {
+                console.log('newString1 was hit')
+                if (newString1 == '01') {
                     month1 = "Jan";
-                } else if (newString1 === 2) {
+                } else if (newString1 == '02') {
                     month1 = "Feb";
-                } else if (newString1 === 3) {
+                } else if (newString1 == '03') {
                     month1 = "Mar";
-                } else if (newString1 === 4) {
+                } else if (newString1 == '04') {
                     month1 = "Apr";
-                } else if (newString1 === 5) {
+                } else if (newString1 == '05') {
                     month1 = "May";
-                } else if (newString1 === 6) {
+                } else if (newString1 == '06') {
                     month1 = "June";
-                } else if (newString1 === 7) {
+                } else if (newString1 == '07') {
                     month1 = "July";
-                } else if (newString1 === 8) {
+                } else if (newString1 == '08') {
                     month1 = "Aug";
-                } else if (newString1 === 9) {
+                } else if (newString1 == '09') {
                     month1 = "Sept";
-                } else if (newString1 === 10) {
+                } else if (newString1 == '10') {
                     month1 = "Oct";
-                } else if (newString1 === 11) {
+                } else if (newString1 == '11') {
                     month1 = "Nov";
                 } else {
                     month1 = "Dec";
                 }
-            } else if (monthConversion1 === 1) {
+            } else if (monthConversion1 == '01') {
                 month1 = "Jan";
-            } else if (monthConversion1 === 2) {
+            } else if (monthConversion1 == '02') {
                 month1 = "Feb";
-            } else if (monthConversion1 === 3) {
+            } else if (monthConversion1 == '03') {
                 month1 = "Mar";
-            } else if (monthConversion1 === 4) {
+            } else if (monthConversion1 == '04') {
                 month1 = "Apr";
-            } else if (monthConversion1 === 5) {
+            } else if (monthConversion1 == '05') {
                 month1 = "May";
-            } else if (monthConversion1 === 6) {
+            } else if (monthConversion1 == '06') {
                 month1 = "June";
-            } else if (monthConversion1 === 7) {
+            } else if (monthConversion1 == '07') {
                 month1 = "July";
-            } else if (monthConversion1 === 8) {
+            } else if (monthConversion1 == '08') {
                 month1 = "Aug";
-            } else if (monthConversion1 === 9) {
+            } else if (monthConversion1 == '09') {
                 month1 = "Sept";
-            } else if (monthConversion1 === 10) {
+            } else if (monthConversion1 == '10') {
                 month1 = "Oct";
-            } else if (monthConversion1 === 11) {
+            } else if (monthConversion1 == '11') {
                 month1 = "Nov";
             } else {
                 month1 = "Dec";
+                console.log('month was hit')
             }
             // console.log(month1)
             //THIRD
             let newString2 = null;
             let month2;
-            let dayco2 = forecast2.date[8] += forecast2.date[9];
+            let dayco2 = forecast3.date[8] += forecast3.date[9];
             let dayConversion2 = dayco2;
+            console.log("1",dayConversion2)
             let monco2 = forecast3.date[5] += forecast3.date[6];
             let monthConversion2 = monco2.toString();
             if (monthConversion2.indexOf("-") >= 0) {
                 newString2 = monthConversion2.replace("-", "");
             }
             if (newString2) {
-                if (newString2 === 1) {
+                console.log('newString2 was hit')
+                if (newString2 == '01') {
                     month2 = "Jan";
-                } else if (newString2 === 2) {
+                } else if (newString2 == '02') {
                     month2 = "Feb";
-                } else if (newString2 === 3) {
+                } else if (newString2 == '03') {
                     month2 = "Mar";
-                } else if (newString2 === 4) {
+                } else if (newString2 == '04') {
                     month2 = "Apr";
-                } else if (newString2 === 5) {
+                } else if (newString2 == '05') {
                     month2 = "May";
-                } else if (newString2 === 6) {
+                } else if (newString2 == '06') {
                     month2 = "June";
-                } else if (newString2 === 7) {
+                } else if (newString2 == '07') {
                     month2 = "July";
-                } else if (newString2 === 8) {
+                } else if (newString2 == '08') {
                     month2 = "Aug";
-                } else if (newString2 === 9) {
+                } else if (newString2 == '09') {
                     month2 = "Sept";
-                } else if (newString2 === 10) {
+                } else if (newString2 == '10') {
                     month2 = "Oct";
-                } else if (newString2 === 11) {
+                } else if (newString2 == '11') {
                     month2 = "Nov";
                 } else {
                     month2 = "Dec";
                 }
-            } else if (monthConversion2 === 1) {
+            } else if (monthConversion2 == '01') {
                 month2 = "Jan";
-            } else if (monthConversion2 === 2) {
+            } else if (monthConversion2 == '02') {
                 month2 = "Feb";
-            } else if (monthConversion2 === 3) {
+            } else if (monthConversion2 == '03') {
                 month2 = "Mar";
-            } else if (monthConversion2 === 4) {
+            } else if (monthConversion2 == '04') {
                 month2 = "Apr";
-            } else if (monthConversion2 === 5) {
+            } else if (monthConversion2 == '05') {
                 month2 = "May";
-            } else if (monthConversion2 === 6) {
+            } else if (monthConversion2 == '06') {
                 month2 = "June";
-            } else if (monthConversion2 === 7) {
+            } else if (monthConversion2 == '07') {
                 month2 = "July";
-            } else if (monthConversion2 === 8) {
+            } else if (monthConversion2 == '08') {
                 month2 = "Aug";
-            } else if (monthConversion2 === 9) {
+            } else if (monthConversion2 == '09') {
                 month2 = "Sept";
-            } else if (monthConversion2 === 10) {
+            } else if (monthConversion2 == '10') {
                 month2 = "Oct";
-            } else if (monthConversion2 === 11) {
+            } else if (monthConversion2 == '11') {
                 month2 = "Nov";
             } else {
                 month2 = "Dec";
+                console.log('month was hit')
             }
             res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, hour12, forecast1, forecast2, forecast3, month1, month2, dayConversion1, dayConversion2, username, loggedIn, userId})
         })
@@ -420,7 +421,6 @@ router.get('/weather/daily/:coords', (req, res) => {
             let localTime = locTime[11] + locTime[12]
             let hourTime = hours.splice(localTime)
             let idx = 0;
-
             while (hourTime.length < 13) {
                 hourTime.push(forecast2.hour[idx])
                 idx++
@@ -438,12 +438,6 @@ router.get('/weather/daily/:coords', (req, res) => {
             let hour10 = hourTime[10]
             let hour11 = hourTime[11]
             let hour12 = hourTime[12]
-            //TESTING
-            console.log(hour7.time)
-            console.log(hour8.time)
-            console.log(hour9.time)
-            // console.log('7 8 9 not working: \n', hourTime)
-            //FIRST
             let newString = null;
             let month;
             let dayco = forecast1.date[8] += forecast1.date[9];
@@ -454,181 +448,187 @@ router.get('/weather/daily/:coords', (req, res) => {
                 newString = monthConversion.replace("-", "");
             }
             if (newString) {
-                if (newString === 1) {
+                console.log('newString was hit')
+                if (newString == '01') {
                     month = "Jan";
-                } else if (newString === 2) {
+                } else if (newString == '02') {
                     month = "Feb";
-                } else if (newString === 3) {
+                } else if (newString == '03') {
                     month = "Mar";
-                } else if (newString === 4) {
+                } else if (newString == '04') {
                     month = "Apr";
-                } else if (newString === 5) {
+                } else if (newString == '05') {
                     month = "May";
-                } else if (newString === 6) {
+                } else if (newString == '06') {
                     month = "June";
-                } else if (newString === 7) {
+                } else if (newString == '07') {
                     month = "July";
-                } else if (newString === 8) {
+                } else if (newString == '08') {
                     month = "Aug";
-                } else if (newString === 9) {
+                } else if (newString == '09') {
                     month = "Sept";
-                } else if (newString === 10) {
+                } else if (newString == '10') {
                     month = "Oct";
-                } else if (newString === 11) {
+                } else if (newString == '11') {
                     month = "Nov";
                 } else {
                     month = "Dec";
                 }
-            } else if (monthConversion === 1) {
+            } else if (monthConversion == '01') {
                 month = "Jan";
-            } else if (monthConversion === 2) {
+            } else if (monthConversion == '02') {
                 month = "Feb";
-            } else if (monthConversion === 3) {
+            } else if (monthConversion == '03') {
                 month = "Mar";
-            } else if (monthConversion === 4) {
+            } else if (monthConversion == '04') {
                 month = "Apr";
-            } else if (monthConversion === 5) {
+            } else if (monthConversion == '05') {
                 month = "May";
-            } else if (monthConversion === 6) {
+            } else if (monthConversion == '06') {
                 month = "June";
-            } else if (monthConversion === 7) {
+            } else if (monthConversion == '07') {
                 month = "July";
-            } else if (monthConversion === 8) {
+            } else if (monthConversion == '08') {
                 month = "Aug";
-            } else if (monthConversion === 9) {
+            } else if (monthConversion == '09') {
                 month = "Sept";
-            } else if (monthConversion === 10) {
+            } else if (monthConversion == '10') {
                 month = "Oct";
-            } else if (monthConversion === 11) {
+            } else if (monthConversion == '11') {
                 month = "Nov";
             } else {
                 month = "Dec";
+                console.log('month was hit')
             }
-            console.log('This is the month: \n', month)
             //SECOND
             let newString1 = null;
             let month1;
             let dayco1 = forecast2.date[8] += forecast2.date[9];
             let dayConversion1 = dayco1;
+            console.log("2",dayConversion1)
             let monco1 = forecast2.date[5] += forecast2.date[6];
             let monthConversion1 = monco1.toString();
             if (monthConversion1.indexOf("-") >= 0) {
                 newString1 = monthConversion1.replace("-", "");
             }
             if (newString1) {
-                if (newString1 === 1) {
+                console.log('newString1 was hit')
+                if (newString1 == '01') {
                     month1 = "Jan";
-                } else if (newString1 === 2) {
+                } else if (newString1 == '02') {
                     month1 = "Feb";
-                } else if (newString1 === 3) {
+                } else if (newString1 == '03') {
                     month1 = "Mar";
-                } else if (newString1 === 4) {
+                } else if (newString1 == '04') {
                     month1 = "Apr";
-                } else if (newString1 === 5) {
+                } else if (newString1 == '05') {
                     month1 = "May";
-                } else if (newString1 === 6) {
+                } else if (newString1 == '06') {
                     month1 = "June";
-                } else if (newString1 === 7) {
+                } else if (newString1 == '07') {
                     month1 = "July";
-                } else if (newString1 === 8) {
+                } else if (newString1 == '08') {
                     month1 = "Aug";
-                } else if (newString1 === 9) {
+                } else if (newString1 == '09') {
                     month1 = "Sept";
-                } else if (newString1 === 10) {
+                } else if (newString1 == '10') {
                     month1 = "Oct";
-                } else if (newString1 === 11) {
+                } else if (newString1 == '11') {
                     month1 = "Nov";
                 } else {
                     month1 = "Dec";
                 }
-            } else if (monthConversion1 === 1) {
+            } else if (monthConversion1 == '01') {
                 month1 = "Jan";
-            } else if (monthConversion1 === 2) {
+            } else if (monthConversion1 == '02') {
                 month1 = "Feb";
-            } else if (monthConversion1 === 3) {
+            } else if (monthConversion1 == '03') {
                 month1 = "Mar";
-            } else if (monthConversion1 === 4) {
+            } else if (monthConversion1 == '04') {
                 month1 = "Apr";
-            } else if (monthConversion1 === 5) {
+            } else if (monthConversion1 == '05') {
                 month1 = "May";
-            } else if (monthConversion1 === 6) {
+            } else if (monthConversion1 == '06') {
                 month1 = "June";
-            } else if (monthConversion1 === 7) {
+            } else if (monthConversion1 == '07') {
                 month1 = "July";
-            } else if (monthConversion1 === 8) {
+            } else if (monthConversion1 == '08') {
                 month1 = "Aug";
-            } else if (monthConversion1 === 9) {
+            } else if (monthConversion1 == '09') {
                 month1 = "Sept";
-            } else if (monthConversion1 === 10) {
+            } else if (monthConversion1 == '10') {
                 month1 = "Oct";
-            } else if (monthConversion1 === 11) {
+            } else if (monthConversion1 == '11') {
                 month1 = "Nov";
             } else {
                 month1 = "Dec";
+                console.log('month was hit')
             }
-            console.log(month1)
+            // console.log(month1)
             //THIRD
             let newString2 = null;
             let month2;
-            let dayco2 = forecast2.date[8] += forecast2.date[9];
+            let dayco2 = forecast3.date[8] += forecast3.date[9];
             let dayConversion2 = dayco2;
+            console.log("2",dayConversion2)
             let monco2 = forecast3.date[5] += forecast3.date[6];
             let monthConversion2 = monco2.toString();
             if (monthConversion2.indexOf("-") >= 0) {
                 newString2 = monthConversion2.replace("-", "");
             }
             if (newString2) {
-                if (newString2 === 1) {
+                console.log('newString2 was hit')
+                if (newString2 == '01') {
                     month2 = "Jan";
-                } else if (newString2 === 2) {
+                } else if (newString2 == '02') {
                     month2 = "Feb";
-                } else if (newString2 === 3) {
+                } else if (newString2 == '03') {
                     month2 = "Mar";
-                } else if (newString2 === 4) {
+                } else if (newString2 == '04') {
                     month2 = "Apr";
-                } else if (newString2 === 5) {
+                } else if (newString2 == '05') {
                     month2 = "May";
-                } else if (newString2 === 6) {
+                } else if (newString2 == '06') {
                     month2 = "June";
-                } else if (newString2 === 7) {
+                } else if (newString2 == '07') {
                     month2 = "July";
-                } else if (newString2 === 8) {
+                } else if (newString2 == '08') {
                     month2 = "Aug";
-                } else if (newString2 === 9) {
+                } else if (newString2 == '09') {
                     month2 = "Sept";
-                } else if (newString2 === 10) {
+                } else if (newString2 == '10') {
                     month2 = "Oct";
-                } else if (newString2 === 11) {
+                } else if (newString2 == '11') {
                     month2 = "Nov";
                 } else {
                     month2 = "Dec";
                 }
-            } else if (monthConversion2 === 1) {
+            } else if (monthConversion2 == '01') {
                 month2 = "Jan";
-            } else if (monthConversion2 === 2) {
+            } else if (monthConversion2 == '02') {
                 month2 = "Feb";
-            } else if (monthConversion2 === 3) {
+            } else if (monthConversion2 == '03') {
                 month2 = "Mar";
-            } else if (monthConversion2 === 4) {
+            } else if (monthConversion2 == '04') {
                 month2 = "Apr";
-            } else if (monthConversion2 === 5) {
+            } else if (monthConversion2 == '05') {
                 month2 = "May";
-            } else if (monthConversion2 === 6) {
+            } else if (monthConversion2 == '06') {
                 month2 = "June";
-            } else if (monthConversion2 === 7) {
+            } else if (monthConversion2 == '07') {
                 month2 = "July";
-            } else if (monthConversion2 === 8) {
+            } else if (monthConversion2 == '08') {
                 month2 = "Aug";
-            } else if (monthConversion2 === 9) {
+            } else if (monthConversion2 == '09') {
                 month2 = "Sept";
-            } else if (monthConversion2 === 10) {
+            } else if (monthConversion2 == '10') {
                 month2 = "Oct";
-            } else if (monthConversion2 === 11) {
+            } else if (monthConversion2 == '11') {
                 month2 = "Nov";
             } else {
                 month2 = "Dec";
+                console.log('month was hit')
             }
-            console.log(dayConversion2)
             res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, hour12, forecast1, forecast2, forecast3, month1, month2, dayConversion1, dayConversion2, username, loggedIn, userId})
         })
         .catch(err => {
