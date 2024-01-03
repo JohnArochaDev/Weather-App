@@ -11,9 +11,19 @@
                     <h2>Favorites</h2>
                 </div>
                 <ul class="list-group list-group-flush">
-            <% favorites.forEach((f) => { %>
-                <li class="list-group-item"><a class="noTag" href="/weather/daily/<%= f.lat %>,<%= f.long %>"><%= f.name %> <%= f.region %></a></li>
-        <% })} else { %>
+                    <% favorites.forEach((f) => { %>
+                    <div class="col">
+                        <div class="row">
+                            <li class="list-group-item"><a class="noTag" href="/weather/daily/<%= f.lat %>,<%= f.long %>"><%= f.name %> <%= f.region %></a>
+                                <span style="float:right">
+                                    <form class="rem" action="/users/delete/<%= f._id %>?_method=DELETE" method="POST">
+                                        <input type="submit" class="btn btn-outline-secondary btn-sm" value="🗑️">
+                                    </form>
+                                </span>
+                            </li>
+                        </div>
+                    </div>
+                <% })} else { %>
             <h3 class="container mt-5" >Go pick some favorites first!</h3>
         <% } %>
     </div>

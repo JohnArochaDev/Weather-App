@@ -39,7 +39,6 @@ router.post('/signup', async (req, res) => {
 
 router.get('/login', (req, res) => {
     const { username, loggedIn, userId } = req.session
-
     res.render('users/login', { username, loggedIn, userId })
 })
 
@@ -70,7 +69,6 @@ router.post('/login', async (req, res) => {
 
 router.get('/logout', (req, res) => {
     const { username, loggedIn, userId } = req.session
-
     res.render('users/logout', { username, loggedIn, userId })
 })
 
@@ -80,17 +78,13 @@ router.delete('/logout', (req, res) => {
     })
 })
 
-
 router.get('/favorites', (req, res) => {
     const { username, loggedIn, userId } = req.session
     if (loggedIn) {
         Favorite.find({ owner: userId })
-        // display them in a list format
         .then(userFavorites => {
-            // res.send(userFavorites)
             res.render('users/favorites', { favorites: userFavorites, username, userId, loggedIn})
         })
-        // or display any errors
         .catch(err => {
             console.log('error')
             res.redirect(`/error?error=${err}`)
@@ -110,6 +104,34 @@ router.post('/add', (req, res) => {
         .then(newFavorite => {
             res.redirect(`/users/favorites`)
         })
+        .catch(err => {
+            console.log('error')
+            res.redirect(`/error?error=${err}`)
+        })
+})
+
+router.delete('/delete/:id', (req, res) => {
+    const { username, loggedIn, userId } = req.session
+    const favoriteId = req.params.id
+    Favorite.findById(favoriteId)
+        // delete it 
+        .then(place => {
+            // determine if loggedIn user is authorized to delete this(aka, the owner)
+            if (place.owner == userId) {
+                // here is where we delete
+                return place.deleteOne()
+            } else {
+                // if the loggedIn user is NOT the owner
+                res.redirect(`/error?error=You%20Are%20Not%20Allowed%20to%20Delete%20this%20Place`)
+            }
+        })
+        // redirect to another page
+        .then(deletedPlace => {
+            // console.log('this was returned from deleteOne', deletedPlace)
+
+            res.redirect('/users/favorites')
+        })
+        // if err -> send to err page
         .catch(err => {
             console.log('error')
             res.redirect(`/error?error=${err}`)
