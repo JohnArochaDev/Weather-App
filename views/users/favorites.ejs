@@ -2,20 +2,20 @@
 
     <img src="../public/images/home/space3.jpg" class="card-img bg1" size="auto">
     <div class="container mt-4">
-        <h2><%= username %>'s favorite locations</h2>
+        <h2 class="underline" ><%= username %>'s favorite locations</h2>
     </div>
 
-<table class="popFocrasts">
-    <% if (favorites.length >= 1) { %>
-        <% favorites.forEach((f) => { %>
-        <tr>
-            <td><a href="/weather/daily/<%= f.lat %>,<%= f.long %>"><%= f.name %> <%= f.region %></a></td>
-            <td><%= f.lat %> <%= f.long %></a></td>
-        </tr>
-</table>
-    <% })} else { %>
-        <h3 class="container mt-5" >Go pick some favorites first!</h3>
-    <% } %>
-
+    <div class="card container" style="width: 18rem;">
+        <div class="card-header">
+        <% if (favorites.length >= 1) { %>
+                    <h2>Favorites</h2>
+                </div>
+                <ul class="list-group list-group-flush">
+            <% favorites.forEach((f) => { %>
+                <li class="list-group-item"><a class="noTag" href="/weather/daily/<%= f.lat %>,<%= f.long %>"><%= f.name %> <%= f.region %></a></li>
+        <% })} else { %>
+            <h3 class="container mt-5" >Go pick some favorites first!</h3>
+        <% } %>
+    </div>
 
     <%- include('../partial/footer') %>
