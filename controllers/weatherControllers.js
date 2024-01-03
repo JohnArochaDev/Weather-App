@@ -14,13 +14,9 @@ const router = express.Router();
 ////////////////////////
 // Create Variables ////
 ////////////////////////
-let lat = 42.3761504
-let long = -85.45500539999999
+// let lat = 42.3761504
+// let long = -85.45500539999999
 // TEST COORDS     42.3761504,-85.45500539999999
-
-//////////////////////////////
-///  Routes + Controllers ////
-//////////////////////////////
 
 const newYork = '40.7127753,-74.0059728'
 const losAngeles = '34.0549076,-118.242643'
@@ -36,6 +32,10 @@ const sanJose = '37.33874,-121.8852525'
 let homelocName = []
 let homeTemp = []
 let homeCondition = []
+
+//////////////////////////////
+///  Routes + Controllers ////
+//////////////////////////////
 
 router.get('/', async function(req, res, next) {
     const { username, loggedIn, userId } = req.session

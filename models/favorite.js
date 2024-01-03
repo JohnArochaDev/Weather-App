@@ -10,10 +10,10 @@ const { Schema, model } = mongoose
 //// Schema definition ////
 ///////////////////////////
 const favoriteSchema = new Schema({
-    name: { type: String, required: true },
-    temperature: { type: String, required: true },
-    lat: { type: Number, required: true },
-    long: { type: Number, required: true },
+    name: { type: String},
+    temperature: { type: String},
+    lat: { type: Number},
+    long: { type: Number},
     owner: {
         type: Schema.Types.ObjectId,
         ref: 'User',
@@ -26,7 +26,7 @@ const favoriteSchema = new Schema({
 ///////////////////////////
 //// create user model ////
 ///////////////////////////
-const Favorite = model('Place', favoriteSchema)
+const Favorite = model('Favorite', favoriteSchema)
 
 ///////////////////////////
 //// export user model ////

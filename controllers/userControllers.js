@@ -80,10 +80,22 @@ router.delete('/logout', (req, res) => {
     })
 })
 
-router.get('/favorites/:user', (req, res) => {
+router.get('/favorites', (req, res) => {
     const { username, loggedIn, userId } = req.session
-    res.render('users/favorites', { username, loggedIn, userId,})
+    Favorite.find({ owner: userId })
+    // display them in a list format
+    .then(userFavorites => {
+        // res.send(userFavorites)
+        res.render('users/favorites', { favorites: userFavorites, username, userId, loggedIn})
+    })
+    // or display any errors
+    .catch(err => {
+        console.log('error')
+        res.redirect(`/error?error=${err}`)
+    })
 })
+
+
 
 ///////////////////////
 //// Export Router ////

@@ -1,1 +1,12 @@
 <h1>Howdy there</h1>
+
+<table class="popFocrasts">
+    <% if (favorites.length >= 1) { %>
+        <% favorites.forEach((f) => { %>
+        <tr>
+            <td><a href="weather/daily/<%= f.name %>"><%= favorite.name %></a></td>
+        </tr>
+</table>
+    <% })} else { %>
+        <h3>Go pick some favorites first!</h3>
+    <% } %>
