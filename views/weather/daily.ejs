@@ -748,12 +748,21 @@
         </div>
     </div>
 </div>
+
 <% if (loggedIn) { %>
-        <div class="d-grid gap-2 col-3 mx-auto"><button type="button" class="btn btn-outline-dark favButton"><a href="/users/favorites/<%= userId %>"><span class="link">Favorite</span></a></button></div>
+        <form action="/users/add" method="POST">
+            <fieldset>
+                <input hidden type="text" name="name" value="<%= weather.location.name %>">
+                <input hidden type="text" name="region" value="<%= weather.location.region %>">
+                <input hidden type="text" name="lat" value="<%= weather.location.lat %>">
+                <input hidden type="text" name="long" value="<%= weather.location.lon %>">
+            </fieldset>
+            <div class="d-grid gap-2 col-3 mx-auto">
+                <button type="submit" class="btn btn-outline-dark favButton" value="Favorite">Favorite</button>
+            </div>
+        </form>
     <% } else { %>
         <div></div>
-    <% } %>
-
-
+<% } %>
 
 <%- include('../partial/footer') %>

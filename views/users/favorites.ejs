@@ -1,12 +1,21 @@
-<h1>Howdy there</h1>
+<%- include('../partial/header') %>
+
+    <img src="../public/images/home/space3.jpg" class="card-img bg1" size="auto">
+    <div class="container mt-4">
+        <h2><%= username %>'s favorite locations</h2>
+    </div>
 
 <table class="popFocrasts">
     <% if (favorites.length >= 1) { %>
         <% favorites.forEach((f) => { %>
         <tr>
-            <td><a href="weather/daily/<%= f.name %>"><%= favorite.name %></a></td>
+            <td><a href="/weather/daily/<%= f.lat %>,<%= f.long %>"><%= f.name %> <%= f.region %></a></td>
+            <td><%= f.lat %> <%= f.long %></a></td>
         </tr>
 </table>
     <% })} else { %>
-        <h3>Go pick some favorites first!</h3>
+        <h3 class="container mt-5" >Go pick some favorites first!</h3>
     <% } %>
+
+
+    <%- include('../partial/footer') %>

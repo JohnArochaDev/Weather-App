@@ -11,7 +11,7 @@ const { Schema, model } = mongoose
 ///////////////////////////
 const favoriteSchema = new Schema({
     name: { type: String},
-    temperature: { type: String},
+    region: { type: String},
     lat: { type: Number},
     long: { type: Number},
     owner: {
