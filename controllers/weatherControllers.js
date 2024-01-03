@@ -185,7 +185,7 @@ router.get('/weather/daily/zipcode', (req, res) => {
             let localTime = locTime[11] + locTime[12]
             let hourTime = hours.splice(localTime)
             let idx = 0;
-            while (hourTime.length < 12) {
+            while (hourTime.length < 13) {
                 hourTime.push(forecast2.hour[idx])
                 idx++
             }
@@ -201,6 +201,7 @@ router.get('/weather/daily/zipcode', (req, res) => {
             let hour9 = hourTime[9]
             let hour10 = hourTime[10]
             let hour11 = hourTime[11]
+            let hour12 = hourTime[12]
             //TESTING
             // console.log(hour7.time)
             // console.log(hour8.time)
@@ -391,7 +392,7 @@ router.get('/weather/daily/zipcode', (req, res) => {
             } else {
                 month2 = "Dec";
             }
-            res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, forecast1, forecast2, forecast3, month1, month2, dayConversion1, dayConversion2, username, loggedIn, userId})
+            res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, hour12, forecast1, forecast2, forecast3, month1, month2, dayConversion1, dayConversion2, username, loggedIn, userId})
         })
         .catch(err => {
             // console.log('error', err)
@@ -420,7 +421,7 @@ router.get('/weather/daily/:coords', (req, res) => {
             let hourTime = hours.splice(localTime)
             let idx = 0;
 
-            while (hourTime.length < 12) {
+            while (hourTime.length < 13) {
                 hourTime.push(forecast2.hour[idx])
                 idx++
             }
@@ -436,6 +437,7 @@ router.get('/weather/daily/:coords', (req, res) => {
             let hour9 = hourTime[9]
             let hour10 = hourTime[10]
             let hour11 = hourTime[11]
+            let hour12 = hourTime[12]
             //TESTING
             console.log(hour7.time)
             console.log(hour8.time)
@@ -627,7 +629,7 @@ router.get('/weather/daily/:coords', (req, res) => {
                 month2 = "Dec";
             }
             console.log(dayConversion2)
-            res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, forecast1, forecast2, forecast3, month1, month2, dayConversion1, dayConversion2, username, loggedIn, userId})
+            res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, hour12, forecast1, forecast2, forecast3, month1, month2, dayConversion1, dayConversion2, username, loggedIn, userId})
         })
         .catch(err => {
             // console.log('error', err)

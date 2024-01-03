@@ -4,7 +4,6 @@
     <div class="container mt-4">
         <h2 class="underline" ><%= username %>'s favorite locations</h2>
     </div>
-
     <div class="card container" style="width: 18rem;">
         <div class="card-header">
         <% if (favorites.length >= 1) { %>
@@ -14,7 +13,7 @@
                     <% favorites.forEach((f) => { %>
                     <div class="col">
                         <div class="row">
-                            <li class="list-group-item"><a class="noTag" href="/weather/daily/<%= f.lat %>,<%= f.long %>"><%= f.name %> <%= f.region %></a>
+                            <li class="list-group-item"><a class="noTag" href="/weather/daily/<%= f.lat %>,<%= f.long %>"><%= f.name %>, <%= f.region %></a>
                                 <span style="float:right">
                                     <form class="rem" action="/users/delete/<%= f._id %>?_method=DELETE" method="POST">
                                         <input type="submit" class="btn btn-outline-secondary btn-sm" value="🗑️">

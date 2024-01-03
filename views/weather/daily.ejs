@@ -2,7 +2,7 @@
 
 <!-- GRAB THE STRING FROM THE BACK TO FIX THIS -->
 
-<% let timeConversion = weather.location.localtime[11] + weather.location.localtime[12];   timeConversion = (timeConversion % 12) || 12;  let finalTime = timeConversion; %>
+<% let timeConversion = weather.location.localtime.substr(-5, 2);   timeConversion = (timeConversion % 12) || 12;  let finalTime = timeConversion; %>
 
 <img src="../../public/images/background/gradient darker blue.jpg" class="bg">
 
@@ -10,7 +10,7 @@
     <img src="../../public/images/home/space2.jpg" class="card-img" size="auto">
     <div class="row">
         <div class="card-img-overlay">
-            <h1 class="fg"><span class='time' style="float:right;"><%= finalTime + weather.location.localtime[13] + weather.location.localtime[14] + weather.location.localtime[15]%></span></h1>
+            <h1 class="fg"><span class='time' style="float:right;"><%= finalTime + weather.location.localtime.substr(-3, 3)%></span></h1>
         </div>
     </div>
     <div class="row">
@@ -144,25 +144,25 @@
                                     </div>
                                     <!-- fourth icon -->
                                     <div class="col col-3">
-                                        <% if (hour3.condition.text == 'Clear' ||hour3.condition.text == 'Sunny') { %>
+                                        <% if (hour4.condition.text == 'Clear' ||hour4.condition.text == 'Sunny') { %>
                                             <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
                                             <!-- CLOUDY -->
-                                        <% } else if (hour3.condition.text == 'Cloudy' || hour3.condition.text == 'Overcast') {%>
+                                        <% } else if (hour4.condition.text == 'Cloudy' || hour4.condition.text == 'Overcast') {%>
                                             <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconSmall">
                                             <!-- RAIN -->
-                                        <% } else if (hour3.condition.text == 'Mist' || hour3.condition.text == 'Light drizzle' || hour3.condition.text == 'Moderate or heavy rain shower'|| hour3.condition.text == 'Patchy light drizzle' || hour3.condition.text == 'Light rain' || hour3.condition.text == 'Patchy rain possible' || hour3.condition.text == 'Patchy light rain' || hour3.condition.text == 'Moderate rain' || hour3.condition.text == 'Heavy rain' || hour3.condition.text == 'Light rain shower' || hour3.condition.text == 'Moderate rain at times' || hour3.condition.text == 'Heavy rain at times') {%>
+                                        <% } else if (hour4.condition.text == 'Mist' || hour4.condition.text == 'Light drizzle' || hour4.condition.text == 'Moderate or heavy rain shower'|| hour4.condition.text == 'Patchy light drizzle' || hour4.condition.text == 'Light rain' || hour4.condition.text == 'Patchy rain possible' || hour4.condition.text == 'Patchy light rain' || hour4.condition.text == 'Moderate rain' || hour4.condition.text == 'Heavy rain' || hour4.condition.text == 'Light rain shower' || hour4.condition.text == 'Moderate rain at times' || hour4.condition.text == 'Heavy rain at times') {%>
                                             <img src="../../public/images/icons/rain.png" alt="" class="weatherIconSmall">
                                             <!-- THUNDERSTORM -->
-                                        <% } else if (hour3.condition.text == 'Patchy light rain with thunder' || hour3.condition.text == 'Moderate or heavy rain with thunder' || hour3.condition.text == 'Torrential rain shower' || hour3.condition.text == 'Thundery outbreaks possible') {%>
+                                        <% } else if (hour4.condition.text == 'Patchy light rain with thunder' || hour4.condition.text == 'Moderate or heavy rain with thunder' || hour4.condition.text == 'Torrential rain shower' || hour4.condition.text == 'Thundery outbreaks possible') {%>
                                             <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconSmall">
                                             <!-- SNOW -->
-                                        <% } else if (hour3.condition.text == 'Light snow' || hour3.condition.text == 'Light snow showers' || hour3.condition.text == 'Patchy snow possible' || hour3.condition.text == 'Patchy sleet possible' || hour3.condition.text == 'Freezing drizzle' || hour3.condition.text == 'Moderate or heavy sleet' || hour3.condition.text == 'Patchy light snow' || hour3.condition.text == 'Patchy moderate snow' || hour3.condition.text == 'Light sleet showers' || hour3.condition.text == 'Moderate snow' || hour3.condition.text == 'Light sleet' || hour3.condition.text == 'Heavy freezing drizzle' || hour3.condition.text == 'Patchy freezing drizzle possible' || hour3.condition.text == 'Moderate or heavy sleet showers' || hour3.condition.text == 'Light showers of ice pellets' || hour3.condition.text == 'Moderate or heavy showers of ice pellets' || hour3.condition.text == 'Patchy freezing drizzle possible' || hour3.condition.text == 'Moderate or heavy freezing rain' || hour3.condition.text == 'Ice pellets' || hour3.condition.text == 'Patchy heavy snow' || hour3.condition.text == 'Light freezing rain') {%>
+                                        <% } else if (hour4.condition.text == 'Light snow' || hour4.condition.text == 'Light snow showers' || hour4.condition.text == 'Patchy snow possible' || hour4.condition.text == 'Patchy sleet possible' || hour4.condition.text == 'Freezing drizzle' || hour4.condition.text == 'Moderate or heavy sleet' || hour4.condition.text == 'Patchy light snow' || hour4.condition.text == 'Patchy moderate snow' || hour4.condition.text == 'Light sleet showers' || hour4.condition.text == 'Moderate snow' || hour4.condition.text == 'Light sleet' || hour4.condition.text == 'Heavy freezing drizzle' || hour4.condition.text == 'Patchy freezing drizzle possible' || hour4.condition.text == 'Moderate or heavy sleet showers' || hour4.condition.text == 'Light showers of ice pellets' || hour4.condition.text == 'Moderate or heavy showers of ice pellets' || hour4.condition.text == 'Patchy freezing drizzle possible' || hour4.condition.text == 'Moderate or heavy freezing rain' || hour4.condition.text == 'Ice pellets' || hour4.condition.text == 'Patchy heavy snow' || hour4.condition.text == 'Light freezing rain') {%>
                                             <img src="../../public/images/icons/snow.png" alt="" class="weatherIconSmall">
                                             <!-- BLIZZARD -->
-                                        <% } else if (hour3.condition.text == 'Blizzard' || hour3.condition.text == 'Blowing snow' || hour3.condition.text == 'Heavy snow' || hour3.condition.text == 'Patchy light snow with thunder' || hour3.condition.text == 'Moderate or heavy snow showers' || hour3.condition.text == 'Moderate or heavy snow with thunder') {%>
+                                        <% } else if (hour4.condition.text == 'Blizzard' || hour4.condition.text == 'Blowing snow' || hour4.condition.text == 'Heavy snow' || hour4.condition.text == 'Patchy light snow with thunder' || hour4.condition.text == 'Moderate or heavy snow showers' || hour4.condition.text == 'Moderate or heavy snow with thunder') {%>
                                             <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconSmall">
                                             <!-- PARTLY CLOUDY -->
-                                            <% } else if (hour3.condition.text == 'Partly cloudy') { %>
+                                            <% } else if (hour4.condition.text == 'Partly cloudy') { %>
                                                 <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconSmall">
                                             <!-- WINDY -->
                                         <% } else {%>
@@ -203,29 +203,29 @@
                                     </div>
                                     <!-- fourth condition -->
                                     <div class="col col-3">
-                                        <h7 class="card-text weatherText blackSmall"><%= hour3.condition.text %></h7>
+                                        <h7 class="card-text weatherText blackSmall"><%= hour4.condition.text %></h7>
                                     </div>
                                 </div>
                                 <div class="row justify-content-around">
                                     <!-- first time -->
                                     <div class="col col-3 weatherText3">
-                                        <% let timeConversion1 =  hour1.time[11] + hour1.time[12];   timeConversion1 = (timeConversion1 % 12) || 12;  let finalTime1 = timeConversion1; %>
-                                        <h7><%= finalTime1 + hour1.time[13] + hour1.time[14] + hour1.time[15]%></h7>
+                                        <% let timeConversion1 =  hour1.time.substr(-5, 2);   timeConversion1 = (timeConversion1 % 12) || 12;  let finalTime1 = timeConversion1; %>
+                                        <h7><%= finalTime1 + hour1.time.substr(-3, 3)%></h7>
                                     </div>
                                     <!-- second time -->
                                     <div class="col col-3 weatherText3">
-                                        <% let timeConversion2 = hour2.time[11] + hour2.time[12];   timeConversion2 = (timeConversion2 % 12) || 12;  let finalTime2 = timeConversion2; %>
-                                        <h7><%= finalTime2 + hour2.time[13] + hour2.time[14] + hour2.time[15]%></h7>
+                                        <% let timeConversion2 = hour2.time.substr(-5, 2);   timeConversion2 = (timeConversion2 % 12) || 12;  let finalTime2 = timeConversion2; %>
+                                        <h7><%= finalTime2 + hour2.time.substr(-3, 3)%></h7>
                                     </div>
                                     <!-- third time -->
                                     <div class="col col-3 weatherText3">
-                                        <% let timeConversion3 =  hour3.time[11] + hour3.time[12];   timeConversion3 = (timeConversion3 % 12) || 12;  let finalTime3 = timeConversion3; %>
-                                        <h7><%= finalTime3 + hour3.time[13] + hour3.time[14] + hour3.time[15]%></h7>
+                                        <% let timeConversion3 =  hour3.time.substr(-5, 2);   timeConversion3 = (timeConversion3 % 12) || 12;  let finalTime3 = timeConversion3; %>
+                                        <h7><%= finalTime3 + hour3.time.substr(-3, 3)%></h7>
                                     </div>
                                     <!-- fourth time -->
                                     <div class="col col-3 weatherText3">
-                                        <% let timeConversion4 =  hour4.time[11] + hour4.time[12];   timeConversion4 = (timeConversion4 % 12) || 12;  let finalTime4 = timeConversion4; %>
-                                        <h7><%= finalTime4 + hour4.time[13] + hour4.time[14] + hour4.time[15]%></h7>
+                                        <% let timeConversion4 =  hour4.time.substr(-5, 2);   timeConversion4 = (timeConversion4 % 12) || 12;  let finalTime4 = timeConversion4; %>
+                                        <h7><%= finalTime4 + hour4.time.substr(-3, 3)%></h7>
                                     </div>
                                 </div>
                             </div>
@@ -235,33 +235,6 @@
                             <div class="container grid text-center" style="--bs-columns: 3;" data-bs-interval="10000">
                                 <div class="row justify-content-around">
                                     <!-- fifth icon -->
-                                    <div class="col col-3">
-                                        <% if (hour4.condition.text == 'Clear' ||hour4.condition.text == 'Sunny') { %>
-                                                <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
-                                                <!-- CLOUDY -->
-                                            <% } else if (hour4.condition.text == 'Cloudy' || hour4.condition.text == 'Overcast') {%>
-                                                <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconSmall">
-                                                <!-- RAIN -->
-                                            <% } else if (hour4.condition.text == 'Mist' || hour4.condition.text == 'Light drizzle' || hour4.condition.text == 'Moderate or heavy rain shower'|| hour4.condition.text == 'Patchy light drizzle' || hour4.condition.text == 'Light rain' || hour4.condition.text == 'Patchy rain possible' || hour4.condition.text == 'Patchy light rain' || hour4.condition.text == 'Moderate rain' || hour4.condition.text == 'Heavy rain' || hour4.condition.text == 'Light rain shower' || hour4.condition.text == 'Moderate rain at times' || hour4.condition.text == 'Heavy rain at times') {%>
-                                                <img src="../../public/images/icons/rain.png" alt="" class="weatherIconSmall">
-                                                <!-- THUNDERSTORM -->
-                                            <% } else if (hour4.condition.text == 'Patchy light rain with thunder' || hour4.condition.text == 'Moderate or heavy rain with thunder' || hour4.condition.text == 'Torrential rain shower' || hour4.condition.text == 'Thundery outbreaks possible') {%>
-                                                <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconSmall">
-                                                <!-- SNOW -->
-                                            <% } else if (hour4.condition.text == 'Light snow' || hour4.condition.text == 'Light snow showers' || hour4.condition.text == 'Patchy snow possible' || hour4.condition.text == 'Patchy sleet possible' || hour4.condition.text == 'Freezing drizzle' || hour4.condition.text == 'Moderate or heavy sleet' || hour4.condition.text == 'Patchy light snow' || hour4.condition.text == 'Patchy moderate snow' || hour4.condition.text == 'Light sleet showers' || hour4.condition.text == 'Moderate snow' || hour4.condition.text == 'Light sleet' || hour4.condition.text == 'Heavy freezing drizzle' || hour4.condition.text == 'Patchy freezing drizzle possible' || hour4.condition.text == 'Moderate or heavy sleet showers' || hour4.condition.text == 'Light showers of ice pellets' || hour4.condition.text == 'Moderate or heavy showers of ice pellets' || hour4.condition.text == 'Patchy freezing drizzle possible' || hour4.condition.text == 'Moderate or heavy freezing rain' || hour4.condition.text == 'Ice pellets' || hour4.condition.text == 'Patchy heavy snow' || hour4.condition.text == 'Light freezing rain') {%>
-                                                <img src="../../public/images/icons/snow.png" alt="" class="weatherIconSmall">
-                                                <!-- BLIZZARD -->
-                                            <% } else if (hour4.condition.text == 'Blizzard' || hour4.condition.text == 'Blowing snow' || hour4.condition.text == 'Heavy snow' || hour4.condition.text == 'Patchy light snow with thunder' || hour4.condition.text == 'Moderate or heavy snow showers' || hour4.condition.text == 'Moderate or heavy snow with thunder') {%>
-                                                <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconSmall">
-                                                <!-- PARTLY CLOUDY -->
-                                                <% } else if (hour4.condition.text == 'Partly cloudy') { %>
-                                                    <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconSmall">
-                                                <!-- WINDY -->
-                                            <% } else {%>
-                                                <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
-                                        <% } %>
-                                    </div>
-                                    <!-- sixth icon -->
                                     <div class="col col-3">
                                         <% if (hour5.condition.text == 'Clear' ||hour5.condition.text == 'Sunny') { %>
                                                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
@@ -288,27 +261,54 @@
                                                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                         <% } %>
                                     </div>
-                                    <!-- seventh icon -->
+                                    <!-- sixth icon -->
                                     <div class="col col-3">
                                         <% if (hour6.condition.text == 'Clear' ||hour6.condition.text == 'Sunny') { %>
+                                                <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
+                                                <!-- CLOUDY -->
+                                            <% } else if (hour6.condition.text == 'Cloudy' || hour6.condition.text == 'Overcast') {%>
+                                                <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconSmall">
+                                                <!-- RAIN -->
+                                            <% } else if (hour6.condition.text == 'Mist' || hour6.condition.text == 'Light drizzle' || hour6.condition.text == 'Moderate or heavy rain shower'|| hour6.condition.text == 'Patchy light drizzle' || hour6.condition.text == 'Light rain' || hour6.condition.text == 'Patchy rain possible' || hour6.condition.text == 'Patchy light rain' || hour6.condition.text == 'Moderate rain' || hour6.condition.text == 'Heavy rain' || hour6.condition.text == 'Light rain shower' || hour6.condition.text == 'Moderate rain at times' || hour6.condition.text == 'Heavy rain at times') {%>
+                                                <img src="../../public/images/icons/rain.png" alt="" class="weatherIconSmall">
+                                                <!-- THUNDERSTORM -->
+                                            <% } else if (hour6.condition.text == 'Patchy light rain with thunder' || hour6.condition.text == 'Moderate or heavy rain with thunder' || hour6.condition.text == 'Torrential rain shower' || hour6.condition.text == 'Thundery outbreaks possible') {%>
+                                                <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconSmall">
+                                                <!-- SNOW -->
+                                            <% } else if (hour6.condition.text == 'Light snow' || hour6.condition.text == 'Light snow showers' || hour6.condition.text == 'Patchy snow possible' || hour6.condition.text == 'Patchy sleet possible' || hour6.condition.text == 'Freezing drizzle' || hour6.condition.text == 'Moderate or heavy sleet' || hour6.condition.text == 'Patchy light snow' || hour6.condition.text == 'Patchy moderate snow' || hour6.condition.text == 'Light sleet showers' || hour6.condition.text == 'Moderate snow' || hour6.condition.text == 'Light sleet' || hour6.condition.text == 'Heavy freezing drizzle' || hour6.condition.text == 'Patchy freezing drizzle possible' || hour6.condition.text == 'Moderate or heavy sleet showers' || hour6.condition.text == 'Light showers of ice pellets' || hour6.condition.text == 'Moderate or heavy showers of ice pellets' || hour6.condition.text == 'Patchy freezing drizzle possible' || hour6.condition.text == 'Moderate or heavy freezing rain' || hour6.condition.text == 'Ice pellets' || hour6.condition.text == 'Patchy heavy snow' || hour6.condition.text == 'Light freezing rain') {%>
+                                                <img src="../../public/images/icons/snow.png" alt="" class="weatherIconSmall">
+                                                <!-- BLIZZARD -->
+                                            <% } else if (hour6.condition.text == 'Blizzard' || hour6.condition.text == 'Blowing snow' || hour6.condition.text == 'Heavy snow' || hour6.condition.text == 'Patchy light snow with thunder' || hour6.condition.text == 'Moderate or heavy snow showers' || hour6.condition.text == 'Moderate or heavy snow with thunder') {%>
+                                                <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconSmall">
+                                                <!-- PARTLY CLOUDY -->
+                                                <% } else if (hour6.condition.text == 'Partly cloudy') { %>
+                                                    <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconSmall">
+                                                <!-- WINDY -->
+                                            <% } else {%>
+                                                <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
+                                        <% } %>
+                                    </div>
+                                    <!-- seventh icon -->
+                                    <div class="col col-3">
+                                        <% if (hour7.condition.text == 'Clear' ||hour7.condition.text == 'Sunny') { %>
                                             <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
                                             <!-- CLOUDY -->
-                                        <% } else if (hour6.condition.text == 'Cloudy' || hour6.condition.text == 'Overcast') {%>
+                                        <% } else if (hour7.condition.text == 'Cloudy' || hour7.condition.text == 'Overcast') {%>
                                             <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconSmall">
                                             <!-- RAIN -->
-                                        <% } else if (hour6.condition.text == 'Mist' || hour6.condition.text == 'Light drizzle' || hour6.condition.text == 'Moderate or heavy rain shower'|| hour6.condition.text == 'Patchy light drizzle' || hour6.condition.text == 'Light rain' || hour6.condition.text == 'Patchy rain possible' || hour6.condition.text == 'Patchy light rain' || hour6.condition.text == 'Moderate rain' || hour6.condition.text == 'Heavy rain' || hour6.condition.text == 'Light rain shower' || hour6.condition.text == 'Moderate rain at times' || hour6.condition.text == 'Heavy rain at times') {%>
+                                        <% } else if (hour7.condition.text == 'Mist' || hour7.condition.text == 'Light drizzle' || hour7.condition.text == 'Moderate or heavy rain shower'|| hour7.condition.text == 'Patchy light drizzle' || hour7.condition.text == 'Light rain' || hour7.condition.text == 'Patchy rain possible' || hour7.condition.text == 'Patchy light rain' || hour7.condition.text == 'Moderate rain' || hour7.condition.text == 'Heavy rain' || hour7.condition.text == 'Light rain shower' || hour7.condition.text == 'Moderate rain at times' || hour7.condition.text == 'Heavy rain at times') {%>
                                             <img src="../../public/images/icons/rain.png" alt="" class="weatherIconSmall">
                                             <!-- THUNDERSTORM -->
-                                        <% } else if (hour6.condition.text == 'Patchy light rain with thunder' || hour6.condition.text == 'Moderate or heavy rain with thunder' || hour6.condition.text == 'Torrential rain shower' || hour6.condition.text == 'Thundery outbreaks possible') {%>
+                                        <% } else if (hour7.condition.text == 'Patchy light rain with thunder' || hour7.condition.text == 'Moderate or heavy rain with thunder' || hour7.condition.text == 'Torrential rain shower' || hour7.condition.text == 'Thundery outbreaks possible') {%>
                                             <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconSmall">
                                             <!-- SNOW -->
-                                        <% } else if (hour6.condition.text == 'Light snow' || hour6.condition.text == 'Light snow showers' || hour6.condition.text == 'Patchy snow possible' || hour6.condition.text == 'Patchy sleet possible' || hour6.condition.text == 'Freezing drizzle' || hour6.condition.text == 'Moderate or heavy sleet' || hour6.condition.text == 'Patchy light snow' || hour6.condition.text == 'Patchy moderate snow' || hour6.condition.text == 'Light sleet showers' || hour6.condition.text == 'Moderate snow' || hour6.condition.text == 'Light sleet' || hour6.condition.text == 'Heavy freezing drizzle' || hour6.condition.text == 'Patchy freezing drizzle possible' || hour6.condition.text == 'Moderate or heavy sleet showers' || hour6.condition.text == 'Light showers of ice pellets' || hour6.condition.text == 'Moderate or heavy showers of ice pellets' || hour6.condition.text == 'Patchy freezing drizzle possible' || hour6.condition.text == 'Moderate or heavy freezing rain' || hour6.condition.text == 'Ice pellets' || hour6.condition.text == 'Patchy heavy snow' || hour6.condition.text == 'Light freezing rain') {%>
+                                        <% } else if (hour7.condition.text == 'Light snow' || hour7.condition.text == 'Light snow showers' || hour7.condition.text == 'Patchy snow possible' || hour7.condition.text == 'Patchy sleet possible' || hour7.condition.text == 'Freezing drizzle' || hour7.condition.text == 'Moderate or heavy sleet' || hour7.condition.text == 'Patchy light snow' || hour7.condition.text == 'Patchy moderate snow' || hour7.condition.text == 'Light sleet showers' || hour7.condition.text == 'Moderate snow' || hour7.condition.text == 'Light sleet' || hour7.condition.text == 'Heavy freezing drizzle' || hour7.condition.text == 'Patchy freezing drizzle possible' || hour7.condition.text == 'Moderate or heavy sleet showers' || hour7.condition.text == 'Light showers of ice pellets' || hour7.condition.text == 'Moderate or heavy showers of ice pellets' || hour7.condition.text == 'Patchy freezing drizzle possible' || hour7.condition.text == 'Moderate or heavy freezing rain' || hour7.condition.text == 'Ice pellets' || hour7.condition.text == 'Patchy heavy snow' || hour7.condition.text == 'Light freezing rain') {%>
                                             <img src="../../public/images/icons/snow.png" alt="" class="weatherIconSmall">
                                             <!-- BLIZZARD -->
-                                        <% } else if (hour6.condition.text == 'Blizzard' || hour6.condition.text == 'Blowing snow' || hour6.condition.text == 'Heavy snow' || hour6.condition.text == 'Patchy light snow with thunder' || hour6.condition.text == 'Moderate or heavy snow showers' || hour6.condition.text == 'Moderate or heavy snow with thunder') {%>
+                                        <% } else if (hour7.condition.text == 'Blizzard' || hour7.condition.text == 'Blowing snow' || hour7.condition.text == 'Heavy snow' || hour7.condition.text == 'Patchy light snow with thunder' || hour7.condition.text == 'Moderate or heavy snow showers' || hour7.condition.text == 'Moderate or heavy snow with thunder') {%>
                                             <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconSmall">
                                             <!-- PARTLY CLOUDY -->
-                                            <% } else if (hour6.condition.text == 'Partly cloudy') { %>
+                                            <% } else if (hour7.condition.text == 'Partly cloudy') { %>
                                                 <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconSmall">
                                             <!-- WINDY -->
                                         <% } else {%>
@@ -316,98 +316,6 @@
                                     <% } %>
                                     </div>
                                     <!-- eighth icon -->
-                                    <div class="col col-3">
-                                        <% if (hour7.condition.text == 'Clear' ||hour7.condition.text == 'Sunny') { %>
-                                                <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
-                                                <!-- CLOUDY -->
-                                            <% } else if (hour7.condition.text == 'Cloudy' || hour7.condition.text == 'Overcast') {%>
-                                                <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconSmall">
-                                                <!-- RAIN -->
-                                            <% } else if (hour7.condition.text == 'Mist' || hour7.condition.text == 'Light drizzle' || hour7.condition.text == 'Moderate or heavy rain shower'|| hour7.condition.text == 'Patchy light drizzle' || hour7.condition.text == 'Light rain' || hour7.condition.text == 'Patchy rain possible' || hour7.condition.text == 'Patchy light rain' || hour7.condition.text == 'Moderate rain' || hour7.condition.text == 'Heavy rain' || hour7.condition.text == 'Light rain shower' || hour7.condition.text == 'Moderate rain at times' || hour7.condition.text == 'Heavy rain at times') {%>
-                                                <img src="../../public/images/icons/rain.png" alt="" class="weatherIconSmall">
-                                                <!-- THUNDERSTORM -->
-                                            <% } else if (hour7.condition.text == 'Patchy light rain with thunder' || hour7.condition.text == 'Moderate or heavy rain with thunder' || hour7.condition.text == 'Torrential rain shower' || hour7.condition.text == 'Thundery outbreaks possible') {%>
-                                                <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconSmall">
-                                                <!-- SNOW -->
-                                            <% } else if (hour7.condition.text == 'Light snow' || hour7.condition.text == 'Light snow showers' || hour7.condition.text == 'Patchy snow possible' || hour7.condition.text == 'Patchy sleet possible' || hour7.condition.text == 'Freezing drizzle' || hour7.condition.text == 'Moderate or heavy sleet' || hour7.condition.text == 'Patchy light snow' || hour7.condition.text == 'Patchy moderate snow' || hour7.condition.text == 'Light sleet showers' || hour7.condition.text == 'Moderate snow' || hour7.condition.text == 'Light sleet' || hour7.condition.text == 'Heavy freezing drizzle' || hour7.condition.text == 'Patchy freezing drizzle possible' || hour7.condition.text == 'Moderate or heavy sleet showers' || hour7.condition.text == 'Light showers of ice pellets' || hour7.condition.text == 'Moderate or heavy showers of ice pellets' || hour7.condition.text == 'Patchy freezing drizzle possible' || hour7.condition.text == 'Moderate or heavy freezing rain' || hour7.condition.text == 'Ice pellets' || hour7.condition.text == 'Patchy heavy snow' || hour7.condition.text == 'Light freezing rain') {%>
-                                                <img src="../../public/images/icons/snow.png" alt="" class="weatherIconSmall">
-                                                <!-- BLIZZARD -->
-                                            <% } else if (hour7.condition.text == 'Blizzard' || hour7.condition.text == 'Blowing snow' || hour7.condition.text == 'Heavy snow' || hour7.condition.text == 'Patchy light snow with thunder' || hour7.condition.text == 'Moderate or heavy snow showers' || hour7.condition.text == 'Moderate or heavy snow with thunder') {%>
-                                                <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconSmall">
-                                                <!-- PARTLY CLOUDY -->
-                                                <% } else if (hour7.condition.text == 'Partly cloudy') { %>
-                                                    <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconSmall">
-                                                <!-- WINDY -->
-                                            <% } else {%>
-                                                <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
-                                        <% } %>
-                                    </div>
-                                </div>
-                                    <!-- fifth temp -->
-                                <div class="row justify-content-around">
-                                    <div class="col col-3">
-                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour4.temp_f %>°F</strong></h5>
-                                    </div>
-                                    <!-- sixth temp -->
-                                    <div class="col col-3">
-                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour5.temp_f %>°F</strong></h5>
-                                    </div>
-                                    <!-- seventh temp -->
-                                    <div class="col col-3">
-                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour6.temp_f %>°F</strong></h5>
-                                    </div>
-                                    <!-- eighth temp -->
-                                    <div class="col col-3">
-                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour7.temp_f %>°F</strong></h5>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-around">
-                                    <!-- fifth condition -->
-                                    <div class="col col-3">
-                                        <h7 class="card-text weatherText blackSmall"><%= hour4.condition.text %></h7>
-                                    </div>
-                                    <!-- sixth condition -->
-                                    <div class="col col-3">
-                                        <h7 class="card-text weatherText blackSmall"><%= hour5.condition.text %></h7>
-                                    </div>
-                                    <!-- seventh condition -->
-                                    <div class="col col-3">
-                                        <h7 class="card-text weatherText blackSmall"><%= hour6.condition.text %></h7>
-                                    </div>
-                                    <!-- eigth condition -->
-                                    <div class="col col-3">
-                                        <h7 class="card-text weatherText blackSmall"><%= hour7.condition.text %></h7>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-around">
-                                    <!-- fifth time -->
-                                    <div class="col col-3 weatherText3">
-                                        <% let timeConversion5 = hour5.time[11] + hour5.time[12];   timeConversion5 = (timeConversion5 % 12) || 12;  let finalTime5 = timeConversion5; %>
-                                        <h7><%= finalTime5 + hour5.time[13] + hour5.time[14] + hour5.time[15]%></h7>
-                                    </div>
-                                    <!-- sixth time -->
-                                    <div class="col col-3 weatherText3">
-                                        <% let timeConversion6 =  hour6.time[11] + hour6.time[12];   timeConversion6 = (timeConversion6 % 12) || 12;  let finalTime6 = timeConversion6; %>
-                                        <h7><%= finalTime6 + hour6.time[13] + hour6.time[14] + hour6.time[15]%></h7>
-                                    </div>
-                                    <!-- seventh time -->
-                                    <div class="col col-3 weatherText3">
-                                        <% let timeConversion7 =  hour7.time[11] + hour7.time[12];   timeConversion7 = (timeConversion7 % 12) || 12;  let finalTime7 = timeConversion7; %>
-                                        <h7><%= finalTime7 + hour7.time[13] + hour7.time[14] + hour7.time[15]%></h7>
-                                    </div>
-                                    <!-- eighth time -->
-                                    <div class="col col-3 weatherText3">
-                                        <% let timeConversion8 = hour8.time[11] + hour8.time[12];   timeConversion8 = (timeConversion8 % 12) || 12;  let finalTime8 = timeConversion8; %>
-                                        <h7><%= finalTime8 + hour8.time[13] + hour8.time[14] + hour8.time[15]%></h7>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Carosel 3 -->
-                        <div class="carousel-item">
-                            <div class="container grid text-center" style="--bs-columns: 3;" data-bs-interval="10000">
-                                <div class="row justify-content-around">
-                                    <!-- nineth icon -->
                                     <div class="col col-3">
                                         <% if (hour8.condition.text == 'Clear' ||hour8.condition.text == 'Sunny') { %>
                                                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
@@ -434,7 +342,72 @@
                                                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                         <% } %>
                                     </div>
-                                    <!-- tenth icon -->
+                                </div>
+                                    <!-- fifth temp -->
+                                <div class="row justify-content-around">
+                                    <div class="col col-3">
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour5.temp_f %>°F</strong></h5>
+                                    </div>
+                                    <!-- sixth temp -->
+                                    <div class="col col-3">
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour6.temp_f %>°F</strong></h5>
+                                    </div>
+                                    <!-- seventh temp -->
+                                    <div class="col col-3">
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour7.temp_f %>°F</strong></h5>
+                                    </div>
+                                    <!-- eighth temp -->
+                                    <div class="col col-3">
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour8.temp_f %>°F</strong></h5>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-around">
+                                    <!-- fifth condition -->
+                                    <div class="col col-3">
+                                        <h7 class="card-text weatherText blackSmall"><%= hour5.condition.text %></h7>
+                                    </div>
+                                    <!-- sixth condition -->
+                                    <div class="col col-3">
+                                        <h7 class="card-text weatherText blackSmall"><%= hour6.condition.text %></h7>
+                                    </div>
+                                    <!-- seventh condition -->
+                                    <div class="col col-3">
+                                        <h7 class="card-text weatherText blackSmall"><%= hour7.condition.text %></h7>
+                                    </div>
+                                    <!-- eigth condition -->
+                                    <div class="col col-3">
+                                        <h7 class="card-text weatherText blackSmall"><%= hour8.condition.text %></h7>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-around">
+                                    <!-- fifth time -->
+                                    <div class="col col-3 weatherText3">
+                                        <% let timeConversion5 = hour5.time.substr(-5, 2);   timeConversion5 = (timeConversion5 % 12) || 12;  let finalTime5 = timeConversion5; %>
+                                        <h7><%= finalTime5 + hour5.time.substr(-3, 3)%></h7>
+                                    </div>
+                                    <!-- sixth time -->
+                                    <div class="col col-3 weatherText3">
+                                        <% let timeConversion6 =  hour6.time.substr(-5, 2);   timeConversion6 = (timeConversion6 % 12) || 12;  let finalTime6 = timeConversion6; %>
+                                        <h7><%= finalTime6 + hour6.time.substr(-3, 3)%></h7>
+                                    </div>
+                                    <!-- seventh time -->
+                                    <div class="col col-3 weatherText3">
+                                        <% let timeConversion7 =  hour7.time.substr(-5, 2);   timeConversion7 = (timeConversion7 % 12) || 12;  let finalTime7 = timeConversion7; %>
+                                        <h7><%= finalTime7 + hour7.time.substr(-3, 3)%></h7>
+                                    </div>
+                                    <!-- eighth time -->
+                                    <div class="col col-3 weatherText3">
+                                        <% let timeConversion8 = hour8.time.substr(-5, 2);   timeConversion8 = (timeConversion8 % 12) || 12;  let finalTime8 = timeConversion8; %>
+                                        <h7><%= finalTime8 + hour8.time.substr(-3, 3)%></h7>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Carosel 3 -->
+                        <div class="carousel-item">
+                            <div class="container grid text-center" style="--bs-columns: 3;" data-bs-interval="10000">
+                                <div class="row justify-content-around">
+                                    <!-- nineth icon -->
                                     <div class="col col-3">
                                         <% if (hour9.condition.text == 'Clear' ||hour9.condition.text == 'Sunny') { %>
                                                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
@@ -461,7 +434,7 @@
                                                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                         <% } %>
                                     </div>
-                                    <!-- eleventh icon -->
+                                    <!-- tenth icon -->
                                     <div class="col col-3">
                                         <% if (hour10.condition.text == 'Clear' ||hour10.condition.text == 'Sunny') { %>
                                                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
@@ -488,7 +461,7 @@
                                                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                         <% } %>
                                     </div>
-                                    <!-- twelth icon -->
+                                    <!-- eleventh icon -->
                                     <div class="col col-3">
                                         <% if (hour11.condition.text == 'Clear' ||hour11.condition.text == 'Sunny') { %>
                                                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
@@ -515,63 +488,90 @@
                                                 <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                         <% } %>
                                     </div>
+                                    <!-- twelth icon -->
+                                    <div class="col col-3">
+                                        <% if (hour12.condition.text == 'Clear' ||hour12.condition.text == 'Sunny') { %>
+                                                <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
+                                                <!-- CLOUDY -->
+                                            <% } else if (hour12.condition.text == 'Cloudy' || hour12.condition.text == 'Overcast') {%>
+                                                <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconSmall">
+                                                <!-- RAIN -->
+                                            <% } else if (hour12.condition.text == 'Mist' || hour12.condition.text == 'Light drizzle' || hour12.condition.text == 'Moderate or heavy rain shower'|| hour12.condition.text == 'Patchy light drizzle' || hour12.condition.text == 'Light rain' || hour12.condition.text == 'Patchy rain possible' || hour12.condition.text == 'Patchy light rain' || hour12.condition.text == 'Moderate rain' || hour12.condition.text == 'Heavy rain' || hour12.condition.text == 'Light rain shower' || hour12.condition.text == 'Moderate rain at times' || hour12.condition.text == 'Heavy rain at times') {%>
+                                                <img src="../../public/images/icons/rain.png" alt="" class="weatherIconSmall">
+                                                <!-- THUNDERSTORM -->
+                                            <% } else if (hour12.condition.text == 'Patchy light rain with thunder' || hour12.condition.text == 'Moderate or heavy rain with thunder' || hour12.condition.text == 'Torrential rain shower' || hour12.condition.text == 'Thundery outbreaks possible') {%>
+                                                <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconSmall">
+                                                <!-- SNOW -->
+                                            <% } else if (hour12.condition.text == 'Light snow' || hour12.condition.text == 'Light snow showers' || hour12.condition.text == 'Patchy snow possible' || hour12.condition.text == 'Patchy sleet possible' || hour12.condition.text == 'Freezing drizzle' || hour12.condition.text == 'Moderate or heavy sleet' || hour12.condition.text == 'Patchy light snow' || hour12.condition.text == 'Patchy moderate snow' || hour12.condition.text == 'Light sleet showers' || hour12.condition.text == 'Moderate snow' || hour12.condition.text == 'Light sleet' || hour12.condition.text == 'Heavy freezing drizzle' || hour12.condition.text == 'Patchy freezing drizzle possible' || hour12.condition.text == 'Moderate or heavy sleet showers' || hour12.condition.text == 'Light showers of ice pellets' || hour12.condition.text == 'Moderate or heavy showers of ice pellets' || hour12.condition.text == 'Patchy freezing drizzle possible' || hour12.condition.text == 'Moderate or heavy freezing rain' || hour12.condition.text == 'Ice pellets' || hour12.condition.text == 'Patchy heavy snow' || hour12.condition.text == 'Light freezing rain') {%>
+                                                <img src="../../public/images/icons/snow.png" alt="" class="weatherIconSmall">
+                                                <!-- BLIZZARD -->
+                                            <% } else if (hour12.condition.text == 'Blizzard' || hour12.condition.text == 'Blowing snow' || hour12.condition.text == 'Heavy snow' || hour12.condition.text == 'Patchy light snow with thunder' || hour12.condition.text == 'Moderate or heavy snow showers' || hour12.condition.text == 'Moderate or heavy snow with thunder') {%>
+                                                <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconSmall">
+                                                <!-- PARTLY CLOUDY -->
+                                                <% } else if (hour12.condition.text == 'Partly cloudy') { %>
+                                                    <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconSmall">
+                                                <!-- WINDY -->
+                                            <% } else {%>
+                                                <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
+                                        <% } %>
+                                    </div>
                                 </div>
                                 <div class="row justify-content-around">
                                     <!-- nineth temp -->
                                     <div class="col col-3">
-                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour8.temp_f %>°F</strong></h5>
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour9.temp_f %>°F</strong></h5>
                                     </div>
                                     <!-- tenth temp -->
                                     <div class="col col-3">
-                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour9.temp_f %>°F</strong></h5>
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour10.temp_f %>°F</strong></h5>
                                     </div>
                                     <!-- eleventh temp -->
                                     <div class="col col-3">
-                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour10.temp_f %>°F</strong></h5>
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour11.temp_f %>°F</strong></h5>
                                     </div>
                                     <!-- twelth temp -->
                                     <div class="col col-3">
-                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour11.temp_f %>°F</strong></h5>
+                                        <h7 class="card-title weatherText2 blackSmall"><strong><%= hour12.temp_f %>°F</strong></h5>
                                     </div>
                                 </div>
                                 <div class="row justify-content-around">
                                     <!-- nineth condition -->
                                     <div class="col col-3">
-                                        <h7 class="card-text weatherText blackSmall"><%= hour8.condition.text %></h7>
+                                        <h7 class="card-text weatherText blackSmall"><%= hour9.condition.text %></h7>
                                     </div>
                                     <!-- tenth condition -->
                                     <div class="col col-3">
-                                        <h7 class="card-text weatherText blackSmall"><%= hour9.condition.text %></h7>
+                                        <h7 class="card-text weatherText blackSmall"><%= hour10.condition.text %></h7>
                                     </div>
                                     <!-- eleventh condition -->
                                     <div class="col col-3">
-                                        <h7 class="card-text weatherText blackSmall"><%= hour10.condition.text %></h7>
+                                        <h7 class="card-text weatherText blackSmall"><%= hour11.condition.text %></h7>
                                     </div>
                                     <!-- twelth condition -->
                                     <div class="col col-3">
-                                        <h7 class="card-text weatherText blackSmall"><%= hour11.condition.text %></h7>
+                                        <h7 class="card-text weatherText blackSmall"><%= hour12.condition.text %></h7>
                                     </div>
                                 </div>
                                 <div class="row justify-content-around">
                                     <!-- nineth time -->
                                     <div class="col col-3 weatherText3">
-                                        <% let timeConversion9 =  hour8.time[11] + hour8.time[12];   timeConversion9 = (timeConversion9 % 12) || 12;  let finalTime9 = timeConversion9; %>
-                                        <h7><%= finalTime9 + hour8.time[13] + hour8.time[14] + hour8.time[15]%></h7>
+                                        <% let timeConversion9 =  hour9.time.substr(-5, 2);   timeConversion9 = (timeConversion9 % 12) || 12;  let finalTime9 = timeConversion9; %>
+                                        <h7><%= finalTime9 + hour9.time.substr(-3, 3)%></h7>
                                     </div>
                                     <!-- tenth time -->
                                     <div class="col col-3 weatherText3">
-                                        <% let timeConversion10 =  hour9.time[11] + hour9.time[12];   timeConversion10 = (timeConversion10 % 12) || 12;  let finalTime10 = timeConversion10; %>
-                                        <h7><%= finalTime10 + hour9.time[13] + hour9.time[14] + hour9.time[15]%></h7>
+                                        <% let timeConversion10 =  hour10.time.substr(-5, 2);   timeConversion10 = (timeConversion10 % 12) || 12;  let finalTime10 = timeConversion10; %>
+                                        <h7><%= finalTime10 + hour10.time.substr(-3, 3)%></h7>
                                     </div>
                                     <!-- eleventh time -->
                                     <div class="col col-3 weatherText3">
-                                        <% let timeConversion11 =  hour10.time[11] + hour10.time[12];   timeConversion11 = (timeConversion11 % 12) || 12;  let finalTime11 = timeConversion11; %>
-                                        <h7><%= finalTime11 + hour10.time[13] + hour10.time[14] + hour10.time[15]%></h7>
+                                        <% let timeConversion11 =  hour11.time.substr(-5, 2);   timeConversion11 = (timeConversion11 % 12) || 12;  let finalTime11 = timeConversion11; %>
+                                        <h7><%= finalTime11 + hour11.time.substr(-3, 3)%></h7>
                                     </div>
                                     <!-- twelth time -->
                                     <div class="col col-3 weatherText3">
-                                        <% let timeConversion12 =  hour11.time[11] + hour11.time[12];   timeConversion12 = (timeConversion12 % 12) || 12;  let finalTime12 = timeConversion12; %>
-                                        <h7><%= finalTime12 + hour11.time[13] + hour11.time[14] + hour11.time[15]%></h7>
+                                        <% let timeConversion12 =  hour12.time.substr(-5, 2);   timeConversion12 = (timeConversion12 % 12) || 12;  let finalTime12 = timeConversion12; %>
+                                        <h7><%= finalTime12 + hour12.time.substr(-3, 3)%></h7>
                                     </div>
                                 </div>
                             </div>
