@@ -92,13 +92,14 @@ async function initMap() {
     response.innerText = JSON.stringify(result, null, 2);
     // THis is my stuff
     data.push(results);
-    lat = data[0][0].geometry.viewport.eb.lo;
-    long = data[0][0].geometry.viewport.La.hi;
+    console.log(results)
+    lat = data[0][0].geometry.viewport.bi.lo;
+    long = data[0][0].geometry.viewport.Mh.hi;
     lat = lat.toString();
     long = long.toString();
     latlong = lat + ',' + long;
 
-    coords.innerHTML += `<a class="btn btn-primary" href="weather/daily/${lat},${long}">Lets Go!</a>`
+    coords.innerHTML = `<a class="btn btn-primary" href="weather/daily/${lat},${long}">Lets Go!</a>`
     // END OF MY SATUFF
     return results;
     })

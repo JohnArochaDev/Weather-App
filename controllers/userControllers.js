@@ -99,21 +99,41 @@ router.get('/favorites', (req, res) => {
     }
 })
 
-router.post('/add', (req, res) => {
-    const { username, loggedIn, userId } = req.session
-    console.log("this is the favorite: \n", req.params)
-    console.log("Do you see me")
-    const theFavorite = req.body
-    theFavorite.owner = userId
-    Favorite.create(theFavorite)
-        .then(newFavorite => {
-            res.redirect(`/users/favorites`)
-        })
-        .catch(err => {
-            console.log('error')
-            res.redirect(`/error?error=${err}`)
-        })
+router.post('/add', async (req, res) => {
+    try {
+        const {username, loggedIn, userId} = req.session
+        const favorites = await Favorite.find({owner: userId})
+        let newFavorite = req.body
+        newFavorite.owner = userId
+        for(let i=0; i<favorites.length; i++){
+            if(favorites[i].name == newFavorite.name){
+            return res.send({error: 'This favorite already exists'})
+            }
+        }
+        newFavorite = await Favorite.create(req.body)
+        res.redirect('/users/favorites')
+    } catch(err) {
+        console.log('error')
+        res.redirect(`/error?error=${err}`)
+    }
 })
+
+// router.post('/add', (req, res) => {
+//     const { username, loggedIn, userId } = req.session
+
+//     Favorite.find({})
+
+//     const theFavorite = req.body
+//     theFavorite.owner = userId
+//     Favorite.create(theFavorite)
+//         .then(newFavorite => {
+//             res.redirect(`/users/favorites`)
+//         })
+//         .catch(err => {
+//             console.log('error')
+//             res.redirect(`/error?error=${err}`)
+//         })
+// })
 
 router.delete('/delete/:id', (req, res) => {
     const { username, loggedIn, userId } = req.session
