@@ -1,5 +1,7 @@
 <%- include('../partial/header') %>
 
+<% let i = 0 %>
+
     <img src="../public/images/home/space3.jpg" class="card-img bg1" size="auto">
     <div class="container mt-4">
         <h2 class="underline" ><%= username %>'s favorite locations</h2>
@@ -11,73 +13,73 @@
                 </div>
                 <ul class="list-group list-group-flush">
                     <% favorites.forEach((f) => { %>
-                    <div class="col">
-                        <div class="row">
-                            <li class="list-group-item"><a class="noTag" href="/weather/daily/<%= f.lat %>,<%= f.long %>">
-                                <!-- if statement -->
-                                <% if (f.nickname.length > 0) { %>
-                                    <%= f.nickname[0].nickname%></a>
-                                <% } else { %>
-                                <%= f.name %>, <%= f.region %></a>
-                                <% } %>
-                                <span style="float:right">
-                                    <form class="rem" action="/users/delete/<%= f._id %>?_method=DELETE" method="POST">
-                                        <input type="submit" class="btn btn-outline-secondary btn-sm" value="🗑️">
-                                    </form>
-                                </span>
-                                <span style="float:right">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Options
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#addModal">Add Name</button></li>
-                                            <li><button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#updateModal">Update Name</button></li>
-                                            <li><a class="dropdown-item" href="/users/favorites/65970242db1889cf098de0ab">Delete Name</a></li>
-                                        </ul>
+                        <div class="col">
+                            <div class="row">
+                                <li class="list-group-item"><a class="noTag" href="/weather/daily/<%= f.lat %>,<%= f.long %>">
+                                    <!-- if statement -->
+                                    <% if (f.nickname.length > 0) { %>
+                                        <%= f.nickname[0].nickname%></a>
+                                    <% } else { %>
+                                    <%= f.name %>, <%= f.region %></a>
+                                    <% } %>
+                                    <span style="float:right">
+                                        <form class="rem" action="/users/delete/<%= f._id %>?_method=DELETE" method="POST">
+                                            <input type="submit" class="btn btn-outline-secondary btn-sm" value="🗑️">
+                                        </form>
+                                    </span>
+                                    <span style="float:right">
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Options
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#addModal<%= i %>">Add Name</button></li>
+                                                <li><button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#updateModal<%= i %>">Update Name</button></li>
+                                                <li><a class="dropdown-item" href="/users/<%= f._id %>">Delete Name</a></li>
+                                            </ul>
+                                        </div>
+                                    </span>
+                                </li>
+                            </div>
+
+                            <div class="modal fade" id="addModal<%= i %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="ms-3" id="add-notes-form" method="POST" action="/users/favorites/<%= f._id %>">
+                                                <label>Add Nickname:</label>
+                                                <input type="text" name="nickname" value="">
+                                                <input type="submit" class="btn btn-success" value="Add">
+                                            </form>
+                                        </div>
                                     </div>
-                                </span>
-                            </li>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Add</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form class="ms-3" id="add-notes-form" method="POST" action="/users/favorites/<%= f._id %>">
-                                        <label>Add Nickname:</label>
-                                        <input type="text" name="nickname" value="">
-                                        <input type="submit" class="btn btn-success" value="Add">
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Update</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                ...
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+
+
+                        <div class="modal fade" id="updateModal<%= i %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Update</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                    ...
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <% i++ %>
                 <% })} else { %>
             <h3 class="container mt-5" >Go pick some favorites first!</h3>
         <% } %>

@@ -83,6 +83,7 @@ router.get('/favorites', (req, res) => {
     if (loggedIn) {
         Favorite.find({ owner: userId })
         .then(userFavorites => {
+            console.log(userFavorites)
             res.render('users/favorites', { favorites: userFavorites, username, userId, loggedIn})
         })
         .catch(err => {
@@ -103,12 +104,9 @@ router.post('/favorites/:id', (req, res) => {
     const {username, loggedIn, userId} = req.session
     theFav = req.body
     theFav.owner = userId
-    console.log('.bod', req)
-    console.log('.param', req.params)
     Favorite.findById(req.params.id)
         .then(fav => {
             fav.nickname.push(req.body)
-            console.log(req.body)
             return fav.save()
         })
         res.redirect('/users/favorites')
