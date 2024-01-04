@@ -33,11 +33,19 @@
                                                 Options
                                             </button>
                                             <ul class="dropdown-menu">
-                                                <li><button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#addModal<%= i %>">Add Name</button></li>
-                                                <li><button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#updateModal<%= i %>">Update Name</button></li>
-                                                <li><form class="rem" action="/users/nickname/<%= f._id %>?_method=DELETE" method="POST">
-                                                    <input type="submit" class="btn btn-outline-secondary btn-sm" value="Delete Name">
-                                                </form></li>
+                                                <li>
+                                                    <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#addModal<%= i %>">Add Name</button>
+                                                </li>
+                                                <% if (f.nickname[0]?._id) {%>
+                                                <li>
+                                                    <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#updateModal<%= i %>">Update Name</button>
+                                                </li>
+                                                <li>
+                                                    <form class="rem" action="/users/nickname/<%= f.nickname[0]._id %>?_method=DELETE" method="POST">
+                                                        <input type="submit" class="btn btn-outline-secondary btn-sm" value="Delete Name">
+                                                    </form>
+                                                </li>
+                                                    <% } %>
                                             </ul>
                                         </div>
                                     </span>
