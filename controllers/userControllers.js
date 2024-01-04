@@ -83,7 +83,6 @@ router.get('/favorites', (req, res) => {
     if (loggedIn) {
         Favorite.find({ owner: userId })
         .then(userFavorites => {
-            console.log(userFavorites)
             res.render('users/favorites', { favorites: userFavorites, username, userId, loggedIn})
         })
         .catch(err => {
@@ -107,17 +106,26 @@ router.post('/favorites/:id', (req, res) => {
     Favorite.findById(req.params.id)
         .then(fav => {
             fav.nickname.push(req.body)
+            console.log(fav.nickname._id)
             return fav.save()
         })
         res.redirect('/users/favorites')
         .catch(err => {
-            console.log('error')
+            console.log('error:', err)
         })
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/nickname/:id', async (req, res) => {
     const {username, loggedIn, userId} = req.session
-
+    const fav = await Favorite.findOne({'nickname._id': req.params.id, "nickname.owner": userId})
+    console.log('user', req.params.id)
+    if(!fav) return res.redirect('/users/favorites')
+    fav.nickname.remove(req.params.id)
+    await fav.save()
+    res.redirect('/users/favorites')
+    .catch(err => {
+        console.log('error:', err)
+    })
 })
 
 router.post('/add', async (req, res) => {
