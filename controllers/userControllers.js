@@ -99,6 +99,28 @@ router.get('/favorites', (req, res) => {
     }
 })
 
+router.get('/favorites/:id', (req, res) => {
+    const {username, loggedIn, userId} = req.session
+    theFav = req.body
+    theFav.user = userId
+    Favorite.findById(req.params.id)
+        .then(fav => {
+            fav.nickname.push(req.body)
+            return fav.save()
+        })
+        .then(savedFav => {
+            res.redirect('users/favorites')
+        })
+        .catch(err => {
+            console.log('error')
+        })
+})
+
+router.delete('/:id', async (req, res) => {
+    const {username, loggedIn, userId} = req.session
+    
+})
+
 router.post('/add', async (req, res) => {
     try {
         const {username, loggedIn, userId} = req.session

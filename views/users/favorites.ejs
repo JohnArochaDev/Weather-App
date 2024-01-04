@@ -4,7 +4,7 @@
     <div class="container mt-4">
         <h2 class="underline" ><%= username %>'s favorite locations</h2>
     </div>
-    <div class="card container" style="width: 18rem;">
+    <div class="card container" style="width: 27rem;">
         <div class="card-header">
         <% if (favorites.length >= 1) { %>
                     <h2>Favorites</h2>
@@ -18,6 +18,18 @@
                                     <form class="rem" action="/users/delete/<%= f._id %>?_method=DELETE" method="POST">
                                         <input type="submit" class="btn btn-outline-secondary btn-sm" value="🗑️">
                                     </form>
+                                </span>
+                                <span style="float:right">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Options
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Add Name</a></li>
+                                            <li><a class="dropdown-item" href="#">Update Name</a></li>
+                                            <li><a class="dropdown-item" href="#">Delete Name</a></li>
+                                        </ul>
+                                    </div>
                                 </span>
                             </li>
                         </div>

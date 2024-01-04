@@ -9,6 +9,18 @@ const { Schema, model } = mongoose
 ///////////////////////////
 //// Schema definition ////
 ///////////////////////////
+
+const nicknameSchema = new Schema({
+    nickname: {type: String},
+    owner: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+}, {
+    timestamps: true
+});
+
 const favoriteSchema = new Schema({
     name: { type: String},
     region: { type: String},
@@ -18,7 +30,8 @@ const favoriteSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
-    }
+    },
+    nickname: [nicknameSchema]
 }, {
     timestamps: true
 })
