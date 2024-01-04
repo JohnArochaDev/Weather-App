@@ -29,6 +29,7 @@ const sanDiego = '32.715738,-117.1610838'
 const dallas = '32.7766642,-96.79698789999999'
 const sanJose = '37.33874,-121.8852525'
 
+let cities = [newYork, losAngeles, chicago, houston, phoenix, philadelphia, sanAntonio, sanDiego, dallas, sanJose]
 let homelocName = []
 let homeTemp = []
 let homeCondition = []
@@ -37,6 +38,23 @@ let homeCondition = []
 ///  Routes + Controllers ////
 //////////////////////////////
 
+// cities.forEach((city) => {
+//     let c = 0
+//     await axios(`${weatherURL}${city[c]}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
+//     // render the results on a 'show' page: aka 'detail' page
+//     .then(apiRes => {
+//         let weather = apiRes.data
+//         let locName = weather.location.name
+//         homelocName.push(locName)
+//         let tempF = weather.current.temp_f
+//         homeTemp.push(tempF)
+//         let condition = weather.current.condition.text
+//         homeCondition.push(condition)
+//         // console.log('1 This is the Home Name: \n', homelocName,'1 This is the Temp Name: \n', homeTemp,'1 This is the Cindition Name: \n', homeCondition)
+//     })
+//     c ++
+// })
+//Good below
 router.get('/', async function(req, res, next) {
     const { username, loggedIn, userId } = req.session
     console.log(userId)

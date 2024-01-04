@@ -90,7 +90,12 @@ router.get('/favorites', (req, res) => {
             res.redirect(`/error?error=${err}`)
         })
     } else {
-        res.redirect('/users/login', { username, loggedIn, userId })
+        try {
+            res.redirect('/users/login')
+        }catch(err) {
+            console.log('error')
+            res.redirect(`/error?error=${err}`)
+        }
     }
 })
 
