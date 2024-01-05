@@ -143,29 +143,14 @@ router.post('/add', async (req, res) => {
             }
         }
         newFavorite = await Favorite.create(req.body)
-        res.redirect('/users/favorites')
+        .then(done => {
+            res.redirect('/users/favorites')
+        })
     } catch(err) {
         console.log('error')
         res.redirect(`/error?error=${err}`)
     }
 })
-
-// router.post('/add', (req, res) => {
-//     const { username, loggedIn, userId } = req.session
-
-//     Favorite.find({})
-
-//     const theFavorite = req.body
-//     theFavorite.owner = userId
-//     Favorite.create(theFavorite)
-//         .then(newFavorite => {
-//             res.redirect(`/users/favorites`)
-//         })
-//         .catch(err => {
-//             console.log('error')
-//             res.redirect(`/error?error=${err}`)
-//         })
-// })
 
 router.delete('/delete/:id', (req, res) => {
     const { username, loggedIn, userId } = req.session
