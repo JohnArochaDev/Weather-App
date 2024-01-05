@@ -54,6 +54,7 @@ let homeCondition = []
 //     })
 //     c ++
 // })
+
 //Good below
 router.get('/', async function(req, res, next) {
     const { username, loggedIn, userId } = req.session
@@ -654,9 +655,6 @@ router.get('/weather/daily/:coords', (req, res) => {
             res.redirect(`/error?error=${err}`)
     })
 })
-
-
-
 
 ///////////////////////
 ///  Export Router ////
