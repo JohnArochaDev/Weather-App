@@ -107,7 +107,7 @@ router.post('/favorites/:id', (req, res) => {
     Favorite.findById(req.params.id)
         .then(fav => {
             fav.nickname = req.body
-            console.log(fav.nickname._id)
+            // console.log(fav.nickname._id)
             return fav.save()
         })
         res.redirect('/users/favorites')

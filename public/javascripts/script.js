@@ -82,6 +82,8 @@ async function initMap() {
     clear();
     geocoder
     .geocode(request)
+
+    
     .then((result) => {
     const { results } = result;
 
@@ -98,7 +100,7 @@ async function initMap() {
     lat = lat.toString();
     long = long.toString();
     latlong = lat + ',' + long;
-
+    console.log(latlong)
     coords.innerHTML = `<a class="btn btn-primary" href="weather/daily/${lat},${long}">Lets Go!</a>`
     // END OF MY SATUFF
     return results;
