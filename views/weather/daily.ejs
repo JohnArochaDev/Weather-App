@@ -405,136 +405,122 @@
                                         <% if (hour10.condition.text == 'Clear' ||hour10.condition.text == 'Sunny') { %>
                                                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
                                                 <!-- CLOUDY -->
-                                            <% } else if (hour10.condition.text == 'Cloudy' || hour10.condition.text == 'Overcast') {%>
-                                                <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconSmall">
-                                                <!-- RAIN -->
-                                            <% } else if (hour10.condition.text == 'Mist' || hour10.condition.text == 'Light drizzle' || hour10.condition.text == 'Moderate or heavy rain shower'|| hour10.condition.text == 'Patchy light drizzle' || hour10.condition.text == 'Light rain' || hour10.condition.text == 'Patchy rain possible' || hour10.condition.text == 'Patchy light rain' || hour10.condition.text == 'Moderate rain' || hour10.condition.text == 'Heavy rain' || hour10.condition.text == 'Light rain shower' || hour10.condition.text == 'Moderate rain at times' || hour10.condition.text == 'Heavy rain at times') {%>
-                                                <img src="../../public/images/icons/rain.png" alt="" class="weatherIconSmall">
-                                                <!-- THUNDERSTORM -->
-                                            <% } else if (hour10.condition.text == 'Patchy light rain with thunder' || hour10.condition.text == 'Moderate or heavy rain with thunder' || hour10.condition.text == 'Torrential rain shower' || hour10.condition.text == 'Thundery outbreaks possible') {%>
-                                                <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconSmall">
-                                                <!-- SNOW -->
-                                            <% } else if (hour10.condition.text == 'Light snow' || hour10.condition.text == 'Light snow showers' || hour10.condition.text == 'Patchy snow possible' || hour10.condition.text == 'Patchy sleet possible' || hour10.condition.text == 'Freezing drizzle' || hour10.condition.text == 'Moderate or heavy sleet' || hour10.condition.text == 'Patchy light snow' || hour10.condition.text == 'Patchy moderate snow' || hour10.condition.text == 'Light sleet showers' || hour10.condition.text == 'Moderate snow' || hour10.condition.text == 'Light sleet' || hour10.condition.text == 'Heavy freezing drizzle' || hour10.condition.text == 'Patchy freezing drizzle possible' || hour10.condition.text == 'Moderate or heavy sleet showers' || hour10.condition.text == 'Light showers of ice pellets' || hour10.condition.text == 'Moderate or heavy showers of ice pellets' || hour10.condition.text == 'Patchy freezing drizzle possible' || hour10.condition.text == 'Moderate or heavy freezing rain' || hour10.condition.text == 'Ice pellets' || hour10.condition.text == 'Patchy heavy snow' || hour10.condition.text == 'Light freezing rain') {%>
-                                                <img src="../../public/images/icons/snow.png" alt="" class="weatherIconSmall">
-                                                <!-- BLIZZARD -->
-                                            <% } else if (hour10.condition.text == 'Blizzard' || hour10.condition.text == 'Blowing snow' || hour10.condition.text == 'Heavy snow' || hour10.condition.text == 'Patchy light snow with thunder' || hour10.condition.text == 'Moderate or heavy snow showers' || hour10.condition.text == 'Moderate or heavy snow with thunder') {%>
-                                                <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconSmall">
-                                                <!-- PARTLY CLOUDY -->
-                                                <% } else if (hour10.condition.text == 'Partly cloudy') { %>
-                                                    <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconSmall">
-                                                <!-- WINDY -->
-                                            <% } else {%>
-                                                <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
+                                                <% } else if (hour10.condition.text == 'Cloudy' || hour10.condition.text == 'Overcast') {%>
+                                                    <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconSmall">
+                                                    <!-- RAIN -->
+                                                    <% } else if (hour10.condition.text == 'Mist' || hour10.condition.text == 'Light drizzle' || hour10.condition.text == 'Moderate or heavy rain shower'|| hour10.condition.text == 'Patchy light drizzle' || hour10.condition.text == 'Light rain' || hour10.condition.text == 'Patchy rain possible' || hour10.condition.text == 'Patchy light rain' || hour10.condition.text == 'Moderate rain' || hour10.condition.text == 'Heavy rain' || hour10.condition.text == 'Light rain shower' || hour10.condition.text == 'Moderate rain at times' || hour10.condition.text == 'Heavy rain at times') {%>
+                                                        <img src="../../public/images/icons/rain.png" alt="" class="weatherIconSmall">
+                                                        <!-- THUNDERSTORM -->
+                                                        <% } else if (hour10.condition.text == 'Patchy light rain with thunder' || hour10.condition.text == 'Moderate or heavy rain with thunder' || hour10.condition.text == 'Torrential rain shower' || hour10.condition.text == 'Thundery outbreaks possible') {%>
+                                                            <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconSmall">
+                                                            <!-- SNOW -->
+                                                            <% } else if (hour10.condition.text == 'Light snow' || hour10.condition.text == 'Light snow showers' || hour10.condition.text == 'Patchy snow possible' || hour10.condition.text == 'Patchy sleet possible' || hour10.condition.text == 'Freezing drizzle' || hour10.condition.text == 'Moderate or heavy sleet' || hour10.condition.text == 'Patchy light snow' || hour10.condition.text == 'Patchy moderate snow' || hour10.condition.text == 'Light sleet showers' || hour10.condition.text == 'Moderate snow' || hour10.condition.text == 'Light sleet' || hour10.condition.text == 'Heavy freezing drizzle' || hour10.condition.text == 'Patchy freezing drizzle possible' || hour10.condition.text == 'Moderate or heavy sleet showers' || hour10.condition.text == 'Light showers of ice pellets' || hour10.condition.text == 'Moderate or heavy showers of ice pellets' || hour10.condition.text == 'Patchy freezing drizzle possible' || hour10.condition.text == 'Moderate or heavy freezing rain' || hour10.condition.text == 'Ice pellets' || hour10.condition.text == 'Patchy heavy snow' || hour10.condition.text == 'Light freezing rain') {%>
+                                                                <img src="../../public/images/icons/snow.png" alt="" class="weatherIconSmall">
+                                                                <!-- BLIZZARD -->
+                                                                <% } else if (hour10.condition.text == 'Blizzard' || hour10.condition.text == 'Blowing snow' || hour10.condition.text == 'Heavy snow' || hour10.condition.text == 'Patchy light snow with thunder' || hour10.condition.text == 'Moderate or heavy snow showers' || hour10.condition.text == 'Moderate or heavy snow with thunder') {%>
+                                                                    <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconSmall">
+                                                                    <!-- PARTLY CLOUDY -->
+                                                                    <% } else if (hour10.condition.text == 'Partly cloudy') { %>
+                                                                        <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconSmall">
+                                                                        <!-- WINDY -->
+                                                                        <% } else {%>
+                                                                            <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                         <% } %>
                                     </div>
-                                    <!-- eleventh icon -->
                                     <div class="col col-3">
                                         <% if (hour11.condition.text == 'Clear' ||hour11.condition.text == 'Sunny') { %>
                                                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
                                                 <!-- CLOUDY -->
-                                            <% } else if (hour11.condition.text == 'Cloudy' || hour11.condition.text == 'Overcast') {%>
-                                                <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconSmall">
-                                                <!-- RAIN -->
-                                            <% } else if (hour11.condition.text == 'Mist' || hour11.condition.text == 'Light drizzle' || hour11.condition.text == 'Moderate or heavy rain shower'|| hour11.condition.text == 'Patchy light drizzle' || hour11.condition.text == 'Light rain' || hour11.condition.text == 'Patchy rain possible' || hour11.condition.text == 'Patchy light rain' || hour11.condition.text == 'Moderate rain' || hour11.condition.text == 'Heavy rain' || hour11.condition.text == 'Light rain shower' || hour11.condition.text == 'Moderate rain at times' || hour11.condition.text == 'Heavy rain at times') {%>
-                                                <img src="../../public/images/icons/rain.png" alt="" class="weatherIconSmall">
-                                                <!-- THUNDERSTORM -->
-                                            <% } else if (hour11.condition.text == 'Patchy light rain with thunder' || hour11.condition.text == 'Moderate or heavy rain with thunder' || hour11.condition.text == 'Torrential rain shower' || hour11.condition.text == 'Thundery outbreaks possible') {%>
-                                                <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconSmall">
-                                                <!-- SNOW -->
-                                            <% } else if (hour11.condition.text == 'Light snow' || hour11.condition.text == 'Light snow showers' || hour11.condition.text == 'Patchy snow possible' || hour11.condition.text == 'Patchy sleet possible' || hour11.condition.text == 'Freezing drizzle' || hour11.condition.text == 'Moderate or heavy sleet' || hour11.condition.text == 'Patchy light snow' || hour11.condition.text == 'Patchy moderate snow' || hour11.condition.text == 'Light sleet showers' || hour11.condition.text == 'Moderate snow' || hour11.condition.text == 'Light sleet' || hour11.condition.text == 'Heavy freezing drizzle' || hour11.condition.text == 'Patchy freezing drizzle possible' || hour11.condition.text == 'Moderate or heavy sleet showers' || hour11.condition.text == 'Light showers of ice pellets' || hour11.condition.text == 'Moderate or heavy showers of ice pellets' || hour11.condition.text == 'Patchy freezing drizzle possible' || hour11.condition.text == 'Moderate or heavy freezing rain' || hour11.condition.text == 'Ice pellets' || hour11.condition.text == 'Patchy heavy snow' || hour11.condition.text == 'Light freezing rain') {%>
-                                                <img src="../../public/images/icons/snow.png" alt="" class="weatherIconSmall">
-                                                <!-- BLIZZARD -->
-                                            <% } else if (hour11.condition.text == 'Blizzard' || hour11.condition.text == 'Blowing snow' || hour11.condition.text == 'Heavy snow' || hour11.condition.text == 'Patchy light snow with thunder' || hour11.condition.text == 'Moderate or heavy snow showers' || hour11.condition.text == 'Moderate or heavy snow with thunder') {%>
-                                                <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconSmall">
-                                                <!-- PARTLY CLOUDY -->
-                                                <% } else if (hour11.condition.text == 'Partly cloudy') { %>
-                                                    <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconSmall">
-                                                <!-- WINDY -->
-                                            <% } else {%>
-                                                <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
+                                                <% } else if (hour11.condition.text == 'Cloudy' || hour11.condition.text == 'Overcast') {%>
+                                                    <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconSmall">
+                                                    <!-- RAIN -->
+                                                    <% } else if (hour11.condition.text == 'Mist' || hour11.condition.text == 'Light drizzle' || hour11.condition.text == 'Moderate or heavy rain shower'|| hour11.condition.text == 'Patchy light drizzle' || hour11.condition.text == 'Light rain' || hour11.condition.text == 'Patchy rain possible' || hour11.condition.text == 'Patchy light rain' || hour11.condition.text == 'Moderate rain' || hour11.condition.text == 'Heavy rain' || hour11.condition.text == 'Light rain shower' || hour11.condition.text == 'Moderate rain at times' || hour11.condition.text == 'Heavy rain at times') {%>
+                                                        <img src="../../public/images/icons/rain.png" alt="" class="weatherIconSmall">
+                                                        <!-- THUNDERSTORM -->
+                                                        <% } else if (hour11.condition.text == 'Patchy light rain with thunder' || hour11.condition.text == 'Moderate or heavy rain with thunder' || hour11.condition.text == 'Torrential rain shower' || hour11.condition.text == 'Thundery outbreaks possible') {%>
+                                                            <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconSmall">
+                                                            <!-- SNOW -->
+                                                            <% } else if (hour11.condition.text == 'Light snow' || hour11.condition.text == 'Light snow showers' || hour11.condition.text == 'Patchy snow possible' || hour11.condition.text == 'Patchy sleet possible' || hour11.condition.text == 'Freezing drizzle' || hour11.condition.text == 'Moderate or heavy sleet' || hour11.condition.text == 'Patchy light snow' || hour11.condition.text == 'Patchy moderate snow' || hour11.condition.text == 'Light sleet showers' || hour11.condition.text == 'Moderate snow' || hour11.condition.text == 'Light sleet' || hour11.condition.text == 'Heavy freezing drizzle' || hour11.condition.text == 'Patchy freezing drizzle possible' || hour11.condition.text == 'Moderate or heavy sleet showers' || hour11.condition.text == 'Light showers of ice pellets' || hour11.condition.text == 'Moderate or heavy showers of ice pellets' || hour11.condition.text == 'Patchy freezing drizzle possible' || hour11.condition.text == 'Moderate or heavy freezing rain' || hour11.condition.text == 'Ice pellets' || hour11.condition.text == 'Patchy heavy snow' || hour11.condition.text == 'Light freezing rain') {%>
+                                                                <img src="../../public/images/icons/snow.png" alt="" class="weatherIconSmall">
+                                                                <!-- BLIZZARD -->
+                                                                <% } else if (hour11.condition.text == 'Blizzard' || hour11.condition.text == 'Blowing snow' || hour11.condition.text == 'Heavy snow' || hour11.condition.text == 'Patchy light snow with thunder' || hour11.condition.text == 'Moderate or heavy snow showers' || hour11.condition.text == 'Moderate or heavy snow with thunder') {%>
+                                                                    <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconSmall">
+                                                                    <!-- PARTLY CLOUDY -->
+                                                                    <% } else if (hour11.condition.text == 'Partly cloudy') { %>
+                                                                        <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconSmall">
+                                                                        <!-- WINDY -->
+                                                                        <% } else {%>
+                                                                            <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                         <% } %>
                                     </div>
-                                    <!-- twelth icon -->
                                     <div class="col col-3">
                                         <% if (hour12.condition.text == 'Clear' ||hour12.condition.text == 'Sunny') { %>
                                                 <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
                                                 <!-- CLOUDY -->
-                                            <% } else if (hour12.condition.text == 'Cloudy' || hour12.condition.text == 'Overcast') {%>
-                                                <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconSmall">
-                                                <!-- RAIN -->
-                                            <% } else if (hour12.condition.text == 'Mist' || hour12.condition.text == 'Light drizzle' || hour12.condition.text == 'Moderate or heavy rain shower'|| hour12.condition.text == 'Patchy light drizzle' || hour12.condition.text == 'Light rain' || hour12.condition.text == 'Patchy rain possible' || hour12.condition.text == 'Patchy light rain' || hour12.condition.text == 'Moderate rain' || hour12.condition.text == 'Heavy rain' || hour12.condition.text == 'Light rain shower' || hour12.condition.text == 'Moderate rain at times' || hour12.condition.text == 'Heavy rain at times') {%>
-                                                <img src="../../public/images/icons/rain.png" alt="" class="weatherIconSmall">
-                                                <!-- THUNDERSTORM -->
-                                            <% } else if (hour12.condition.text == 'Patchy light rain with thunder' || hour12.condition.text == 'Moderate or heavy rain with thunder' || hour12.condition.text == 'Torrential rain shower' || hour12.condition.text == 'Thundery outbreaks possible') {%>
-                                                <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconSmall">
-                                                <!-- SNOW -->
-                                            <% } else if (hour12.condition.text == 'Light snow' || hour12.condition.text == 'Light snow showers' || hour12.condition.text == 'Patchy snow possible' || hour12.condition.text == 'Patchy sleet possible' || hour12.condition.text == 'Freezing drizzle' || hour12.condition.text == 'Moderate or heavy sleet' || hour12.condition.text == 'Patchy light snow' || hour12.condition.text == 'Patchy moderate snow' || hour12.condition.text == 'Light sleet showers' || hour12.condition.text == 'Moderate snow' || hour12.condition.text == 'Light sleet' || hour12.condition.text == 'Heavy freezing drizzle' || hour12.condition.text == 'Patchy freezing drizzle possible' || hour12.condition.text == 'Moderate or heavy sleet showers' || hour12.condition.text == 'Light showers of ice pellets' || hour12.condition.text == 'Moderate or heavy showers of ice pellets' || hour12.condition.text == 'Patchy freezing drizzle possible' || hour12.condition.text == 'Moderate or heavy freezing rain' || hour12.condition.text == 'Ice pellets' || hour12.condition.text == 'Patchy heavy snow' || hour12.condition.text == 'Light freezing rain') {%>
-                                                <img src="../../public/images/icons/snow.png" alt="" class="weatherIconSmall">
-                                                <!-- BLIZZARD -->
-                                            <% } else if (hour12.condition.text == 'Blizzard' || hour12.condition.text == 'Blowing snow' || hour12.condition.text == 'Heavy snow' || hour12.condition.text == 'Patchy light snow with thunder' || hour12.condition.text == 'Moderate or heavy snow showers' || hour12.condition.text == 'Moderate or heavy snow with thunder') {%>
-                                                <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconSmall">
-                                                <!-- PARTLY CLOUDY -->
-                                                <% } else if (hour12.condition.text == 'Partly cloudy') { %>
-                                                    <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconSmall">
-                                                <!-- WINDY -->
-                                            <% } else {%>
-                                                <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
+                                                <% } else if (hour12.condition.text == 'Cloudy' || hour12.condition.text == 'Overcast') {%>
+                                                    <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconSmall">
+                                                    <!-- RAIN -->
+                                                    <% } else if (hour12.condition.text == 'Mist' || hour12.condition.text == 'Light drizzle' || hour12.condition.text == 'Moderate or heavy rain shower'|| hour12.condition.text == 'Patchy light drizzle' || hour12.condition.text == 'Light rain' || hour12.condition.text == 'Patchy rain possible' || hour12.condition.text == 'Patchy light rain' || hour12.condition.text == 'Moderate rain' || hour12.condition.text == 'Heavy rain' || hour12.condition.text == 'Light rain shower' || hour12.condition.text == 'Moderate rain at times' || hour12.condition.text == 'Heavy rain at times') {%>
+                                                        <img src="../../public/images/icons/rain.png" alt="" class="weatherIconSmall">
+                                                        <!-- THUNDERSTORM -->
+                                                        <% } else if (hour12.condition.text == 'Patchy light rain with thunder' || hour12.condition.text == 'Moderate or heavy rain with thunder' || hour12.condition.text == 'Torrential rain shower' || hour12.condition.text == 'Thundery outbreaks possible') {%>
+                                                            <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconSmall">
+                                                            <!-- SNOW -->
+                                                            <% } else if (hour12.condition.text == 'Light snow' || hour12.condition.text == 'Light snow showers' || hour12.condition.text == 'Patchy snow possible' || hour12.condition.text == 'Patchy sleet possible' || hour12.condition.text == 'Freezing drizzle' || hour12.condition.text == 'Moderate or heavy sleet' || hour12.condition.text == 'Patchy light snow' || hour12.condition.text == 'Patchy moderate snow' || hour12.condition.text == 'Light sleet showers' || hour12.condition.text == 'Moderate snow' || hour12.condition.text == 'Light sleet' || hour12.condition.text == 'Heavy freezing drizzle' || hour12.condition.text == 'Patchy freezing drizzle possible' || hour12.condition.text == 'Moderate or heavy sleet showers' || hour12.condition.text == 'Light showers of ice pellets' || hour12.condition.text == 'Moderate or heavy showers of ice pellets' || hour12.condition.text == 'Patchy freezing drizzle possible' || hour12.condition.text == 'Moderate or heavy freezing rain' || hour12.condition.text == 'Ice pellets' || hour12.condition.text == 'Patchy heavy snow' || hour12.condition.text == 'Light freezing rain') {%>
+                                                                <img src="../../public/images/icons/snow.png" alt="" class="weatherIconSmall">
+                                                                <!-- BLIZZARD -->
+                                                                <% } else if (hour12.condition.text == 'Blizzard' || hour12.condition.text == 'Blowing snow' || hour12.condition.text == 'Heavy snow' || hour12.condition.text == 'Patchy light snow with thunder' || hour12.condition.text == 'Moderate or heavy snow showers' || hour12.condition.text == 'Moderate or heavy snow with thunder') {%>
+                                                                    <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconSmall">
+                                                                    <!-- PARTLY CLOUDY -->
+                                                                    <% } else if (hour12.condition.text == 'Partly cloudy') { %>
+                                                                        <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconSmall">
+                                                                        <!-- WINDY -->
+                                                                        <% } else {%>
+                                                                            <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                         <% } %>
                                     </div>
                                 </div>
                                 <div class="row justify-content-around">
-                                    <!-- nineth temp -->
                                     <div class="col col-3">
                                         <h7 class="card-title weatherText2 blackSmall"><strong><%= hour9.temp_f %>°F</strong></h5>
                                     </div>
-                                    <!-- tenth temp -->
                                     <div class="col col-3">
                                         <h7 class="card-title weatherText2 blackSmall"><strong><%= hour10.temp_f %>°F</strong></h5>
                                     </div>
-                                    <!-- eleventh temp -->
                                     <div class="col col-3">
                                         <h7 class="card-title weatherText2 blackSmall"><strong><%= hour11.temp_f %>°F</strong></h5>
                                     </div>
-                                    <!-- twelth temp -->
                                     <div class="col col-3">
                                         <h7 class="card-title weatherText2 blackSmall"><strong><%= hour12.temp_f %>°F</strong></h5>
                                     </div>
                                 </div>
                                 <div class="row justify-content-around">
-                                    <!-- nineth condition -->
                                     <div class="col col-3">
                                         <h7 class="card-text weatherText blackSmall"><%= hour9.condition.text %></h7>
                                     </div>
-                                    <!-- tenth condition -->
                                     <div class="col col-3">
                                         <h7 class="card-text weatherText blackSmall"><%= hour10.condition.text %></h7>
                                     </div>
-                                    <!-- eleventh condition -->
                                     <div class="col col-3">
                                         <h7 class="card-text weatherText blackSmall"><%= hour11.condition.text %></h7>
                                     </div>
-                                    <!-- twelth condition -->
                                     <div class="col col-3">
                                         <h7 class="card-text weatherText blackSmall"><%= hour12.condition.text %></h7>
                                     </div>
                                 </div>
                                 <div class="row justify-content-around">
-                                    <!-- nineth time -->
                                     <div class="col col-3 weatherText3">
                                         <% let timeConversion9 =  hour9.time.substr(-5, 2);   timeConversion9 = (timeConversion9 % 12) || 12;  let finalTime9 = timeConversion9; %>
                                         <h7><%= finalTime9 + hour9.time.substr(-3, 3)%></h7>
                                     </div>
-                                    <!-- tenth time -->
                                     <div class="col col-3 weatherText3">
                                         <% let timeConversion10 =  hour10.time.substr(-5, 2);   timeConversion10 = (timeConversion10 % 12) || 12;  let finalTime10 = timeConversion10; %>
                                         <h7><%= finalTime10 + hour10.time.substr(-3, 3)%></h7>
                                     </div>
-                                    <!-- eleventh time -->
                                     <div class="col col-3 weatherText3">
                                         <% let timeConversion11 =  hour11.time.substr(-5, 2);   timeConversion11 = (timeConversion11 % 12) || 12;  let finalTime11 = timeConversion11; %>
                                         <h7><%= finalTime11 + hour11.time.substr(-3, 3)%></h7>
                                     </div>
-                                    <!-- twelth time -->
                                     <div class="col col-3 weatherText3">
                                         <% let timeConversion12 =  hour12.time.substr(-5, 2);   timeConversion12 = (timeConversion12 % 12) || 12;  let finalTime12 = timeConversion12; %>
                                         <h7><%= finalTime12 + hour12.time.substr(-3, 3)%></h7>
@@ -586,114 +572,99 @@
                                             <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
                                     <% } %>
                                     </div>
-                                    <!-- second icon -->
                                     <div class="col col-3">
                                         <% if (forecast2.day.condition.text == 'Clear' ||forecast2.day.condition.text == 'Sunny') { %>
                                             <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
-                                            <!-- CLOUDY -->
-                                        <% } else if (forecast2.day.condition.text == 'Cloudy' || forecast2.day.condition.text == 'Overcast') {%>
-                                            <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconSmall">
-                                            <!-- RAIN -->
-                                        <% } else if (forecast2.day.condition.text == 'Mist' || forecast2.day.condition.text == 'Light drizzle' || forecast2.day.condition.text == 'Moderate or heavy rain shower'|| forecast2.day.condition.text == 'Patchy light drizzle' || forecast2.day.condition.text == 'Light rain' || forecast2.day.condition.text == 'Patchy rain possible' || forecast2.day.condition.text == 'Patchy light rain' || forecast2.day.condition.text == 'Moderate rain' || forecast2.day.condition.text == 'Heavy rain' || forecast2.day.condition.text == 'Light rain shower' || forecast2.day.condition.text == 'Moderate rain at times' || forecast2.day.condition.text == 'Heavy rain at times') {%>
-                                            <img src="../../public/images/icons/rain.png" alt="" class="weatherIconSmall">
-                                            <!-- THUNDERSTORM -->
-                                        <% } else if (forecast2.day.condition.text == 'Patchy light rain with thunder' || forecast2.day.condition.text == 'Moderate or heavy rain with thunder' || forecast2.day.condition.text == 'Torrential rain shower' || forecast2.day.condition.text == 'Thundery outbreaks possible') {%>
-                                            <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconSmall">
-                                            <!-- SNOW -->
-                                        <% } else if (forecast2.day.condition.text == 'Light snow' || forecast2.day.condition.text == 'Light snow showers' || forecast2.day.condition.text == 'Patchy snow possible' || forecast2.day.condition.text == 'Patchy sleet possible' || forecast2.day.condition.text == 'Freezing drizzle' || forecast2.day.condition.text == 'Moderate or heavy sleet' || forecast2.day.condition.text == 'Patchy light snow' || forecast2.day.condition.text == 'Patchy moderate snow' || forecast2.day.condition.text == 'Light sleet showers' || forecast2.day.condition.text == 'Moderate snow' || forecast2.day.condition.text == 'Light sleet' || forecast2.day.condition.text == 'Heavy freezing drizzle' || forecast2.day.condition.text == 'Patchy freezing drizzle possible' || forecast2.day.condition.text == 'Moderate or heavy sleet showers' || forecast2.day.condition.text == 'Light showers of ice pellets' || forecast2.day.condition.text == 'Moderate or heavy showers of ice pellets' || forecast2.day.condition.text == 'Patchy freezing drizzle possible' || forecast2.day.condition.text == 'Moderate or heavy freezing rain' || forecast2.day.condition.text == 'Ice pellets' || forecast2.day.condition.text == 'Patchy heavy snow' || forecast2.day.condition.text == 'Light freezing rain') {%>
-                                            <img src="../../public/images/icons/snow.png" alt="" class="weatherIconSmall">
-                                            <!-- BLIZZARD -->
-                                        <% } else if (forecast2.day.condition.text == 'Blizzard' || forecast2.day.condition.text == 'Blowing snow' || forecast2.day.condition.text == 'Heavy snow' || forecast2.day.condition.text == 'Patchy light snow with thunder' || forecast2.day.condition.text == 'Moderate or heavy snow showers' || forecast2.day.condition.text == 'Moderate or heavy snow with thunder') {%>
-                                            <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconSmall">
-                                            <!-- PARTLY CLOUDY -->
-                                        <% } else if (forecast2.day.condition.text == 'Partly cloudy') { %>
-                                                <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconSmall">
-                                            <!-- WINDY -->
-                                        <% } else {%>
-                                            <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
-                                    <% } %>
+                                                <!-- CLOUDY -->
+                                            <% } else if (forecast2.day.condition.text == 'Cloudy' || forecast2.day.condition.text == 'Overcast') {%>
+                                                <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconSmall">
+                                                <!-- RAIN -->
+                                                <% } else if (forecast2.day.condition.text == 'Mist' || forecast2.day.condition.text == 'Light drizzle' || forecast2.day.condition.text == 'Moderate or heavy rain shower'|| forecast2.day.condition.text == 'Patchy light drizzle' || forecast2.day.condition.text == 'Light rain' || forecast2.day.condition.text == 'Patchy rain possible' || forecast2.day.condition.text == 'Patchy light rain' || forecast2.day.condition.text == 'Moderate rain' || forecast2.day.condition.text == 'Heavy rain' || forecast2.day.condition.text == 'Light rain shower' || forecast2.day.condition.text == 'Moderate rain at times' || forecast2.day.condition.text == 'Heavy rain at times') {%>
+                                                    <img src="../../public/images/icons/rain.png" alt="" class="weatherIconSmall">
+                                                    <!-- THUNDERSTORM -->
+                                                    <% } else if (forecast2.day.condition.text == 'Patchy light rain with thunder' || forecast2.day.condition.text == 'Moderate or heavy rain with thunder' || forecast2.day.condition.text == 'Torrential rain shower' || forecast2.day.condition.text == 'Thundery outbreaks possible') {%>
+                                                        <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconSmall">
+                                                        <!-- SNOW -->
+                                                        <% } else if (forecast2.day.condition.text == 'Light snow' || forecast2.day.condition.text == 'Light snow showers' || forecast2.day.condition.text == 'Patchy snow possible' || forecast2.day.condition.text == 'Patchy sleet possible' || forecast2.day.condition.text == 'Freezing drizzle' || forecast2.day.condition.text == 'Moderate or heavy sleet' || forecast2.day.condition.text == 'Patchy light snow' || forecast2.day.condition.text == 'Patchy moderate snow' || forecast2.day.condition.text == 'Light sleet showers' || forecast2.day.condition.text == 'Moderate snow' || forecast2.day.condition.text == 'Light sleet' || forecast2.day.condition.text == 'Heavy freezing drizzle' || forecast2.day.condition.text == 'Patchy freezing drizzle possible' || forecast2.day.condition.text == 'Moderate or heavy sleet showers' || forecast2.day.condition.text == 'Light showers of ice pellets' || forecast2.day.condition.text == 'Moderate or heavy showers of ice pellets' || forecast2.day.condition.text == 'Patchy freezing drizzle possible' || forecast2.day.condition.text == 'Moderate or heavy freezing rain' || forecast2.day.condition.text == 'Ice pellets' || forecast2.day.condition.text == 'Patchy heavy snow' || forecast2.day.condition.text == 'Light freezing rain') {%>
+                                                            <img src="../../public/images/icons/snow.png" alt="" class="weatherIconSmall">
+                                                            <!-- BLIZZARD -->
+                                                            <% } else if (forecast2.day.condition.text == 'Blizzard' || forecast2.day.condition.text == 'Blowing snow' || forecast2.day.condition.text == 'Heavy snow' || forecast2.day.condition.text == 'Patchy light snow with thunder' || forecast2.day.condition.text == 'Moderate or heavy snow showers' || forecast2.day.condition.text == 'Moderate or heavy snow with thunder') {%>
+                                                                <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconSmall">
+                                                                <!-- PARTLY CLOUDY -->
+                                                                <% } else if (forecast2.day.condition.text == 'Partly cloudy') { %>
+                                                                        <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconSmall">
+                                                                        <!-- WINDY -->
+                                                                        <% } else {%>
+                                                                            <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
+                                        <% } %>
                                     </div>
-                                    <!-- third icon -->
                                     <div class="col col-3">
                                         <% if (forecast3.day.condition.text == 'Clear' ||forecast3.day.condition.text == 'Sunny') { %>
                                             <img src="../../public/images/icons/clearDay.png" alt="" class="weatherIconSmall">
                                             <!-- CLOUDY -->
-                                        <% } else if (forecast3.day.condition.text == 'Cloudy' || forecast3.day.condition.text == 'Overcast') {%>
-                                            <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconSmall">
-                                            <!-- RAIN -->
-                                        <% } else if (forecast3.day.condition.text == 'Mist' || forecast3.day.condition.text == 'Light drizzle' || forecast3.day.condition.text == 'Moderate or heavy rain shower'|| forecast3.day.condition.text == 'Patchy light drizzle' || forecast3.day.condition.text == 'Light rain' || forecast3.day.condition.text == 'Patchy rain possible' || forecast3.day.condition.text == 'Patchy light rain' || forecast3.day.condition.text == 'Moderate rain' || forecast3.day.condition.text == 'Heavy rain' || forecast3.day.condition.text == 'Light rain shower' || forecast3.day.condition.text == 'Moderate rain at times' || forecast3.day.condition.text == 'Heavy rain at times') {%>
-                                            <img src="../../public/images/icons/rain.png" alt="" class="weatherIconSmall">
-                                            <!-- THUNDERSTORM -->
-                                        <% } else if (forecast3.day.condition.text == 'Patchy light rain with thunder' || forecast3.day.condition.text == 'Moderate or heavy rain with thunder' || forecast3.day.condition.text == 'Torrential rain shower' || forecast3.day.condition.text == 'Thundery outbreaks possible') {%>
-                                            <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconSmall">
-                                            <!-- SNOW -->
-                                        <% } else if (forecast3.day.condition.text == 'Light snow' || forecast3.day.condition.text == 'Light snow showers' || forecast3.day.condition.text == 'Patchy snow possible' || forecast3.day.condition.text == 'Patchy sleet possible' || forecast3.day.condition.text == 'Freezing drizzle' || forecast3.day.condition.text == 'Moderate or heavy sleet' || forecast3.day.condition.text == 'Patchy light snow' || forecast3.day.condition.text == 'Patchy moderate snow' || forecast3.day.condition.text == 'Light sleet showers' || forecast3.day.condition.text == 'Moderate snow' || forecast3.day.condition.text == 'Light sleet' || forecast3.day.condition.text == 'Heavy freezing drizzle' || forecast3.day.condition.text == 'Patchy freezing drizzle possible' || forecast3.day.condition.text == 'Moderate or heavy sleet showers' || forecast3.day.condition.text == 'Light showers of ice pellets' || forecast3.day.condition.text == 'Moderate or heavy showers of ice pellets' || forecast3.day.condition.text == 'Patchy freezing drizzle possible' || forecast3.day.condition.text == 'Moderate or heavy freezing rain' || forecast3.day.condition.text == 'Ice pellets' || forecast3.day.condition.text == 'Patchy heavy snow' || forecast3.day.condition.text == 'Light freezing rain') {%>
-                                            <img src="../../public/images/icons/snow.png" alt="" class="weatherIconSmall">
-                                            <!-- BLIZZARD -->
-                                        <% } else if (forecast3.day.condition.text == 'Blizzard' || forecast3.day.condition.text == 'Blowing snow' || forecast3.day.condition.text == 'Heavy snow' || forecast3.day.condition.text == 'Patchy light snow with thunder' || forecast3.day.condition.text == 'Moderate or heavy snow showers' || forecast3.day.condition.text == 'Moderate or heavy snow with thunder') {%>
-                                            <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconSmall">
-                                            <!-- PARTLY CLOUDY -->
-                                        <% } else if (forecast3.day.condition.text == 'Partly cloudy') { %>
-                                                <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconSmall">
-                                            <!-- WINDY -->
-                                        <% } else {%>
-                                            <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
-                                    <% } %>
+                                            <% } else if (forecast3.day.condition.text == 'Cloudy' || forecast3.day.condition.text == 'Overcast') {%>
+                                                <img src="../../public/images/icons/cloudy.png" alt="" class="weatherIconSmall">
+                                                <!-- RAIN -->
+                                                <% } else if (forecast3.day.condition.text == 'Mist' || forecast3.day.condition.text == 'Light drizzle' || forecast3.day.condition.text == 'Moderate or heavy rain shower'|| forecast3.day.condition.text == 'Patchy light drizzle' || forecast3.day.condition.text == 'Light rain' || forecast3.day.condition.text == 'Patchy rain possible' || forecast3.day.condition.text == 'Patchy light rain' || forecast3.day.condition.text == 'Moderate rain' || forecast3.day.condition.text == 'Heavy rain' || forecast3.day.condition.text == 'Light rain shower' || forecast3.day.condition.text == 'Moderate rain at times' || forecast3.day.condition.text == 'Heavy rain at times') {%>
+                                                    <img src="../../public/images/icons/rain.png" alt="" class="weatherIconSmall">
+                                                    <!-- THUNDERSTORM -->
+                                                    <% } else if (forecast3.day.condition.text == 'Patchy light rain with thunder' || forecast3.day.condition.text == 'Moderate or heavy rain with thunder' || forecast3.day.condition.text == 'Torrential rain shower' || forecast3.day.condition.text == 'Thundery outbreaks possible') {%>
+                                                        <img src="../../public/images/icons/severeThunderstorm.png" alt="" class="weatherIconSmall">
+                                                        <!-- SNOW -->
+                                                        <% } else if (forecast3.day.condition.text == 'Light snow' || forecast3.day.condition.text == 'Light snow showers' || forecast3.day.condition.text == 'Patchy snow possible' || forecast3.day.condition.text == 'Patchy sleet possible' || forecast3.day.condition.text == 'Freezing drizzle' || forecast3.day.condition.text == 'Moderate or heavy sleet' || forecast3.day.condition.text == 'Patchy light snow' || forecast3.day.condition.text == 'Patchy moderate snow' || forecast3.day.condition.text == 'Light sleet showers' || forecast3.day.condition.text == 'Moderate snow' || forecast3.day.condition.text == 'Light sleet' || forecast3.day.condition.text == 'Heavy freezing drizzle' || forecast3.day.condition.text == 'Patchy freezing drizzle possible' || forecast3.day.condition.text == 'Moderate or heavy sleet showers' || forecast3.day.condition.text == 'Light showers of ice pellets' || forecast3.day.condition.text == 'Moderate or heavy showers of ice pellets' || forecast3.day.condition.text == 'Patchy freezing drizzle possible' || forecast3.day.condition.text == 'Moderate or heavy freezing rain' || forecast3.day.condition.text == 'Ice pellets' || forecast3.day.condition.text == 'Patchy heavy snow' || forecast3.day.condition.text == 'Light freezing rain') {%>
+                                                            <img src="../../public/images/icons/snow.png" alt="" class="weatherIconSmall">
+                                                                <!-- BLIZZARD -->
+                                                            <% } else if (forecast3.day.condition.text == 'Blizzard' || forecast3.day.condition.text == 'Blowing snow' || forecast3.day.condition.text == 'Heavy snow' || forecast3.day.condition.text == 'Patchy light snow with thunder' || forecast3.day.condition.text == 'Moderate or heavy snow showers' || forecast3.day.condition.text == 'Moderate or heavy snow with thunder') {%>
+                                                                <img src="../../public/images/icons/blizzard.png" alt="" class="weatherIconSmall">
+                                                                <!-- PARTLY CLOUDY -->
+                                                                <% } else if (forecast3.day.condition.text == 'Partly cloudy') { %>
+                                                                        <img src="../../public/images/icons/partlyCloudyDay.png" alt="" class="weatherIconSmall">
+                                                                        <!-- WINDY -->
+                                                                        <% } else {%>
+                                                                            <img src="../../public/images/icons/wind.png" alt="" class="weatherIconSmall">
+                                        <% } %>
                                     </div>
-                                    <!-- fourth icon -->
                                 </div>
                                 <div class="row justify-content-around">
-                                    <!-- first high temp -->
                                     <div class="col col-3">
                                         <h7 class="card-title weatherText2 blackSmall"><strong><%= forecast1.day.maxtemp_f %>°F</strong></h7>
                                     </div>
-                                    <!-- second high temp -->
                                     <div class="col col-3">
                                         <h7 class="card-title weatherText2 blackSmall"><strong><%= forecast2.day.maxtemp_f %>°F</strong></h7>
                                     </div>
-                                    <!-- third high temp -->
                                     <div class="col col-3">
                                         <h7 class="card-title weatherText2 blackSmall"><strong><%= forecast3.day.maxtemp_f %>°F</strong></h7>
                                     </div>
                                 </div>
                                 <div class="row justify-content-around">
-                                    <!-- first lowtemp -->
                                     <div class="col col-3">
                                         <h9 class="card-title weatherText2 blackSmall"><%= forecast1.day.mintemp_f %>°F</h9>
                                     </div>
-                                    <!-- second low temp -->
                                     <div class="col col-3">
                                         <h9 class="card-title weatherText2 blackSmall"><%= forecast2.day.mintemp_f %>°F</h9>
                                     </div>
-                                    <!-- third low temp -->
                                     <div class="col col-3">
                                         <h9 class="card-title weatherText2 blackSmall"><%= forecast3.day.mintemp_f %>°F</h9>
                                     </div>
                                 </div>
                                 <div class="row justify-content-around">
-                                    <!-- first condition -->
                                     <div class="col col-3">
                                         <h7 class="card-text weatherText blackSmall"><%= forecast1.day.condition.text %></h7>
                                     </div>
-                                    <!-- second condition -->
                                     <div class="col col-3">
                                         <h7 class="card-text weatherText blackSmall"><%= forecast2.day.condition.text %></h7>
                                     </div>
-                                    <!-- third condition -->
                                     <div class="col col-3">
                                         <h7 class="card-text weatherText blackSmall"><%= forecast3.day.condition.text %></h7>
                                     </div>
                                 </div>
                                 <div class="row justify-content-around">
-                                    <!-- Day -->
                                     <div class="col col-3">
                                         <h7 class="card-text weatherText blackSmall">Today</h7>
                                     </div>
-                                    <!-- Day 2-->
                                     <div class="col col-3">
                                         <h7 class="card-text weatherText blackSmall"><%= month1 %> <%= dayConversion1 %></h7>
                                     </div>
-                                    <!-- Day 3-->
                                     <div class="col col-3">
                                         <h7 class="card-text weatherText blackSmall"><%= month2 %> <%= dayConversion2 %></h7>
                                     </div>
