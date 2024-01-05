@@ -120,8 +120,9 @@ router.delete('/nickname/:id', async (req, res) => {
     try{
     const {username, loggedIn, userId} = req.session
     const fav = await Favorite.findOne({'nickname._id': req.params.id, "nickname.owner": userId})
+    console.log(fav)
     if(!fav) return res.redirect('/users/favorites')
-    fav.nickname.remove(req.params.id)
+    fav.nickname.deleteOne(req.params.id)
     await fav.save()
     res.redirect('/users/favorites')
     }catch(err) {
@@ -136,13 +137,6 @@ router.put('/nickname/:id', async (req,res) => {
         let favObj = req.body
         favObj.owner = userId
         const fav = await Favorite.findOneAndUpdate({'nickname._id': req.params.id, "nickname.owner": userId}, { 'nickname.name': req.body.name})
-        console.log('why is this null',fav)
-        const fav1 = await Favorite.find({'nickname._id':req.params.id})
-        const fav2 = await Favorite.find({"nickname.owner":userId})
-        // console.log('params',req.params.id)
-        // console.log('fav1',fav1)
-        // console.log('fav2',fav2)
-        console.log('why is this null',fav)
         fav.save()
         res.redirect('/users/favorites')
     }catch(err) {
@@ -189,10 +183,8 @@ router.delete('/delete/:id', (req, res) => {
         // redirect to another page
         .then(deletedPlace => {
             // console.log('this was returned from deleteOne', deletedPlace)
-
             res.redirect('/users/favorites')
         })
-        // if err -> send to err page
         .catch(err => {
             console.log('error')
             res.redirect(`/error?error=${err}`)
