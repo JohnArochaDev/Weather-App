@@ -4,7 +4,8 @@
 const express = require('express')
 const User = require('../models/user')
 const bcrypt = require('bcryptjs')
-const Favorite = require('../models/favorite')
+const {Favorite} = require('../models/favorite')
+const {Nickname} = require('../models/favorite')
 
 ///////////////////////
 //// Create Router ////
@@ -83,7 +84,6 @@ router.get('/favorites', (req, res) => {
     if (loggedIn) {
         Favorite.find({ owner: userId })
         .then(userFavorites => {
-            // console.log(userFavorites[0].nickname[0]._id)
             res.render('users/favorites', { favorites: userFavorites, username, userId, loggedIn})
         })
         .catch(err => {
@@ -106,7 +106,7 @@ router.post('/favorites/:id', (req, res) => {
     theFav.owner = userId
     Favorite.findById(req.params.id)
         .then(fav => {
-            fav.nickname.push(req.body)
+            fav.nickname = req.body
             console.log(fav.nickname._id)
             return fav.save()
         })
@@ -120,12 +120,31 @@ router.delete('/nickname/:id', async (req, res) => {
     try{
     const {username, loggedIn, userId} = req.session
     const fav = await Favorite.findOne({'nickname._id': req.params.id, "nickname.owner": userId})
-    console.log('user', fav)
-    console.log('user', req.params.id)
     if(!fav) return res.redirect('/users/favorites')
     fav.nickname.remove(req.params.id)
     await fav.save()
     res.redirect('/users/favorites')
+    }catch(err) {
+        console.log('error:', err)
+    }
+})
+
+router.put('/nickname/:id', async (req,res) => {
+    try{
+        const {username, loggedIn, userId} = req.session
+        // const fav = await Favorite.findOne({'nickname._id': req.params.id, "nickname.owner": userId})
+        let favObj = req.body
+        favObj.owner = userId
+        const fav = await Favorite.findOneAndUpdate({'nickname._id': req.params.id, "nickname.owner": userId}, { 'nickname.name': req.body.name})
+        console.log('why is this null',fav)
+        const fav1 = await Favorite.find({'nickname._id':req.params.id})
+        const fav2 = await Favorite.find({"nickname.owner":userId})
+        // console.log('params',req.params.id)
+        // console.log('fav1',fav1)
+        // console.log('fav2',fav2)
+        console.log('why is this null',fav)
+        fav.save()
+        res.redirect('/users/favorites')
     }catch(err) {
         console.log('error:', err)
     }

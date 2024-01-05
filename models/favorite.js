@@ -11,7 +11,7 @@ const { Schema, model } = mongoose
 ///////////////////////////
 
 const nicknameSchema = new Schema({
-    nickname: {type: String},
+    name: {type: String},
     owner: {
         type: Schema.Types.ObjectId,
         ref: 'User',
@@ -31,7 +31,7 @@ const favoriteSchema = new Schema({
         ref: 'User',
         required: true
     },
-    nickname: [nicknameSchema]
+    nickname: nicknameSchema
 }, {
     timestamps: true
 })
@@ -40,8 +40,9 @@ const favoriteSchema = new Schema({
 //// create user model ////
 ///////////////////////////
 const Favorite = model('Favorite', favoriteSchema)
+const Nickname = model('Nickname', nicknameSchema)
 
 ///////////////////////////
 //// export user model ////
 ///////////////////////////
-module.exports = Favorite
+module.exports = {Favorite, Nickname}

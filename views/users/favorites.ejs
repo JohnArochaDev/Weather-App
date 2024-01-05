@@ -17,8 +17,8 @@
                             <div class="row">
                                 <li class="list-group-item"><a class="noTag" href="/weather/daily/<%= f.lat %>,<%= f.long %>">
                                     <!-- if statement -->
-                                    <% if (f.nickname.length > 0) { %>
-                                        <%= f.nickname[0].nickname%></a>
+                                    <% if (f.nickname) { %>
+                                        <%= f.nickname.name%></a>
                                     <% } else { %>
                                     <%= f.name %>, <%= f.region %></a>
                                     <% } %>
@@ -36,12 +36,12 @@
                                                 <li>
                                                     <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#addModal<%= i %>">Add Name</button>
                                                 </li>
-                                                <% if (f.nickname[0]?._id) {%>
+                                                <% if (f.nickname?._id) {%>
                                                 <li>
                                                     <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#updateModal<%= i %>">Update Name</button>
                                                 </li>
                                                 <li>
-                                                    <form class="rem" action="/users/nickname/<%= f.nickname[0]._id %>?_method=DELETE" method="POST">
+                                                    <form class="rem" action="/users/nickname/<%= f.nickname._id %>?_method=DELETE" method="POST">
                                                         <input type="submit" class="dropdown-item" value="Delete Name">
                                                     </form>
                                                 </li>
@@ -62,7 +62,7 @@
                                         <div class="modal-body">
                                             <form class="ms-3" id="add-notes-form" method="POST" action="/users/favorites/<%= f._id %>">
                                                 <label>Add Nickname:</label>
-                                                <input type="text" name="nickname" value="">
+                                                <input type="text" name="name" value="">
                                                 <input type="submit" class="btn btn-success" value="Add">
                                             </form>
                                         </div>
@@ -71,7 +71,7 @@
                             </div>
                         </div>
 
-
+                        <% if (f.nickname?._id) {%>
                         <div class="modal fade" id="updateModal<%= i %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -80,7 +80,10 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                    ...
+                                        <form class="ms-3" id="add-notes-form" method="POST" action="/users/nickname/<%= f.nickname._id %>?_method=PUT">
+                                            <input type="text" name="name" value="">
+                                            <input type="submit" class="btn btn-success" value="Add">
+                                        </form>
                                     </div>
                                     <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -89,6 +92,7 @@
                                 </div>
                             </div>
                         </div>
+                        <% } %>
                         <% i++ %>
                 <% })} else { %>
             <h3 class="container mt-5" >Go pick some favorites first!</h3>
