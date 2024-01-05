@@ -1,12 +1,12 @@
 //////////////////////////////////
 //// Import Dependencies      ////
 //////////////////////////////////
-const express = require('express') //express framework
-const morgan = require('morgan') //morgan logger for request info
+const express = require('express')
+const morgan = require('morgan')
 const session = require('express-session')
-const MongoStore = require('connect-mongo') // connect-mongo(for the session)
+const MongoStore = require('connect-mongo')
 require('dotenv').config()
-const methodOverride = require('method-override') // for forms and CRUD
+const methodOverride = require('method-override')
 
 //////////////////////////////////
 //// Middleware Function      ////

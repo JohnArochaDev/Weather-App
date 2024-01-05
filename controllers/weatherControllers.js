@@ -14,9 +14,6 @@ const router = express.Router();
 ////////////////////////
 // Create Variables ////
 ////////////////////////
-// let lat = 42.3761504
-// let long = -85.45500539999999
-// TEST COORDS     42.3761504,-85.45500539999999
 
 const newYork = '40.7127753,-74.0059728'
 const losAngeles = '34.0549076,-118.242643'
@@ -40,8 +37,8 @@ let homeCondition = []
 
 // cities.forEach((city) => {
 //     let c = 0
-//     await axios(`${weatherURL}${city[c]}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
-//     // render the results on a 'show' page: aka 'detail' page
+//     await axios(`${weatherURL}${city[c]}&days=1&aqi=yes&alerts=no`)
+//   
 //     .then(apiRes => {
 //         let weather = apiRes.data
 //         let locName = weather.location.name
@@ -50,7 +47,7 @@ let homeCondition = []
 //         homeTemp.push(tempF)
 //         let condition = weather.current.condition.text
 //         homeCondition.push(condition)
-//         // console.log('1 This is the Home Name: \n', homelocName,'1 This is the Temp Name: \n', homeTemp,'1 This is the Cindition Name: \n', homeCondition)
+//      
 //     })
 //     c ++
 // })
@@ -59,8 +56,7 @@ let homeCondition = []
 router.get('/', async function(req, res, next) {
     const { username, loggedIn, userId } = req.session
     console.log(userId)
-    await axios(`${weatherURL}${newYork}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
-    // render the results on a 'show' page: aka 'detail' page
+    await axios(`${weatherURL}${newYork}&days=1&aqi=yes&alerts=no`)
     .then(apiRes => {
         let weather = apiRes.data
         let locName = weather.location.name
@@ -69,10 +65,8 @@ router.get('/', async function(req, res, next) {
         homeTemp.push(tempF)
         let condition = weather.current.condition.text
         homeCondition.push(condition)
-        // console.log('1 This is the Home Name: \n', homelocName,'1 This is the Temp Name: \n', homeTemp,'1 This is the Cindition Name: \n', homeCondition)
     })
-    await axios(`${weatherURL}${losAngeles}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
-    // render the results on a 'show' page: aka 'detail' page
+    await axios(`${weatherURL}${losAngeles}&days=1&aqi=yes&alerts=no`)
     .then(apiRes => {
         let weather = apiRes.data
         let locName = weather.location.name
@@ -81,10 +75,8 @@ router.get('/', async function(req, res, next) {
         homeTemp.push(tempF)
         let condition = weather.current.condition.text
         homeCondition.push(condition)
-        // console.log('2 This is the Home Name: \n', homelocName,'2 This is the Temp Name: \n', homeTemp,'2 This is the Cindition Name: \n', homeCondition)
     })
-    await axios(`${weatherURL}${chicago}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
-    // render the results on a 'show' page: aka 'detail' page
+    await axios(`${weatherURL}${chicago}&days=1&aqi=yes&alerts=no`)
     .then(apiRes => {
         let weather = apiRes.data
         let locName = weather.location.name
@@ -93,10 +85,8 @@ router.get('/', async function(req, res, next) {
         homeTemp.push(tempF)
         let condition = weather.current.condition.text
         homeCondition.push(condition)
-        // console.log('3 This is the Home Name: \n', homelocName,'3 This is the Temp Name: \n', homeTemp,'3 This is the Cindition Name: \n', homeCondition)
     })
-    await axios(`${weatherURL}${houston}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
-    // render the results on a 'show' page: aka 'detail' page
+    await axios(`${weatherURL}${houston}&days=1&aqi=yes&alerts=no`)
     .then(apiRes => {
         let weather = apiRes.data
         let locName = weather.location.name
@@ -105,10 +95,8 @@ router.get('/', async function(req, res, next) {
         homeTemp.push(tempF)
         let condition = weather.current.condition.text
         homeCondition.push(condition)
-        // console.log('4 This is the Home Name: \n', homelocName,'4 This is the Temp Name: \n', homeTemp,'4 This is the Cindition Name: \n', homeCondition)
     })
-    await axios(`${weatherURL}${phoenix}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
-    // render the results on a 'show' page: aka 'detail' page
+    await axios(`${weatherURL}${phoenix}&days=1&aqi=yes&alerts=no`)
     .then(apiRes => {
         let weather = apiRes.data
         let locName = weather.location.name
@@ -117,10 +105,8 @@ router.get('/', async function(req, res, next) {
         homeTemp.push(tempF)
         let condition = weather.current.condition.text
         homeCondition.push(condition)
-        // console.log('5 This is the Home Name: \n', homelocName,'5 This is the Temp Name: \n', homeTemp,'5 This is the Cindition Name: \n', homeCondition)
     })
-    await axios(`${weatherURL}${philadelphia}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
-    // render the results on a 'show' page: aka 'detail' page
+    await axios(`${weatherURL}${philadelphia}&days=1&aqi=yes&alerts=no`)
     .then(apiRes => {
         let weather = apiRes.data
         let locName = weather.location.name
@@ -129,10 +115,8 @@ router.get('/', async function(req, res, next) {
         homeTemp.push(tempF)
         let condition = weather.current.condition.text
         homeCondition.push(condition)
-        // console.log('6 This is the Home Name: \n', homelocName,'6 This is the Temp Name: \n', homeTemp,'6 This is the Cindition Name: \n', homeCondition)
     })
-    await axios(`${weatherURL}${sanAntonio}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
-    // render the results on a 'show' page: aka 'detail' page
+    await axios(`${weatherURL}${sanAntonio}&days=1&aqi=yes&alerts=no`)
     .then(apiRes => {
         let weather = apiRes.data
         let locName = weather.location.name
@@ -141,10 +125,8 @@ router.get('/', async function(req, res, next) {
         homeTemp.push(tempF)
         let condition = weather.current.condition.text
         homeCondition.push(condition)
-        // console.log('7 This is the Home Name: \n', homelocName,'7 This is the Temp Name: \n', homeTemp,'7 This is the Cindition Name: \n', homeCondition)
     })
-    await axios(`${weatherURL}${sanDiego}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
-    // render the results on a 'show' page: aka 'detail' page
+    await axios(`${weatherURL}${sanDiego}&days=1&aqi=yes&alerts=no`)
     .then(apiRes => {
         let weather = apiRes.data
         let locName = weather.location.name
@@ -153,10 +135,8 @@ router.get('/', async function(req, res, next) {
         homeTemp.push(tempF)
         let condition = weather.current.condition.text
         homeCondition.push(condition)
-        // console.log('8 This is the Home Name: \n', homelocName,'8 This is the Temp Name: \n', homeTemp,'8 This is the Cindition Name: \n', homeCondition)
     })
-    await axios(`${weatherURL}${dallas}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
-    // render the results on a 'show' page: aka 'detail' page
+    await axios(`${weatherURL}${dallas}&days=1&aqi=yes&alerts=no`)
     .then(apiRes => {
         let weather = apiRes.data
         let locName = weather.location.name
@@ -165,10 +145,8 @@ router.get('/', async function(req, res, next) {
         homeTemp.push(tempF)
         let condition = weather.current.condition.text
         homeCondition.push(condition)
-        // console.log('9 This is the Home Name: \n', homelocName,'9 This is the Temp Name: \n', homeTemp,'9 This is the Cindition Name: \n', homeCondition)
     })
-    await axios(`${weatherURL}${sanJose}&days=1&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
-    // render the results on a 'show' page: aka 'detail' page
+    await axios(`${weatherURL}${sanJose}&days=1&aqi=yes&alerts=no`)
     .then(apiRes => {
         let weather = apiRes.data
         let locName = weather.location.name
@@ -177,7 +155,6 @@ router.get('/', async function(req, res, next) {
         homeTemp.push(tempF)
         let condition = weather.current.condition.text
         homeCondition.push(condition)
-        // console.log('10 This is the Home Name: \n', homelocName,'10 This is the Temp Name: \n', homeTemp,'10 This is the Cindition Name: \n', homeCondition)
         res.render('index', { key, title: 'Express', weather, homelocName, homeTemp, homeCondition, username, loggedIn, userId, newYork, losAngeles, chicago, houston, phoenix, philadelphia, sanAntonio, sanDiego, dallas, sanJose})
     })
         .catch(err => {
@@ -186,11 +163,10 @@ router.get('/', async function(req, res, next) {
     })
 })
 
-// This will be for the hourly forcasts with a ZIP CODE INSTEAD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 router.get('/weather/daily/zipcode', (req, res) => {
     const { username, loggedIn, userId } = req.session
-    axios(`${weatherURL}${req.query.zipcode}&days=3&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
-        // render the results on a 'show' page: aka 'detail' page
+    axios(`${weatherURL}${req.query.zipcode}&days=3&aqi=yes&alerts=no`)
+
         .then(apiRes => {
             let weather = apiRes.data
             let locName = weather.location.name
@@ -415,18 +391,14 @@ router.get('/weather/daily/zipcode', (req, res) => {
             res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, hour12, forecast1, forecast2, forecast3, month1, month2, dayConversion1, dayConversion2, username, loggedIn, userId})
         })
         .catch(err => {
-            // console.log('error', err)
             res.redirect(`/error?error=${err}`)
     })
 })
 
-// This will be for the hourly forcasts with Lattitude and Longitude data !!!!!!!!!!!!!!!!!!!!!!!
 router.get('/weather/daily/:coords', (req, res) => {
     const { username, loggedIn, userId } = req.session
     let coords = req.params.coords
-    // coords ? coords = req.params.coords : coords = req.body.zipcode
-    axios(`${weatherURL}${coords}&days=3&aqi=yes&alerts=no`) //                            Everything will be inside of apiRes.data!!!!!!!!!!!
-        // render the results on a 'show' page: aka 'detail' page
+    axios(`${weatherURL}${coords}&days=3&aqi=yes&alerts=no`)
         .then(apiRes => {
             let weather = apiRes.data
             let locName = weather.location.name
@@ -583,7 +555,6 @@ router.get('/weather/daily/:coords', (req, res) => {
                 month1 = "Dec";
                 console.log('month was hit')
             }
-            // console.log(month1)
             //THIRD
             let newString2 = null;
             let month2;
@@ -651,7 +622,6 @@ router.get('/weather/daily/:coords', (req, res) => {
             res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, hour12, forecast1, forecast2, forecast3, month1, month2, dayConversion1, dayConversion2, username, loggedIn, userId})
         })
         .catch(err => {
-            // console.log('error', err)
             res.redirect(`/error?error=${err}`)
     })
 })

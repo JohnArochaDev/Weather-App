@@ -133,7 +133,6 @@ router.delete('/nickname/:id', async (req, res) => {
 router.put('/nickname/:id', async (req,res) => {
     try{
         const {username, loggedIn, userId} = req.session
-        // const fav = await Favorite.findOne({'nickname._id': req.params.id, "nickname.owner": userId})
         let favObj = req.body
         favObj.owner = userId
         const fav = await Favorite.findOneAndUpdate({'nickname._id': req.params.id, "nickname.owner": userId}, { 'nickname.name': req.body.name})
@@ -169,20 +168,14 @@ router.delete('/delete/:id', (req, res) => {
     const { username, loggedIn, userId } = req.session
     const favoriteId = req.params.id
     Favorite.findById(favoriteId)
-        // delete it 
         .then(place => {
-            // determine if loggedIn user is authorized to delete this(aka, the owner)
             if (place.owner == userId) {
-                // here is where we delete
                 return place.deleteOne()
             } else {
-                // if the loggedIn user is NOT the owner
                 res.redirect(`/error?error=You%20Are%20Not%20Allowed%20to%20Delete%20this%20Place`)
             }
         })
-        // redirect to another page
         .then(deletedPlace => {
-            // console.log('this was returned from deleteOne', deletedPlace)
             res.redirect('/users/favorites')
         })
         .catch(err => {
