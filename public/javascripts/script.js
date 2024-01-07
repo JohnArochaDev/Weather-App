@@ -95,8 +95,8 @@ async function initMap() {
     // THis is my stuff
     data.push(results);
     console.log(results)
-    lat = data[0][0].geometry.viewport.bi.lo;
-    long = data[0][0].geometry.viewport.Mh.hi;
+    lat = data[0][0].geometry.viewport.eb.lo;
+    long = data[0][0].geometry.viewport.La.hi;
     lat = lat.toString();
     long = long.toString();
     latlong = lat + ',' + long;

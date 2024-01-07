@@ -35,10 +35,32 @@ let homeCondition = []
 ///  Routes + Controllers ////
 //////////////////////////////
 
-// cities.forEach((city) => {
-//     let c = 0
-//     await axios(`${weatherURL}${city[c]}&days=1&aqi=yes&alerts=no`)
-//   
+
+router.get('/', async function(req, res, next) {
+    const { username, loggedIn, userId } = req.session
+    let c = 0
+    let weather
+    for (let index = 0; index < cities.length; index++) {
+        await axios(`${weatherURL}${cities[c]}&days=1&aqi=yes&alerts=no`)
+        .then(apiRes => {
+            let weather = apiRes.data
+            let locName = weather.location.name
+            homelocName.push(locName)
+            let tempF = weather.current.temp_f
+            homeTemp.push(tempF)
+            let condition = weather.current.condition.text
+            homeCondition.push(condition)
+        })
+        c ++
+    }
+    res.render('index', { key, title: 'Express', weather, homelocName, homeTemp, homeCondition, username, loggedIn, userId, newYork, losAngeles, chicago, houston, phoenix, philadelphia, sanAntonio, sanDiego, dallas, sanJose})
+})
+
+//Good below
+// router.get('/', async function(req, res, next) {
+//     const { username, loggedIn, userId } = req.session
+//     console.log(userId)
+//     await axios(`${weatherURL}${newYork}&days=1&aqi=yes&alerts=no`)
 //     .then(apiRes => {
 //         let weather = apiRes.data
 //         let locName = weather.location.name
@@ -47,121 +69,103 @@ let homeCondition = []
 //         homeTemp.push(tempF)
 //         let condition = weather.current.condition.text
 //         homeCondition.push(condition)
-//      
 //     })
-//     c ++
+//     await axios(`${weatherURL}${losAngeles}&days=1&aqi=yes&alerts=no`)
+//     .then(apiRes => {
+//         let weather = apiRes.data
+//         let locName = weather.location.name
+//         homelocName.push(locName)
+//         let tempF = weather.current.temp_f
+//         homeTemp.push(tempF)
+//         let condition = weather.current.condition.text
+//         homeCondition.push(condition)
+//     })
+//     await axios(`${weatherURL}${chicago}&days=1&aqi=yes&alerts=no`)
+//     .then(apiRes => {
+//         let weather = apiRes.data
+//         let locName = weather.location.name
+//         homelocName.push(locName)
+//         let tempF = weather.current.temp_f
+//         homeTemp.push(tempF)
+//         let condition = weather.current.condition.text
+//         homeCondition.push(condition)
+//     })
+//     await axios(`${weatherURL}${houston}&days=1&aqi=yes&alerts=no`)
+//     .then(apiRes => {
+//         let weather = apiRes.data
+//         let locName = weather.location.name
+//         homelocName.push(locName)
+//         let tempF = weather.current.temp_f
+//         homeTemp.push(tempF)
+//         let condition = weather.current.condition.text
+//         homeCondition.push(condition)
+//     })
+//     await axios(`${weatherURL}${phoenix}&days=1&aqi=yes&alerts=no`)
+//     .then(apiRes => {
+//         let weather = apiRes.data
+//         let locName = weather.location.name
+//         homelocName.push(locName)
+//         let tempF = weather.current.temp_f
+//         homeTemp.push(tempF)
+//         let condition = weather.current.condition.text
+//         homeCondition.push(condition)
+//     })
+//     await axios(`${weatherURL}${philadelphia}&days=1&aqi=yes&alerts=no`)
+//     .then(apiRes => {
+//         let weather = apiRes.data
+//         let locName = weather.location.name
+//         homelocName.push(locName)
+//         let tempF = weather.current.temp_f
+//         homeTemp.push(tempF)
+//         let condition = weather.current.condition.text
+//         homeCondition.push(condition)
+//     })
+//     await axios(`${weatherURL}${sanAntonio}&days=1&aqi=yes&alerts=no`)
+//     .then(apiRes => {
+//         let weather = apiRes.data
+//         let locName = weather.location.name
+//         homelocName.push(locName)
+//         let tempF = weather.current.temp_f
+//         homeTemp.push(tempF)
+//         let condition = weather.current.condition.text
+//         homeCondition.push(condition)
+//     })
+//     await axios(`${weatherURL}${sanDiego}&days=1&aqi=yes&alerts=no`)
+//     .then(apiRes => {
+//         let weather = apiRes.data
+//         let locName = weather.location.name
+//         homelocName.push(locName)
+//         let tempF = weather.current.temp_f
+//         homeTemp.push(tempF)
+//         let condition = weather.current.condition.text
+//         homeCondition.push(condition)
+//     })
+//     await axios(`${weatherURL}${dallas}&days=1&aqi=yes&alerts=no`)
+//     .then(apiRes => {
+//         let weather = apiRes.data
+//         let locName = weather.location.name
+//         homelocName.push(locName)
+//         let tempF = weather.current.temp_f
+//         homeTemp.push(tempF)
+//         let condition = weather.current.condition.text
+//         homeCondition.push(condition)
+//     })
+//     await axios(`${weatherURL}${sanJose}&days=1&aqi=yes&alerts=no`)
+//     .then(apiRes => {
+//         let weather = apiRes.data
+//         let locName = weather.location.name
+//         homelocName.push(locName)
+//         let tempF = weather.current.temp_f
+//         homeTemp.push(tempF)
+//         let condition = weather.current.condition.text
+//         homeCondition.push(condition)
+//         res.render('index', { key, title: 'Express', weather, homelocName, homeTemp, homeCondition, username, loggedIn, userId, newYork, losAngeles, chicago, houston, phoenix, philadelphia, sanAntonio, sanDiego, dallas, sanJose})
+//     })
+//         .catch(err => {
+//             console.log('error', err)
+//             res.redirect(`/error?error=${err}`)
+//     })
 // })
-
-//Good below
-router.get('/', async function(req, res, next) {
-    const { username, loggedIn, userId } = req.session
-    console.log(userId)
-    await axios(`${weatherURL}${newYork}&days=1&aqi=yes&alerts=no`)
-    .then(apiRes => {
-        let weather = apiRes.data
-        let locName = weather.location.name
-        homelocName.push(locName)
-        let tempF = weather.current.temp_f
-        homeTemp.push(tempF)
-        let condition = weather.current.condition.text
-        homeCondition.push(condition)
-    })
-    await axios(`${weatherURL}${losAngeles}&days=1&aqi=yes&alerts=no`)
-    .then(apiRes => {
-        let weather = apiRes.data
-        let locName = weather.location.name
-        homelocName.push(locName)
-        let tempF = weather.current.temp_f
-        homeTemp.push(tempF)
-        let condition = weather.current.condition.text
-        homeCondition.push(condition)
-    })
-    await axios(`${weatherURL}${chicago}&days=1&aqi=yes&alerts=no`)
-    .then(apiRes => {
-        let weather = apiRes.data
-        let locName = weather.location.name
-        homelocName.push(locName)
-        let tempF = weather.current.temp_f
-        homeTemp.push(tempF)
-        let condition = weather.current.condition.text
-        homeCondition.push(condition)
-    })
-    await axios(`${weatherURL}${houston}&days=1&aqi=yes&alerts=no`)
-    .then(apiRes => {
-        let weather = apiRes.data
-        let locName = weather.location.name
-        homelocName.push(locName)
-        let tempF = weather.current.temp_f
-        homeTemp.push(tempF)
-        let condition = weather.current.condition.text
-        homeCondition.push(condition)
-    })
-    await axios(`${weatherURL}${phoenix}&days=1&aqi=yes&alerts=no`)
-    .then(apiRes => {
-        let weather = apiRes.data
-        let locName = weather.location.name
-        homelocName.push(locName)
-        let tempF = weather.current.temp_f
-        homeTemp.push(tempF)
-        let condition = weather.current.condition.text
-        homeCondition.push(condition)
-    })
-    await axios(`${weatherURL}${philadelphia}&days=1&aqi=yes&alerts=no`)
-    .then(apiRes => {
-        let weather = apiRes.data
-        let locName = weather.location.name
-        homelocName.push(locName)
-        let tempF = weather.current.temp_f
-        homeTemp.push(tempF)
-        let condition = weather.current.condition.text
-        homeCondition.push(condition)
-    })
-    await axios(`${weatherURL}${sanAntonio}&days=1&aqi=yes&alerts=no`)
-    .then(apiRes => {
-        let weather = apiRes.data
-        let locName = weather.location.name
-        homelocName.push(locName)
-        let tempF = weather.current.temp_f
-        homeTemp.push(tempF)
-        let condition = weather.current.condition.text
-        homeCondition.push(condition)
-    })
-    await axios(`${weatherURL}${sanDiego}&days=1&aqi=yes&alerts=no`)
-    .then(apiRes => {
-        let weather = apiRes.data
-        let locName = weather.location.name
-        homelocName.push(locName)
-        let tempF = weather.current.temp_f
-        homeTemp.push(tempF)
-        let condition = weather.current.condition.text
-        homeCondition.push(condition)
-    })
-    await axios(`${weatherURL}${dallas}&days=1&aqi=yes&alerts=no`)
-    .then(apiRes => {
-        let weather = apiRes.data
-        let locName = weather.location.name
-        homelocName.push(locName)
-        let tempF = weather.current.temp_f
-        homeTemp.push(tempF)
-        let condition = weather.current.condition.text
-        homeCondition.push(condition)
-    })
-    await axios(`${weatherURL}${sanJose}&days=1&aqi=yes&alerts=no`)
-    .then(apiRes => {
-        let weather = apiRes.data
-        let locName = weather.location.name
-        homelocName.push(locName)
-        let tempF = weather.current.temp_f
-        homeTemp.push(tempF)
-        let condition = weather.current.condition.text
-        homeCondition.push(condition)
-        res.render('index', { key, title: 'Express', weather, homelocName, homeTemp, homeCondition, username, loggedIn, userId, newYork, losAngeles, chicago, houston, phoenix, philadelphia, sanAntonio, sanDiego, dallas, sanJose})
-    })
-        .catch(err => {
-            console.log('error', err)
-            res.redirect(`/error?error=${err}`)
-    })
-})
 
 router.get('/weather/daily/zipcode', (req, res) => {
     const { username, loggedIn, userId } = req.session
