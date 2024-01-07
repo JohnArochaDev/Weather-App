@@ -102,13 +102,12 @@ async function initMap() {
     latlong = lat + ',' + long;
     console.log(latlong)
     coords.innerHTML = `<a class="btn btn-primary" href="weather/daily/${lat},${long}">Lets Go!</a>`
-    // END OF MY SATUFF
+    // END OF MY STUFF
     return results;
     })
     .catch((e) => {
     alert("Geocode was not successful for the following reason: " + e);
     });
-    // THis is my stuff
 }
 
 

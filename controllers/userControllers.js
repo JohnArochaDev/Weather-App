@@ -1,5 +1,5 @@
 /////////////////////////////
-//// Import Dependencies ////
+///  Import Dependencies ////
 /////////////////////////////
 const express = require('express')
 const User = require('../models/user')
@@ -8,12 +8,12 @@ const {Favorite} = require('../models/favorite')
 const {Nickname} = require('../models/favorite')
 
 ///////////////////////
-//// Create Router ////
+///  Create Router ////
 ///////////////////////
 const router = express.Router()
 
 //////////////////////////////
-//// Routes + Controllers ////
+///  Routes + Controllers ////
 //////////////////////////////
 
 router.get('/signup', (req, res) => {
@@ -185,6 +185,6 @@ router.delete('/delete/:id', (req, res) => {
 })
 
 ///////////////////////
-//// Export Router ////
+///  Export Router ////
 ///////////////////////
 module.exports = router

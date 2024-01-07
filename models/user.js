@@ -1,13 +1,14 @@
 /////////////////////////////////////
-//// Our Schema and dependencies ////
+///  Our Schema and dependencies ////
 /////////////////////////////////////
 const mongoose = require('../utils/connection')
 
 const { Schema, model } = mongoose
 
 ///////////////////////////
-//// Schema definition ////
+///  Schema definition ////
 ///////////////////////////
+
 const userSchema = new Schema({
     username: {
         type: String,
@@ -21,11 +22,11 @@ const userSchema = new Schema({
 })
 
 ///////////////////////////
-//// create user model ////
+///  create user model ////
 ///////////////////////////
 const User = model('User', userSchema)
 
 ///////////////////////////
-//// export user model ////
+///  export user model ////
 ///////////////////////////
 module.exports = User

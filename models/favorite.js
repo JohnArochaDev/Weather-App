@@ -1,11 +1,11 @@
 /////////////////////////////////////
-//// Our Schema and dependencies ////
+///  Our Schema and dependencies ////
 /////////////////////////////////////
 const mongoose = require('../utils/connection')
 const { Schema, model } = mongoose
 
 ///////////////////////////
-//// Schema definition ////
+///  Schema definition ////
 ///////////////////////////
 
 const nicknameSchema = new Schema({
@@ -35,12 +35,12 @@ const favoriteSchema = new Schema({
 })
 
 ///////////////////////////
-//// create user model ////
+///  create user model ////
 ///////////////////////////
 const Favorite = model('Favorite', favoriteSchema)
 const Nickname = model('Nickname', nicknameSchema)
 
 ///////////////////////////
-//// export user model ////
+///  export user model ////
 ///////////////////////////
 module.exports = {Favorite, Nickname}
