@@ -1,16 +1,15 @@
 <%- include('./partial/header') %>
 
-<div class="col">
+<div class="card bgInvis">
     <img src="../public/images/home/space.jpg" class="card-img" alt="..." size="auto">
-    <div class="row">
-        <div class="card-img-overlay">
-            <form class="d-flex search container" action="weather/daily/zipcode">
+        <div class="card-img-overlay d-flex">
+            <form class="card-text container d-flex w-auto d-flex align-items-center " action="weather/daily/zipcode">
                 <input name="zipcode" class="form-control me-2" type="search" placeholder="City or Zipcode" aria-label="Search">
                 <button type="submit" class="btn btn-outline btnBackground">Search</button>
             </form>
         </div>
-    </div>
 </div>
+
 <div class="column" style="height:100%;">
     <div class="row">
         <div class="card instructions">

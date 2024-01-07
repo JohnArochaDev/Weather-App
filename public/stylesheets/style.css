@@ -366,3 +366,7 @@ td {
   text-decoration: underline;
   color: black;
 }
+
+.bgInvis {
+  background-color: #1765cc00;
+}
