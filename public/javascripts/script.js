@@ -50,8 +50,8 @@ async function initMap() {
     responseDiv.id = "response-container";
     responseDiv.appendChild(response);
     //                                                                                               response IS the object   obj>location> lat: / lng:
-    console.log('This is the response: \n', response);
-    console.log('This is the responseDiv: \n', responseDiv);
+    // console.log('This is the response: \n', response);
+    // console.log('This is the responseDiv: \n', responseDiv);
 
     const instructionsElement = document.createElement("p");
 
@@ -102,17 +102,17 @@ async function initMap() {
     response.innerText = JSON.stringify(result, null, 2);
     
     // THis is my stuff
-    console.log('This is the new result \n', result)
-    console.log('This is the new response \n', JSON.parse(response.innerText))
+    // console.log('This is the new result \n', result)
+    // console.log('This is the new response \n', JSON.parse(response.innerText))
     
     let newData = JSON.parse(response.innerText)
-    console.log('This is the new newData \n', newData)
+    // console.log('This is the new newData \n', newData)
     lat = newData.results[0].geometry.location.lat;
-    console.log('This is the new lat \n', lat)
+    // console.log('This is the new lat \n', lat)
     long = newData.results[0].geometry.location.lng;
-    console.log('This is the new long \n', long)
+    // console.log('This is the new long \n', long)
     coords.innerHTML = `<a class="btn btn-primary" href="weather/daily/${lat},${long}">Lets Go!</a>`
-    console.log(latlong)
+    // console.log(latlong)
     coords1.innerHTML = `<p><strong>${lat},${long}</strong></p>`
     // END OF MY STUFF
     
