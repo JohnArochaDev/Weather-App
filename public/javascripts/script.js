@@ -43,13 +43,15 @@ async function initMap() {
     clearButton.value = "Clear";
     clearButton.classList.add("button", "button-secondary");
     response = document.createElement("pre");
+    // console.log('response maybe', response)
     response.id = "response";
     response.innerText = "";
     responseDiv = document.createElement("div");
     responseDiv.id = "response-container";
     responseDiv.appendChild(response);
     //                                                                                               response IS the object   obj>location> lat: / lng:
-    // console.log('This is the response: \n', response);
+    console.log('This is the response: \n', response);
+    console.log('This is the responseDiv: \n', responseDiv);
 
     const instructionsElement = document.createElement("p");
 
@@ -87,69 +89,39 @@ async function initMap() {
     clear();
     geocoder
     .geocode(request)
-
+    
     
     .then((result) => {
     const { results } = result;
-
+    
     map.setCenter(results[0].geometry.location);
     marker.setPosition(results[0].geometry.location);
     marker.setMap(map);
     responseDiv.style.display = "block";
+    // THIS IS WHEREW THE DAMN DATA IS
     response.innerText = JSON.stringify(result, null, 2);
-    // THis is my stuff
-
-
-
-//     var address = document.getElementById("address").value;
-//     geocoder.geocode( { 'address': address}, function(results, status) {
-//     if (status == google.maps.GeocoderStatus.OK)
-//     {
-//       // do something with the geocoded result
-//       //
-//       // results[0].geometry.location.latitude
-//       // results[0].geometry.location.longitude
-//     }
-// });
-
-// var geo = new google.maps.Geocoder;
-// geo.geocode({'address':address},function(results, status){
-//     if (status == google.maps.GeocoderStatus.OK) {              
-//         var myLatLng = results[0].geometry.location;
-//         console.log('this should be lat long maybe \n', myLatLng)
-//         // Add some code to work with myLatLng              
-
-//     } else {
-//         alert("Geocode was not successful for the following reason: " + status);
-//     }
-// });
-
-
-
-
-    data.push(results);
-    console.log(results)
-    lat = data[0][0].geometry.viewport.eb.lo;
-    latt = data[0][0].geometry.location.lat
-    console.log(latt)
-    long = data[0][0].geometry.viewport.La.hi;
-    longg = data[0][0].geometry.location.lng
-    console.log(longg)
-    lat = lat.toString();
-    long = long.toString();
-    latlong = lat + ',' + long;
-    console.log(latlong)
-    coords.innerHTML = `<a class="btn btn-primary" href="weather/daily/${lat},${long}">Lets Go!</a>`
-    coords1.innerHTML = `<p><strong>${latt},${longg}</strong></p>`
     
+    // THis is my stuff
+    console.log('This is the new result \n', result)
+    console.log('This is the new response \n', JSON.parse(response.innerText))
+    
+    let newData = JSON.parse(response.innerText)
+    console.log('This is the new newData \n', newData)
+    lat = newData.results[0].geometry.location.lat;
+    console.log('This is the new lat \n', lat)
+    long = newData.results[0].geometry.location.lng;
+    console.log('This is the new long \n', long)
+    coords.innerHTML = `<a class="btn btn-primary" href="weather/daily/${lat},${long}">Lets Go!</a>`
+    console.log(latlong)
+    coords1.innerHTML = `<p><strong>${lat},${long}</strong></p>`
     // END OF MY STUFF
+    
+    
     return results;
     })
     .catch((e) => {
     alert("Geocode was not successful for the following reason: " + e);
     });
 }
-
-
 
 initMap();
