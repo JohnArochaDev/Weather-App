@@ -5,9 +5,14 @@ let responseDiv;
 let response;
 let data = [];
 let lat;
+let latt;
 let long;
+let longg;
 let latlong;
 let coords = document.getElementById("hidden")
+let coords1 = document.getElementById("coords1")
+let latitude
+let longitude
 
 async function initMap() {
     // Request libraries when needed, not in the script tag.
@@ -93,15 +98,50 @@ async function initMap() {
     responseDiv.style.display = "block";
     response.innerText = JSON.stringify(result, null, 2);
     // THis is my stuff
+
+
+
+//     var address = document.getElementById("address").value;
+//     geocoder.geocode( { 'address': address}, function(results, status) {
+//     if (status == google.maps.GeocoderStatus.OK)
+//     {
+//       // do something with the geocoded result
+//       //
+//       // results[0].geometry.location.latitude
+//       // results[0].geometry.location.longitude
+//     }
+// });
+
+// var geo = new google.maps.Geocoder;
+// geo.geocode({'address':address},function(results, status){
+//     if (status == google.maps.GeocoderStatus.OK) {              
+//         var myLatLng = results[0].geometry.location;
+//         console.log('this should be lat long maybe \n', myLatLng)
+//         // Add some code to work with myLatLng              
+
+//     } else {
+//         alert("Geocode was not successful for the following reason: " + status);
+//     }
+// });
+
+
+
+
     data.push(results);
     console.log(results)
     lat = data[0][0].geometry.viewport.eb.lo;
+    latt = data[0][0].geometry.location.lat
+    console.log(latt)
     long = data[0][0].geometry.viewport.La.hi;
+    longg = data[0][0].geometry.location.lng
+    console.log(longg)
     lat = lat.toString();
     long = long.toString();
     latlong = lat + ',' + long;
     console.log(latlong)
     coords.innerHTML = `<a class="btn btn-primary" href="weather/daily/${lat},${long}">Lets Go!</a>`
+    coords1.innerHTML = `<p><strong>${latt},${longg}</strong></p>`
+    
     // END OF MY STUFF
     return results;
     })
