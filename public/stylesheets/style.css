@@ -374,3 +374,103 @@ td {
 .white {
   background-color: rgb(247, 247, 247);
 }
+
+.bgColor {
+  background-image: url("../../public/images/home/space2.jpg");
+  width:initial;
+}
+
+
+
+.cont {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto; /* Center the container */
+}
+
+img.dayTop {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bottom-left, .top-left, .top-right, .bottom-right, .middle-left {
+  position: absolute;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 2%;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+}
+
+.top-right {
+  top: 0;
+  right: 2%;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 2%;
+}
+
+.middle-left {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 2%;
+  text-align: center;
+}
+
+.middle-left h3 {
+  margin: 0; /* Remove default margin */
+}
+
+/* Add your other styles here */
+
+@media only screen and (max-width: 768px) {
+  /* Adjust styles for smaller screens */
+  .top-left {
+      display: none; /* Hide top-right and bottom-right on small screens */
+  }
+
+  .middle-left {
+      width: 50%; /* Make middle-left element full width on small screens */
+      margin-top: -10px;
+      font-size: smaller
+  }
+
+  .bottom-left {
+
+    font-size: smaller
+  }
+  
+  .top-left {
+
+    font-size: smaller
+  }
+  
+  .top-right {
+
+    font-size: smaller
+  }
+  
+  .bottom-right {
+
+    font-size: smaller
+  }
+}
+
+/* .smol {
+  width: auto;
+} */
+
+@media only screen and (max-width: 768px) {
+  /* Adjust styles for smaller screens */
+  .smol {
+    width: 300px;
+  }
+}
