@@ -61,16 +61,25 @@ router.get('/weather/daily/zipcode', (req, res) => {
 
         .then(apiRes => {
             let weather = apiRes.data
-            let locName = weather.location.name
             let forecast1 = weather.forecast.forecastday[0] // DAY OF
             let forecast2 = weather.forecast.forecastday[1] // TOMORROW
             let forecast3 = weather.forecast.forecastday[2] // TOMORROWs TOMOROW
-            let locRegion = weather.location.region
             let locTime = weather.location.localtime
             let hours = forecast1.hour
             // THis will be the time we start from
-            let localTime = locTime[11] + locTime[12]
+            let localTime = locTime.substr(-5, 2)
+            // let localTime = "03"
+            // console.log('Localtime: \n', localTime)
+            // console.log(typeof localTime)
+            if (localTime.startsWith("0")) {
+                localTime = localTime.slice(1);
+            }
+            console.log('Localtimee: \n', localTime)
+            // console.log('Localtimee: \n', localTimee)
             let hourTime = hours.splice(localTime)
+
+
+            
             let idx = 0;
             while (hourTime.length < 13) {
                 hourTime.push(forecast2.hour[idx])
@@ -99,7 +108,6 @@ router.get('/weather/daily/zipcode', (req, res) => {
                 newString = monthConversion.replace("-", "");
             }
             if (newString) {
-                console.log('newString was hit')
                 if (newString == '01') {
                     month = "Jan";
                 } else if (newString == '02') {
@@ -149,21 +157,18 @@ router.get('/weather/daily/zipcode', (req, res) => {
                 month = "Nov";
             } else {
                 month = "Dec";
-                console.log('month was hit')
             }
             //SECOND
             let newString1 = null;
             let month1;
             let dayco1 = forecast2.date[8] += forecast2.date[9];
             let dayConversion1 = dayco1;
-            console.log("1",dayConversion1)
             let monco1 = forecast2.date[5] += forecast2.date[6];
             let monthConversion1 = monco1.toString();
             if (monthConversion1.indexOf("-") >= 0) {
                 newString1 = monthConversion1.replace("-", "");
             }
             if (newString1) {
-                console.log('newString1 was hit')
                 if (newString1 == '01') {
                     month1 = "Jan";
                 } else if (newString1 == '02') {
@@ -213,7 +218,6 @@ router.get('/weather/daily/zipcode', (req, res) => {
                 month1 = "Nov";
             } else {
                 month1 = "Dec";
-                console.log('month was hit')
             }
             // console.log(month1)
             //THIRD
@@ -221,14 +225,12 @@ router.get('/weather/daily/zipcode', (req, res) => {
             let month2;
             let dayco2 = forecast3.date[8] += forecast3.date[9];
             let dayConversion2 = dayco2;
-            console.log("1",dayConversion2)
             let monco2 = forecast3.date[5] += forecast3.date[6];
             let monthConversion2 = monco2.toString();
             if (monthConversion2.indexOf("-") >= 0) {
                 newString2 = monthConversion2.replace("-", "");
             }
             if (newString2) {
-                console.log('newString2 was hit')
                 if (newString2 == '01') {
                     month2 = "Jan";
                 } else if (newString2 == '02') {
@@ -278,7 +280,6 @@ router.get('/weather/daily/zipcode', (req, res) => {
                 month2 = "Nov";
             } else {
                 month2 = "Dec";
-                console.log('month was hit')
             }
             res.render('weather/daily', { weather, hour, hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9, hour10, hour11, hour12, forecast1, forecast2, forecast3, month1, month2, dayConversion1, dayConversion2, username, loggedIn, userId})
         })

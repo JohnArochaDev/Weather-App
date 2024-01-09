@@ -113,7 +113,6 @@ async function initMap() {
     // console.log('This is the new long \n', long)
     coords.innerHTML = `<a class="btn btn-primary" href="weather/daily/${lat},${long}">Lets Go!</a>`
     // console.log(latlong)
-    coords1.innerHTML = `<p><strong>${lat},${long}</strong></p>`
     // END OF MY STUFF
     
     
