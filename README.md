@@ -14,6 +14,12 @@ As a user, I want the ability to...
   - select a location on a google map window
   - Display a 7 day forcast and a current forcast
 
+
+## Planning
+![alt text](public/images/ERD.png)
+![alt text](public/images/Wireframe.png)
+
+
 ## Screenshots
 ![alt text](public/images/homePage.png)
 ![alt text](public/images/forecastPage.png)

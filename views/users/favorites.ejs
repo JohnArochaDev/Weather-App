@@ -9,18 +9,16 @@
     <div class="card container" style="width: 27rem;">
         <div class="card-header">
         <% if (favorites.length >= 1) { %>
-                    <h2>Favorites</h2>
-                </div>
+                <h2>Favorites</h2></div>
                 <ul class="list-group list-group-flush">
                     <% favorites.forEach((f) => { %>
                         <div class="col">
                             <div class="row">
                                 <li class="list-group-item"><a class="noTag" href="/weather/daily/<%= f.lat %>,<%= f.long %>">
-                                    <!-- if statement -->
                                     <% if (f.nickname) { %>
                                         <%= f.nickname.name%></a>
                                     <% } else { %>
-                                    <%= f.name %>, <%= f.region %></a>
+                                        <%= f.name %>, <%= f.region %></a>
                                     <% } %>
                                     <span style="float:right">
                                         <form class="rem" action="/users/delete/<%= f._id %>?_method=DELETE" method="POST">

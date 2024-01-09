@@ -58,7 +58,6 @@ router.get('/', async function(req, res, next) {
 router.get('/weather/daily/zipcode', (req, res) => {
     const { username, loggedIn, userId } = req.session
     axios(`${weatherURL}${req.query.zipcode}&days=3&aqi=yes&alerts=no`)
-
         .then(apiRes => {
             let weather = apiRes.data
             let forecast1 = weather.forecast.forecastday[0] // DAY OF
@@ -66,20 +65,12 @@ router.get('/weather/daily/zipcode', (req, res) => {
             let forecast3 = weather.forecast.forecastday[2] // TOMORROWs TOMOROW
             let locTime = weather.location.localtime
             let hours = forecast1.hour
-            // THis will be the time we start from
             let localTime = locTime.substr(-5, 2)
-            // let localTime = "03"
-            // console.log('Localtime: \n', localTime)
-            // console.log(typeof localTime)
             if (localTime.startsWith("0")) {
                 localTime = localTime.slice(1);
             }
             console.log('Localtimee: \n', localTime)
-            // console.log('Localtimee: \n', localTimee)
             let hourTime = hours.splice(localTime)
-
-
-            
             let idx = 0;
             while (hourTime.length < 13) {
                 hourTime.push(forecast2.hour[idx])
@@ -158,7 +149,6 @@ router.get('/weather/daily/zipcode', (req, res) => {
             } else {
                 month = "Dec";
             }
-            //SECOND
             let newString1 = null;
             let month1;
             let dayco1 = forecast2.date[8] += forecast2.date[9];
@@ -219,8 +209,6 @@ router.get('/weather/daily/zipcode', (req, res) => {
             } else {
                 month1 = "Dec";
             }
-            // console.log(month1)
-            //THIRD
             let newString2 = null;
             let month2;
             let dayco2 = forecast3.date[8] += forecast3.date[9];
@@ -302,7 +290,11 @@ router.get('/weather/daily/:coords', (req, res) => {
             let locTime = weather.location.localtime
             let hours = forecast1.hour
             // THis will be the time we start from
-            let localTime = locTime[11] + locTime[12]
+            let localTime = locTime.substr(-5, 2)
+            if (localTime.startsWith("0")) {
+                localTime = localTime.slice(1);
+            }
+            console.log('Localtimee: \n', localTime)
             let hourTime = hours.splice(localTime)
             let idx = 0;
             while (hourTime.length < 13) {
@@ -384,7 +376,6 @@ router.get('/weather/daily/:coords', (req, res) => {
                 month = "Dec";
                 console.log('month was hit')
             }
-            //SECOND
             let newString1 = null;
             let month1;
             let dayco1 = forecast2.date[8] += forecast2.date[9];
@@ -448,7 +439,6 @@ router.get('/weather/daily/:coords', (req, res) => {
                 month1 = "Dec";
                 console.log('month was hit')
             }
-            //THIRD
             let newString2 = null;
             let month2;
             let dayco2 = forecast3.date[8] += forecast3.date[9];

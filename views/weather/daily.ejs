@@ -6,11 +6,9 @@
 
 <div class="cont">
     <img src="../../public/images/home/space2.jpg" alt="Snow" style="width:100%;" class="dayTop">
-
     <div class="bottom-left black">
     <h1 class="black"><%= hour.condition.text %></h1>
     </div>
-
     <div class="top-left">
         <% if (hour.condition.text == 'Clear' ||hour.condition.text == 'Sunny') { %>
             <img src="../../public/images/icons/clearDay.png">
@@ -30,15 +28,12 @@
                 <img src="../../public/images/icons/wind.png">
         <% } %>
     </div>
-
     <div class="top-right">
         <h1 class="text-end black"><%= finalTime + weather.location.localtime.substr(-3, 3)%></h1>
     </div>
-
     <div class="bottom-right black">
         <h1 class="black"><%= weather.location.name %>, <%= weather.location.region %></h1>
     </div>
-
     <div class="middle-left black">
         <h1 class="d-flex align-items-center black"><%= hour.temp_f %>°F</h1>
     </div>
@@ -680,7 +675,6 @@
             </div>
         </div>
     </div>
-    
     <% if (loggedIn) { %>
             <form action="/users/add" method="POST">
                 <fieldset>
@@ -699,5 +693,3 @@
 </div>
 
 <%- include('../partial/footer') %>
-
-
