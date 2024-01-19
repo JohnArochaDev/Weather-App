@@ -1,5 +1,5 @@
 ### Weather
-This website will allow you to view the current weather, as well as the forcasted weather anywhere on earth.
+This website will allow you to view the current weather, as well as the forecasted weather anywhere on earth.
 
 
 ## User Story
